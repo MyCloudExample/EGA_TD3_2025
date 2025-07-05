@@ -56,6 +56,7 @@ target_link_libraries(firmware
     pwm_lib
     lcd
     HC_SR04
+    hardware_adc
 )
 
 # Add the standard include files to the build
