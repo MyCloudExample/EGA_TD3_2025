@@ -3,7 +3,7 @@
 #include "hardware/adc.h"
 #include <stdio.h>  // Para printf
 
-#define LED_PIN 15          // GPIO15 para PWM, pin 21
+#define LED_PIN 11          // GPIO15 para PWM, pin 21
 #define POTENTIOMETER_PIN 26 // GPIO26 (ADC0), pin 31
 
 int main() 

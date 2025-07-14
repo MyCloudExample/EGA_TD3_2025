@@ -7,7 +7,7 @@ int main() {
     sleep_ms(2000); // Esperar estabilización USB
     
     hc_sr04_t sensor;
-    hc_sr04_init(&sensor, 15, 16); // Trigger: GPIO2, Echo: GPIO3
+    hc_sr04_init(&sensor, 15, 14); // Trigger: GPIO2, Echo: GPIO3
     
     while(true) {
         float dist = hc_sr04_get_distance_cm(&sensor);
