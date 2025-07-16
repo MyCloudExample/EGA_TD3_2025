@@ -482,7 +482,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA/KICAD/PCB_Levitador_Neumatico/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
@@ -587,7 +587,7 @@
       "workbook_filename": ""
     },
     "page_layout_descr_file": "",
-    "plot_directory": "./",
+    "plot_directory": "../",
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
     "spice_model_current_sheet_as_root": true,
