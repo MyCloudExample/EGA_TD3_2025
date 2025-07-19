@@ -38,6 +38,7 @@ add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../freertos ${CMAKE_BINARY_DIR}/freer
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../lcd ${CMAKE_BINARY_DIR}/lcd)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../pwm_lib ${CMAKE_BINARY_DIR}/pwm_lib)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../HC_SR04 ${CMAKE_BINARY_DIR}/HC_SR04)
+add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../pico-rv32ima/pico-rv32ima ${CMAKE_BINARY_DIR}/pico-rv32ima)
 # Add executable. Default name is the project name, version 0.1
 
 add_executable(firmware firmware.c )
@@ -47,7 +48,7 @@ pico_set_program_version(firmware "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
 pico_enable_stdio_uart(firmware 0)
-pico_enable_stdio_usb(firmware 0)
+pico_enable_stdio_usb(firmware 1)
 
 # Add the standard library to the build
 target_link_libraries(firmware
@@ -57,6 +58,8 @@ target_link_libraries(firmware
     lcd
     HC_SR04
     hardware_adc
+    hardware_spi
+    petitfatfs
 )
 
 # Add the standard include files to the build
