@@ -15,7 +15,6 @@
 #include "pff.h"
 #include "diskio.h"
 #include "string.h"
-
 /*-------------------------------------DEFINICION DE PINES PARA EL PROYECTO-------------------------------------------------*/
 #define PIN_SDA     8 //Pin 11 de la placa
 #define PIN_SCL     9 //Pin 12 de la placa
@@ -38,6 +37,9 @@
 #define GPIO_LED_MAX 16
 #define GPIO_LED_MIN 17
 #define ALERTA_TIMEOUT_MS 3000
+#define PIN_PAGINA  18 // Pin 24 de la placa
+#define DEBOUNCE_TIME_MS 50
+#define MULTI_PRESS_TIMEOUT 300
 /*--------------------------------------VARAIBLES DE RPOGRAMA, COLAS Y SEMAFOROS----------------------------------------------*/
 pwm_config_t cooler={.pin=PIN_PWM, .wrap=12499, .clk_div=10};
 hc_sr04_t sensor;
@@ -51,6 +53,14 @@ QueueHandle_t queue_max;
 QueueHandle_t queue_min;
 QueueHandle_t queue_max_salida;
 QueueHandle_t queue_min_salida;
+QueueHandle_t cola_paginas;
+typedef struct
+{
+    uint32_t setpoint;
+    float setpoint_min;
+    float setpoint_max;
+}estructura_setpoint;
+
 /*--------------------------------------TAREAS DE FREERTOS--------------------------------------------------------------------*/
 //-----------------------------------------TAREA DE INICIALIZACION-------------------------------------------------------------
 
@@ -244,43 +254,135 @@ void task_guardiana_sd(void *params) {
 
 //---------------------------------------------------TAREA PARA INICAR EL SETPOINT------------------------------------------------
 void task_SetPoint(void *params)
-{ uint32_t valor_adc, altura_int;
-  float altura, tension;
+{ uint32_t valor_adc, valor_altura;
+  estructura_setpoint data;  
+  float tension;
   char buffer[30];
-  
+  uint8_t pagina=0;
+
     while (true)
-    {
+    { 
+        if (xQueuePeek(cola_paginas, &pagina, portMAX_DELAY) == pdPASS) {
+        }
+        
+       if (pagina == 1) 
+       {
         valor_adc = adc_read();
         tension = (valor_adc * 3.3f) / 4095; 
-        altura = ((valor_adc * 3.3f) / 4095)*10;
-        altura_int = altura;
-        vTaskDelay(pdMS_TO_TICKS(200));
-        /*printf("Valor= %lu \n",valor_adc);
-        printf("Tension= %.2f V\n",tension);
-        printf("Altura= %.2f cm\n", altura);*/
-    }    
+        valor_altura = ((valor_adc * 3.3f) / 4095)*10;
+        data.setpoint = valor_altura;
+        printf("PAGINA 1 |setpoint= %lu | Valor altura= %lu \n", data.setpoint, valor_altura);
+        } 
+        if(pagina==2) 
+        {
+            valor_adc = adc_read();
+            tension = (valor_adc * 3.3f) / 4095; 
+            valor_altura = ((valor_adc * 3.3f) / 4095)*10;
+            data.setpoint_max = valor_altura;
+            printf("PAGINA 2 |setpointMax= %.2f | Valor altura= %lu \n", data.setpoint_max, valor_altura);
+        }
+        if(pagina==3) 
+        {
+            valor_adc = adc_read();
+            tension = (valor_adc * 3.3f) / 4095; 
+            valor_altura = ((valor_adc * 3.3f) / 4095)*10;
+            data.setpoint_min = valor_altura;
+            printf("PAGINA 3 |setpointMin= %.2f | Valor altura= %lu \n", data.setpoint_min, valor_altura);
+        }
+        if(pagina==0) 
+        {
+            
+            printf("PAGINA 0 |setpoint= %lu | setpoint_max=%.2f | setpoint_min= %.2f \n", data.setpoint,data.setpoint_max,data.setpoint_min);
+        }
+       xQueueSend(queue_setpoint, &data, portMAX_DELAY); //Se quedara aqui ya que no se desopucpa la cola
+       vTaskDelay(pdMS_TO_TICKS(1000));
+}
+           
 }
 
+void task_monitor_gpio(void *pvParameters) {
+    while (1) {
+        printf("Estado GPIO24: %d \n", gpio_get(PIN_PAGINA));
+        vTaskDelay(pdMS_TO_TICKS(100));
+       
+    }
+}
+
+void configuracion_gpio_boton(void) {
+    // Configuración del botón en GPIO 14
+    gpio_init(PIN_PAGINA);
+    gpio_set_dir(PIN_PAGINA, GPIO_IN);
+    gpio_pull_up(PIN_PAGINA);   // configura pull down
+    //gpio_set_irq_enabled_with_callback(PIN_PAGINA, GPIO_IRQ_EDGE_RISE, true, &boton_callback);   // cuando detecta evento, \
+                                                                                            evento: GPIO_IRQ_EDGE_RISE (flanco ascendente), \
+                                                                                            TRUE: habilita la interrupcion para este GPIO, \
+                                                                                            va a la dirección de memoria en la que la función “boton_callback” se encuentra
+}
+
+void task_debounce_boton(void *pvParameters) {
+    bool last_state = 1;
+    bool stable_state = 0;
+    uint8_t contador=0;
+    TickType_t last_debounce_time = 0;
+    const TickType_t debounce_delay = pdMS_TO_TICKS(50);  // 50 ms debounce
+
+    
+    printf("Antede de la cola Contador= %d\n",contador);
+    xQueueOverwrite(cola_paginas, &contador);
+    printf("Despues de la cola Contador= %d\n",contador);
+    while (1) 
+    {
+        bool current_state = gpio_get(PIN_PAGINA);
+        if (current_state != last_state) 
+        {
+            last_debounce_time = xTaskGetTickCount();
+        }
+        if ((xTaskGetTickCount() - last_debounce_time) > debounce_delay) 
+        {
+           
+            if (current_state != stable_state) 
+            {
+                stable_state = current_state;
+                
+                if (stable_state == true) 
+                { 
+                    contador++;
+                    if(contador == 4)
+                    {
+                        contador = 0;
+                    }
+                    xQueueOverwrite(cola_paginas, &contador);
+                    
+                }
+            }
+        }
+        last_state = current_state;
+        vTaskDelay(pdMS_TO_TICKS(10));
+    }
+}
 int main(void) 
 {
     stdio_init_all();
+    configuracion_gpio_boton();
 
     // Creacion de colas
     queue_rtc = xQueueCreate(5,sizeof(float));
     queue_hcsr04 = xQueueCreate(5,sizeof(float));
-    queue_setpoint = xQueueCreate(5,sizeof(uint16_t));
+    queue_setpoint = xQueueCreate(5,sizeof(estructura_setpoint));
     queue_pwm = xQueueCreate(5,sizeof(uint16_t));
     queue_altura = xQueueCreate(5,sizeof(uint16_t));
-    queue_min = xQueueCreate(5,sizeof(uint16_t));
-    queue_max = xQueueCreate(5,sizeof(uint16_t));
     queue_max_salida = xQueueCreate(5,sizeof(uint16_t));
     queue_min_salida = xQueueCreate(5,sizeof(uint16_t));
+    cola_paginas = xQueueCreate(1, sizeof(uint8_t));   // cola que posee una unica posicion para memorizar el cambio de paginas
+    //xQueueOverwrite(cola_paginas, &pagina);
     // Creacion de tareas
     xTaskCreate(task_init, "Init", 256, NULL, 3, NULL);
-    //xTaskCreate(task_SetPoint,"SetPoint",256,NULL,2,NULL);
-    xTaskCreate(task_hcsr04,"MedicionDeDistancia",256,NULL,2,NULL);
+    xTaskCreate(task_SetPoint,"SetPoint",256,NULL,2,NULL);
+    //xTaskCreate(task_monitor_gpio,"boton",256,NULL,2,NULL);
+    //xTaskCreate(task_hcsr04,"MedicionDeDistancia",256,NULL,2,NULL);
     //xTaskCreate(task_guardiana_sd,"guardianaSD",256,NULL,2,NULL);
-    xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
+    //xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
+    xTaskCreate(task_debounce_boton, "debounce_boton", 1024, NULL, 1, NULL);
 
     // Arranca el scheduler
     vTaskStartScheduler();
