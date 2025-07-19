@@ -24,8 +24,10 @@
 #define FREQ        400000 //Frecuencia de 100KHz para el i2c
 #define PIN_PWM     16 //Pin 21 de la placa
 #define PIN_RPM     17 //Pin 22 de la placa
-#define PIN_TRIG    15 //Pin 19 de la placa
-#define PIN_ECHO    16 //Pin 20 de la placa
+// Pines de HC-SR04
+#define PIN_TRIG    14 //Pin 19 de la placa
+#define PIN_ECHO    15 //Pin 20 de la placa
+// PIN de potenciometro de setpoint
 #define PIN_ADC     26 //Pin
 // Pines SPI para la Raspberry Pi Pico 2
 #define PIN_MISO  00
@@ -108,7 +110,8 @@ void task_hcsr04(void *params)
         }
         else
         {
-            printf("Distancia= %.2f cm\n",valor_medido);
+            printf("Tarea: task_hcssr04, Distancia= %.2f cm\n",valor_medido);
+            xQueueSend(queue_hcsr04,&valor_medido,pdMS_TO_TICKS(100));
         }
         vTaskDelay(pdMS_TO_TICKS(2000));
     }
@@ -116,9 +119,11 @@ void task_hcsr04(void *params)
 //---------------------------------------------------TAREA GUARDIANA LCD----------------------------------------------------------
 
 void task_guardiana_lcd(void *params) {
-    uint16_t val_altura = 0, val_max = 0, val_min = 0, val_hcsr04 = 0, val_rtc = 0, val_max_salida = 0, val_min_salida = 0;
+    uint16_t val_altura = 0, val_max = 0, val_min = 0, val_rtc = 0, val_max_salida = 0, val_min_salida = 0;
+    float val_hcsr04=0.0f;
     bool alerta_latched = false;
     TickType_t tick_ultima_alerta = 0;
+    char buffer[20];
 
     while (1) {
         xQueueReceive(queue_altura, &val_altura, pdMS_TO_TICKS(100));
@@ -128,15 +133,16 @@ void task_guardiana_lcd(void *params) {
         xQueueReceive(queue_max_salida, &val_max_salida, pdMS_TO_TICKS(100));
         xQueueReceive(queue_min_salida, &val_min_salida, pdMS_TO_TICKS(100));
 
-        // Mostrar datos
-        printf("ALTURA: %.2f cm | PICO MAXIMO: %.2f cm | PICO MINIMO: %.2f cm | RAW HCSR04: %.2f | PICO MAXIMO EN SALIDA: %.2f | PICO MINIMO EN SALIDA: %.2f;", val_altura, val_max, val_min, val_hcsr04, val_max_salida, val_min_salida);
-
+        // Para pruebas de testeo
+        printf("Tarea: task_guradiana_lcd, Altura: %.2f cm\n",val_hcsr04); //Datos del ultrasonico
+        /*printf("Tarea: task_guradiana_lcd, Altura: %.2f cm\n",val_hcsr04); //Datos del ultrasonico
+        printf("Tarea: task_guradiana_lcd, Altura: %.2f cm\n",val_hcsr04); //Datos del ultrasonico
+        printf("Tarea: task_guradiana_lcd, Altura: %.2f cm\n",val_hcsr04); //Datos del ultrasonico
+        printf("Tarea: task_guradiana_lcd, Altura: %.2f cm\n",val_hcsr04); //Datos del ultrasonico*/
         // Limpio el LCD
         lcd_clear();
         // Muevo el cursor a la segunda fila, tercer columna
         lcd_set_cursor(0, 0);
-        // Escribo
-        char buffer[20];
         sprintf(buffer, "SETPOINT: %.2f cm", val_altura);
         lcd_string(buffer);
         // Muevo el cursor a la segunda fila, tercer columna
@@ -242,7 +248,6 @@ void task_SetPoint(void *params)
   float altura, tension;
   char buffer[30];
   
-  lcd_clear();
     while (true)
     {
         valor_adc = adc_read();
@@ -250,12 +255,9 @@ void task_SetPoint(void *params)
         altura = ((valor_adc * 3.3f) / 4095)*10;
         altura_int = altura;
         vTaskDelay(pdMS_TO_TICKS(200));
-        lcd_set_cursor(0,0);
-        sprintf(buffer,"Altura= %lu cm ",altura_int);
-        lcd_string(buffer);
-        printf("Valor= %lu \n",valor_adc);
+        /*printf("Valor= %lu \n",valor_adc);
         printf("Tension= %.2f V\n",tension);
-        printf("Altura= %.2f cm\n", altura);
+        printf("Altura= %.2f cm\n", altura);*/
     }    
 }
 
@@ -263,11 +265,21 @@ int main(void)
 {
     stdio_init_all();
 
+    // Creacion de colas
+    queue_rtc = xQueueCreate(5,sizeof(float));
+    queue_hcsr04 = xQueueCreate(5,sizeof(float));
+    queue_setpoint = xQueueCreate(5,sizeof(uint16_t));
+    queue_pwm = xQueueCreate(5,sizeof(uint16_t));
+    queue_altura = xQueueCreate(5,sizeof(uint16_t));
+    queue_min = xQueueCreate(5,sizeof(uint16_t));
+    queue_max = xQueueCreate(5,sizeof(uint16_t));
+    queue_max_salida = xQueueCreate(5,sizeof(uint16_t));
+    queue_min_salida = xQueueCreate(5,sizeof(uint16_t));
     // Creacion de tareas
     xTaskCreate(task_init, "Init", 256, NULL, 3, NULL);
-    xTaskCreate(task_SetPoint,"SetPoint",256,NULL,2,NULL);
+    //xTaskCreate(task_SetPoint,"SetPoint",256,NULL,2,NULL);
     xTaskCreate(task_hcsr04,"MedicionDeDistancia",256,NULL,2,NULL);
-    xTaskCreate(task_guardiana_sd,"guardianaSD",256,NULL,2,NULL);
+    //xTaskCreate(task_guardiana_sd,"guardianaSD",256,NULL,2,NULL);
     xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
 
     // Arranca el scheduler
