@@ -145,7 +145,7 @@
 7834	8196	7734487611150835	lcd/CMakeFiles/lcd.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.obj	756b2e0b5a78d3a6
 14170	14897	7734487674506103	HC_SR04/CMakeFiles/HC_SR04.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_uart/uart.c.obj	ad6abf3f66b210b3
 5041	5954	7734487583458395	freertos/CMakeFiles/freertos.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj	d47957b83c20ba69
-110	482	7746571352453799	CMakeFiles/firmware.dir/firmware.c.obj	5963c94bebfdbbfc
+130	570	7749903461237616	CMakeFiles/firmware.dir/firmware.c.obj	5963c94bebfdbbfc
 2542	2897	7746389653997206	pico-rv32ima/petitfatfs/CMakeFiles/petitfatfs.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj	8ffdac6f675d606d
 13189	13598	7746389760445745	CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_xip_cache/xip_cache.c.obj	c04a08e582122d43
 9252	10097	7746389721092867	CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdlib/stdlib.c.obj	73c33c8b638e7d0f
@@ -253,11 +253,11 @@
 12428	13671	7746389752840982	CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_printf/printf.c.obj	5e33ba7baba50a4e
 1130	1956	7746389640216006	pico-rv32ima/petitfatfs/CMakeFiles/petitfatfs.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_clocks/clocks.c.obj	6e89f6a6ae11474b
 13675	14017	7746389765320330	CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/midi/midi_device.c.obj	72b76a2bea0ca026
-484	1124	7746571356276494	firmware.elf	f97861e7f4dd0808
+571	1171	7749903465660934	firmware.elf	f97861e7f4dd0808
 15672	16222	7746389785488187	pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/hardware_claim/claim.c.obj	79063d0472762365
 1083	1228	7729377641500709	C:/Users/nahue/Desktop/Accesos Directos/GitHUB/Practicas_Rasberry/EGA_TD3/Firmware/build/pico-sdk/src/rp2350/boot_stage2/bs2_default_padded_checksummed.S	38aef3d77371ffc2
 2275	2555	7746389651313371	pico-rv32ima/petitfatfs/CMakeFiles/petitfatfs.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_sci_m33.S.obj	82676069272eb76c
-53	2571	7746572395034488	build.ninja	cd7e5baa8edc7490
+53	2571	7749923225597880	build.ninja	cd7e5baa8edc7490
 5647	6067	7734487589277167	lcd/CMakeFiles/lcd.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/hardware_claim/claim.c.obj	22aae2907a9001d6
 5657	6170	7734487589373336	lcd/CMakeFiles/lcd.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync/sync.c.obj	cc6589ae2884dad9
 6010	6391	7734487592912336	lcd/CMakeFiles/lcd.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_irq/irq_handler_chain.S.obj	d39fcd6c885f84c9
