@@ -37,6 +37,7 @@
 #define GPIO_LED_MAX 16
 #define GPIO_LED_MIN 17
 #define ALERTA_TIMEOUT_MS 3000
+// Boton de cambio de pagina, conmuta en la opciones de task_setpoint
 #define PIN_PAGINA  18 // Pin 24 de la placa
 #define DEBOUNCE_TIME_MS 50
 #define MULTI_PRESS_TIMEOUT 300
@@ -102,6 +103,13 @@ void task_init(void *params)
     init_spi_sd();
     //Inicializo el PWM
     pwm_init_config(&cooler);
+    //COnfiguro pines de los leds banderas
+    gpio_init(GPIO_LED_MAX); //Inicio el pin 16
+    gpio_set_dir(GPIO_LED_MAX, GPIO_OUT); //Se configura como salida
+    gpio_put(GPIO_LED_MAX, 0); // Se coloca un 0 a la salida
+    gpio_init(GPIO_LED_MIN); //Inicio el pin 17
+    gpio_set_dir(GPIO_LED_MIN, GPIO_OUT); //Se configura como salida
+    gpio_put(GPIO_LED_MIN, 0); // Se coloca un 0 a la salida
     //Inicializo memoria SD
     printf("Tarea elimianda\n");
     // Elimino la tarea para liberar recursos
@@ -251,11 +259,61 @@ void task_guardiana_sd(void *params) {
     }
 
 }
+//---------------------------------------------------TAREA GUARDIANA DE LEDS------------------------------------------------------
+void task_guardiana_leds(void *params) {
+    bool alerta_latched = false;
+    estructura_setpoint recibido_setpoint;
+    float recibido_hcsr04 = 0, val_max_setpoint = 0, val_min_setpoint = 0;
+    TickType_t tick_ultima_alerta = 0;
+    gpio_init(GPIO_LED_MAX); //Inicio el pin 16
+    gpio_set_dir(GPIO_LED_MAX, GPIO_OUT); //Se configura como salida
+    gpio_put(GPIO_LED_MAX, 0); // Se coloca un 0 a la salida
+    gpio_init(GPIO_LED_MIN); //Inicio el pin 17
+    gpio_set_dir(GPIO_LED_MIN, GPIO_OUT); //Se configura como salida
+    gpio_put(GPIO_LED_MIN, 0); // Se coloca un 0 a la salida
 
+    while(true)
+    {
+        if (xQueueReceive(queue_setpoint, &recibido_setpoint, portMAX_DELAY) == pdPASS) 
+        {
+            val_max_setpoint = recibido_setpoint.setpoint_max;
+            val_min_setpoint = recibido_setpoint.setpoint_min;
+        }
+
+        if (xQueueReceive(queue_hcsr04, &recibido_hcsr04, portMAX_DELAY) == pdPASS) 
+        {
+            // Si superó el umbral → activa latch y guarda tiempo
+            if (recibido_hcsr04 > val_max_setpoint || recibido_hcsr04 < val_min_setpoint) 
+            {
+                alerta_latched = true;
+                tick_ultima_alerta = xTaskGetTickCount();
+                printf("task_guardiana_leds | Supero un limite");
+            }
+        }
+
+        // Si está activo y ya pasó el timeout → apagar
+        if (alerta_latched) 
+        {
+            TickType_t ahora = xTaskGetTickCount();
+            if ((ahora - tick_ultima_alerta) > pdMS_TO_TICKS(ALERTA_TIMEOUT_MS)) 
+            {
+                alerta_latched = false;
+            }
+        }
+
+        // Control de LED
+        gpio_put(GPIO_LED_MAX, 0);
+        gpio_put(GPIO_LED_MIN, 0);
+        printf("task_guardiana_leds | SetPoinrMax: %.2f | SetPointMin: %.2f | Medicion: %.2f\n", val_max_setpoint,val_min_setpoint,recibido_hcsr04);
+        vTaskDelay(pdMS_TO_TICKS(500));
+
+    }
+
+} 
 //---------------------------------------------------TAREA PARA INICAR EL SETPOINT------------------------------------------------
 void task_SetPoint(void *params)
 { uint32_t valor_adc, valor_altura;
-  estructura_setpoint data;  
+  estructura_setpoint data={.setpoint=0, .setpoint_max=0, .setpoint_min=0};  
   float tension;
   char buffer[30];
   uint8_t pagina=0;
@@ -294,8 +352,8 @@ void task_SetPoint(void *params)
             
             printf("PAGINA 0 |setpoint= %lu | setpoint_max=%.2f | setpoint_min= %.2f \n", data.setpoint,data.setpoint_max,data.setpoint_min);
         }
-       xQueueSend(queue_setpoint, &data, portMAX_DELAY); //Se quedara aqui ya que no se desopucpa la cola
-       vTaskDelay(pdMS_TO_TICKS(1000));
+       xQueueSend(queue_setpoint, &data, 100); //Se quedara aqui ya que no se desopucpa la cola
+       vTaskDelay(pdMS_TO_TICKS(100));
 }
            
 }
@@ -379,10 +437,11 @@ int main(void)
     xTaskCreate(task_init, "Init", 256, NULL, 3, NULL);
     xTaskCreate(task_SetPoint,"SetPoint",256,NULL,2,NULL);
     //xTaskCreate(task_monitor_gpio,"boton",256,NULL,2,NULL);
-    //xTaskCreate(task_hcsr04,"MedicionDeDistancia",256,NULL,2,NULL);
+    xTaskCreate(task_hcsr04,"MedicionDeDistancia",256,NULL,2,NULL);
     //xTaskCreate(task_guardiana_sd,"guardianaSD",256,NULL,2,NULL);
     //xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
     xTaskCreate(task_debounce_boton, "debounce_boton", 1024, NULL, 1, NULL);
+    xTaskCreate(task_guardiana_leds,"guardianaLEDS",256,NULL,2,NULL);
 
     // Arranca el scheduler
     vTaskStartScheduler();
