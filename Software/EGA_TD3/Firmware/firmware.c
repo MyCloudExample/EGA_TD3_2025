@@ -4,12 +4,12 @@
 #include "lcd.h"
 #include "pwm_lib.h"
 #include "HC_SR04.h"
-
+#include "ds3231.h"
+//Caebceras de FreeRTOS
 #include "FreeRTOS.h"
 #include "task.h"
 #include "semphr.h"
 #include "queue.h"
-
 //includes del modulo SD
 #include "hardware/spi.h"
 #include "pff.h"
@@ -418,6 +418,38 @@ void task_debounce_boton(void *pvParameters) {
         vTaskDelay(pdMS_TO_TICKS(10));
     }
 }
+
+void task_rtc(void *pvParameters)
+{
+    ds3231_time_t toma_fecha;
+
+    while (true) 
+    {
+        if (ds3231_get_time(I2C, &toma_fecha)) 
+        {
+            printf("Hora: %02d:%02d:%02d - Fecha: %02d/%02d/20%02d\n",
+                  toma_fecha.hours,
+                  toma_fecha.minutes,
+                  toma_fecha.seconds,
+                  toma_fecha.date,
+                  toma_fecha.month,
+                  toma_fecha.year);
+            xQueueSend(queue_rtc,&toma_fecha,pdMS_TO_TICKS(100)); //Si se usa maxPORT_DELAY se bloqeuara
+        } 
+        else 
+        {
+            printf("Error leyendo el RTC\n");
+            toma_fecha.hours = 0;
+            toma_fecha.minutes = 0;
+            toma_fecha.seconds = 0;
+            toma_fecha.date = 0;
+            toma_fecha.month = 0;
+            toma_fecha.year = 0;
+            xQueueSend(queue_rtc,&toma_fecha,portMAX_DELAY);     
+        }
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+}
 int main(void) 
 {
     stdio_init_all();
@@ -435,13 +467,14 @@ int main(void)
     //xQueueOverwrite(cola_paginas, &pagina);
     // Creacion de tareas
     xTaskCreate(task_init, "Init", 256, NULL, 3, NULL);
-    xTaskCreate(task_SetPoint,"SetPoint",256,NULL,2,NULL);
+    //xTaskCreate(task_SetPoint,"SetPoint",256,NULL,2,NULL);
     //xTaskCreate(task_monitor_gpio,"boton",256,NULL,2,NULL);
-    xTaskCreate(task_hcsr04,"MedicionDeDistancia",256,NULL,2,NULL);
+    //xTaskCreate(task_hcsr04,"MedicionDeDistancia",256,NULL,2,NULL);
     //xTaskCreate(task_guardiana_sd,"guardianaSD",256,NULL,2,NULL);
     //xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
-    xTaskCreate(task_debounce_boton, "debounce_boton", 1024, NULL, 1, NULL);
-    xTaskCreate(task_guardiana_leds,"guardianaLEDS",256,NULL,2,NULL);
+    //xTaskCreate(task_debounce_boton, "debounce_boton", 1024, NULL, 1, NULL);
+    //xTaskCreate(task_guardiana_leds,"guardianaLEDS",256,NULL,2,NULL);
+    xTaskCreate(task_rtc,"regsitro_fecha",256,NULL,2,NULL);
 
     // Arranca el scheduler
     vTaskStartScheduler();

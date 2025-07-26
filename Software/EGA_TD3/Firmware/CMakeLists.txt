@@ -39,6 +39,7 @@ add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../lcd ${CMAKE_BINARY_DIR}/lcd)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../pwm_lib ${CMAKE_BINARY_DIR}/pwm_lib)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../HC_SR04 ${CMAKE_BINARY_DIR}/HC_SR04)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../pico-rv32ima/pico-rv32ima ${CMAKE_BINARY_DIR}/pico-rv32ima)
+add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../ds3231 ${CMAKE_BINARY_DIR}/ds3231)
 # Add executable. Default name is the project name, version 0.1
 
 add_executable(firmware firmware.c )
@@ -59,7 +60,9 @@ target_link_libraries(firmware
     HC_SR04
     hardware_adc
     hardware_spi
+    ds3231
     petitfatfs
+
 )
 
 # Add the standard include files to the build
