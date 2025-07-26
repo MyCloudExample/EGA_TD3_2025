@@ -232,3 +232,6 @@ C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA/Software/EGA_TD3/Firmware/bui
 C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA/Software/EGA_TD3/Firmware/build/pico-rv32ima/ps2/CMakeFiles/ps2.dir
 C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA/Software/EGA_TD3/Firmware/build/pico-rv32ima/ps2/CMakeFiles/edit_cache.dir
 C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA/Software/EGA_TD3/Firmware/build/pico-rv32ima/ps2/CMakeFiles/rebuild_cache.dir
+C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA/Software/EGA_TD3/Firmware/build/ds3231/CMakeFiles/ds3231.dir
+C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA/Software/EGA_TD3/Firmware/build/ds3231/CMakeFiles/edit_cache.dir
+C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA/Software/EGA_TD3/Firmware/build/ds3231/CMakeFiles/rebuild_cache.dir

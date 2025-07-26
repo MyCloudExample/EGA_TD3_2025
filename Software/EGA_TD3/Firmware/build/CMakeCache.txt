@@ -334,6 +334,15 @@ PICO_STDIO_USB:BOOL=OFF
 Python3_EXECUTABLE:UNINITIALIZED=c:/Users/nahue/AppData/Local/Programs/Python/Python310/python.exe
 
 //Value Computed by CMake
+ds3231_BINARY_DIR:STATIC=C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA/Software/EGA_TD3/Firmware/build/ds3231
+
+//Value Computed by CMake
+ds3231_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+ds3231_SOURCE_DIR:STATIC=C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA/Software/EGA_TD3/ds3231
+
+//Value Computed by CMake
 firmware_BINARY_DIR:STATIC=C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA/Software/EGA_TD3/Firmware/build
 
 //Value Computed by CMake
@@ -491,7 +500,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=109
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=110
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
