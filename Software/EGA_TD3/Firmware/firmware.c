@@ -136,62 +136,33 @@ void task_hcsr04(void *params)
 }
 //---------------------------------------------------TAREA GUARDIANA LCD----------------------------------------------------------
 
-void task_guardiana_lcd(void *params) {
-    uint16_t val_altura = 0, val_max = 0, val_min = 0, val_rtc = 0, val_max_salida = 0, val_min_salida = 0;
+void task_guardiana_lcd(void *pvParameter) 
+{
     float val_hcsr04=0.0f;
-    bool alerta_latched = false;
-    TickType_t tick_ultima_alerta = 0;
-    char buffer[20];
+    estructura_setpoint recepcion_lcd;
+    char buffer[30];
 
-    while (1) {
-        xQueueReceive(queue_altura, &val_altura, pdMS_TO_TICKS(100));
-        xQueueReceive(queue_max, &val_max, pdMS_TO_TICKS(100));
-        xQueueReceive(queue_min, &val_min, pdMS_TO_TICKS(100));
+    while (true) 
+    {
+        xQueueReceive(queue_setpoint, &recepcion_lcd, pdMS_TO_TICKS(100));
         xQueueReceive(queue_hcsr04, &val_hcsr04, pdMS_TO_TICKS(100));
-        xQueueReceive(queue_max_salida, &val_max_salida, pdMS_TO_TICKS(100));
-        xQueueReceive(queue_min_salida, &val_min_salida, pdMS_TO_TICKS(100));
 
         // Para pruebas de testeo
-        printf("Tarea: task_guradiana_lcd, Altura: %.2f cm\n",val_hcsr04); //Datos del ultrasonico
-        /*printf("Tarea: task_guradiana_lcd, Altura: %.2f cm\n",val_hcsr04); //Datos del ultrasonico
-        printf("Tarea: task_guradiana_lcd, Altura: %.2f cm\n",val_hcsr04); //Datos del ultrasonico
-        printf("Tarea: task_guradiana_lcd, Altura: %.2f cm\n",val_hcsr04); //Datos del ultrasonico
-        printf("Tarea: task_guradiana_lcd, Altura: %.2f cm\n",val_hcsr04); //Datos del ultrasonico*/
+        //printf("Tarea: task_guradiana_lcd, Altura: %.2f cm\n",val_hcsr04); //Datos del ultrasonico
         // Limpio el LCD
         lcd_clear();
-        // Muevo el cursor a la segunda fila, tercer columna
+        // Muevo el cursor a la fila 0, columna 0
         lcd_set_cursor(0, 0);
-        sprintf(buffer, "SETPOINT: %.2f cm", val_altura);
+        sprintf(buffer, "T:%lucm ", recepcion_lcd.setpoint);
         lcd_string(buffer);
-        // Muevo el cursor a la segunda fila, tercer columna
+        // Muevo el cursor a la fila 1, columna 0
         lcd_set_cursor(1, 0);
-        // Escribo
-        sprintf(buffer, "MAX: %.2f cm", val_max);
+        sprintf(buffer, "M:%.2fcm | m:%.2f", recepcion_lcd.setpoint_max, recepcion_lcd.setpoint_min);
         lcd_string(buffer);
-        // Muevo el cursor a la segunda fila, tercer columna
+        // Muevo el cursor a la fila 2, columna 0, deto desde el sensor HC-SR04
         lcd_set_cursor(2, 0);
-        // Escribo
         sprintf(buffer, "HCSR04: %.2f cm", val_hcsr04);
         lcd_string(buffer);
-        
-
-        // Si superó el umbral → activa latch y guarda tiempo
-        if (val_max_salida > val_max || val_min_salida < val_min) {
-            alerta_latched = true;
-            tick_ultima_alerta = xTaskGetTickCount();
-        }
-
-        // Si está activo y ya pasó el timeout → apagar
-        if (alerta_latched) {
-            TickType_t ahora = xTaskGetTickCount();
-            if ((ahora - tick_ultima_alerta) > pdMS_TO_TICKS(ALERTA_TIMEOUT_MS)) {
-                alerta_latched = false;
-            }
-        }
-
-        // Control de LED
-        gpio_put(GPIO_LED_MAX, alerta_latched);
-        gpio_put(GPIO_LED_MIN, alerta_latched);
 
         vTaskDelay(pdMS_TO_TICKS(500));
     }
@@ -320,9 +291,8 @@ void task_SetPoint(void *params)
 
     while (true)
     { 
-        if (xQueuePeek(cola_paginas, &pagina, portMAX_DELAY) == pdPASS) {
-        }
-        
+       if (xQueuePeek(cola_paginas, &pagina, portMAX_DELAY) == pdPASS) 
+        {}
        if (pagina == 1) 
        {
         valor_adc = adc_read();
@@ -418,7 +388,7 @@ void task_debounce_boton(void *pvParameters) {
         vTaskDelay(pdMS_TO_TICKS(10));
     }
 }
-
+//----------------------------------------------------TAREA QUE MANIPULA EL RTC---------------------------------------------------
 void task_rtc(void *pvParameters)
 {
     ds3231_time_t toma_fecha;
@@ -450,6 +420,7 @@ void task_rtc(void *pvParameters)
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
+/*---------------------------------------------------PROGRAMA PRINCIPAL-----------------------------------------------------------*/
 int main(void) 
 {
     stdio_init_all();
@@ -467,14 +438,14 @@ int main(void)
     //xQueueOverwrite(cola_paginas, &pagina);
     // Creacion de tareas
     xTaskCreate(task_init, "Init", 256, NULL, 3, NULL);
-    //xTaskCreate(task_SetPoint,"SetPoint",256,NULL,2,NULL);
+    xTaskCreate(task_SetPoint,"SetPoint",256,NULL,2,NULL);
     //xTaskCreate(task_monitor_gpio,"boton",256,NULL,2,NULL);
-    //xTaskCreate(task_hcsr04,"MedicionDeDistancia",256,NULL,2,NULL);
+    xTaskCreate(task_hcsr04,"MedicionDeDistancia",256,NULL,2,NULL);
     //xTaskCreate(task_guardiana_sd,"guardianaSD",256,NULL,2,NULL);
-    //xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
-    //xTaskCreate(task_debounce_boton, "debounce_boton", 1024, NULL, 1, NULL);
+    xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
+    xTaskCreate(task_debounce_boton, "debounce_boton", 1024, NULL, 1, NULL);
     //xTaskCreate(task_guardiana_leds,"guardianaLEDS",256,NULL,2,NULL);
-    xTaskCreate(task_rtc,"regsitro_fecha",256,NULL,2,NULL);
+    //xTaskCreate(task_rtc,"regsitro_fecha",256,NULL,2,NULL);
 
     // Arranca el scheduler
     vTaskStartScheduler();
