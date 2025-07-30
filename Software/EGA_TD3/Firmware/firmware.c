@@ -5,6 +5,7 @@
 #include "pwm_lib.h"
 #include "HC_SR04.h"
 #include "ds3231.h"
+#include "hardware/uart.h"
 //Caebceras de FreeRTOS
 #include "FreeRTOS.h"
 #include "task.h"
@@ -28,11 +29,11 @@
 #define PIN_ECHO    15 //Pin 20 de la placa
 // PIN de potenciometro de setpoint
 #define PIN_ADC     26 //Pin
-// Pines SPI para la Raspberry Pi Pico 2
-#define PIN_MISO  00
-#define PIN_CS    01
-#define PIN_SCK   02
-#define PIN_MOSI  03
+// Pines UART1
+#define PIN_TX  4
+#define PIN_RX  5
+#define UART_ID uart1
+#define UART_BAUDRATE 115200
 // Alertas
 #define GPIO_LED_MAX 16
 #define GPIO_LED_MIN 17
@@ -63,23 +64,7 @@ typedef struct
 }estructura_setpoint;
 
 /*--------------------------------------TAREAS DE FREERTOS--------------------------------------------------------------------*/
-//-----------------------------------------TAREA DE INICIALIZACION-------------------------------------------------------------
-
-void init_spi_sd(void) {
-    spi_init(spi0, 1000 * 1000); // 1 MHz
-
-    gpio_set_function(PIN_MISO, GPIO_FUNC_SPI);
-    gpio_set_function(PIN_CS, GPIO_FUNC_SIO); // CS como GPIO normal
-    gpio_set_function(PIN_SCK, GPIO_FUNC_SPI);
-    gpio_set_function(PIN_MOSI, GPIO_FUNC_SPI);
-
-    gpio_init(PIN_CS);
-    gpio_set_dir(PIN_CS, GPIO_OUT);
-    gpio_put(PIN_CS, 1); // Desactivar CS inicialmente
-    
-}
-
-void task_init(void *params) 
+void task_init(void *params)
 {
     // Inicializacion de GPIO para HC-SR04
     hc_sr04_init(&sensor,PIN_TRIG,PIN_ECHO);
@@ -98,9 +83,6 @@ void task_init(void *params)
     lcd_clear();
     lcd_set_cursor(0,0);
     lcd_string("STARTING....");
-    //Inicializo el modulo SD
-    printf("Inicializando SPI para SD...\n");
-    init_spi_sd();
     //Inicializo el PWM
     pwm_init_config(&cooler);
     //COnfiguro pines de los leds banderas
@@ -135,14 +117,13 @@ void task_hcsr04(void *params)
     }
 }
 //---------------------------------------------------TAREA GUARDIANA LCD----------------------------------------------------------
-
-void task_guardiana_lcd(void *pvParameter) 
+void task_guardiana_lcd(void *pvParameter)
 {
     float val_hcsr04=0.0f;
     estructura_setpoint recepcion_lcd;
     char buffer[30];
 
-    while (true) 
+    while (true)
     {
         xQueueReceive(queue_setpoint, &recepcion_lcd, pdMS_TO_TICKS(100));
         xQueueReceive(queue_hcsr04, &val_hcsr04, pdMS_TO_TICKS(100));
@@ -169,64 +150,34 @@ void task_guardiana_lcd(void *pvParameter)
 }
 
 //---------------------------------------------------TAREA GUARDIANA DE MODULO SD-------------------------------------------------
-void task_guardiana_sd(void *params) {
+void task_guardiana_sd(void *params)
+{ estructura_setpoint datasd;
+  ds3231_time_t rtcsd;
+  char buffer[30];
 
-    //uint16_t val_altura = 0, val_max = 0, val_min = 0, val_hcsr04 = 0, val_rtc = 0, val_max_salida = 0, val_min_salida = 0;
+    uart_init(UART_ID, UART_BAUDRATE);
+    gpio_set_function(PIN_TX, GPIO_FUNC_UART);
+    gpio_set_function(PIN_RX, GPIO_FUNC_UART);
 
-    vTaskDelay(pdMS_TO_TICKS(5000));
+    while(true)
+    {
+        xQueueReceive(queue_setpoint, &datasd, pdMS_TO_TICKS(100));
+        sprintf(buffer,"Altura seteada: %lu\n ",datasd.setpoint);
+        uart_puts(UART_ID, buffer);
+        vTaskDelay(pdMS_TO_TICKS(200));
+        sprintf(buffer,"Altura maxima: %.2f\n ",datasd.setpoint_max);
+        uart_puts(UART_ID, buffer);
+        vTaskDelay(pdMS_TO_TICKS(200));
+        sprintf(buffer,"Altura minima: %.2f\n ",datasd.setpoint_min);
+        uart_puts(UART_ID, buffer);
+        vTaskDelay(pdMS_TO_TICKS(200));
 
-    FATFS fs;
-    FRESULT fr;
-    UINT escritos;
-
-    while(1) {
-        //xQueueReceive(queue_hcsr04, &val_hcsr04, pdMS_TO_TICKS(100));
-        //xQueueReceive(queue_altura, &val_altura, pdMS_TO_TICKS(100));
-        //xQueueReceive(queue_rtc, &val_rtc, pdMS_TO_TICKS(100));
-        //xQueueReceive(queue_setpoint, &val_setpoint, pdMS_TO_TICKS(100));
-
-        // Montar el sistema de archivos
-        fr = pf_mount(&fs);
-        if (fr != FR_OK) {
-            printf("Error al montar: %d\n", fr);
-            return;
-        }
-
-        // Abrir archivo existente o crear uno nuevo (solo lectura/escritura secuencial)
-        fr = pf_open("log.txt");
-        if (fr != FR_OK) {
-            printf("Error al abrir: %d\n", fr);
-            return;
-        }        
-
-        const char* mensaje = "Hola Mundo\r\n";
-
-        // Posicionarse al final del archivo (simulación de append)
-        fr = pf_lseek(fs.fsize);  // Podés usar pf_lseek(tamaño_anterior) si querés continuar desde el final
-        if (fr != FR_OK) {
-            printf("Error en lseek: %d\n", fr);
-            return;
-        }
-
-        printf("valor de lseek: %lu - ", fs.fsize);
-        printf("valor de mensaje: %s - ", mensaje);
-
-        // Escribir datos
-        fr = pf_write(mensaje, strlen(mensaje), &escritos);
-        if (fr != FR_OK) {
-            printf("Error escribiendo: %d\n", fr);
-            return;
-        }
-
-        // Finalizar escritura (con 0 bytes)
-        fr = pf_write(0, 0, &escritos);  // Necesario para finalizar buffer en Petit FatFs
-        if (fr != FR_OK) {
-            printf("Error finalizando escritura: %d\n", fr);
-        }
-
-        printf("Escritura completa: %u bytes\n", escritos);
-
-        vTaskDelay(pdMS_TO_TICKS(1000)); 
+        xQueueReceive(queue_rtc,&rtcsd,pdMS_TO_TICKS(100));
+        sprintf(buffer,"date: %d/%d/%d\n ",rtcsd.day,rtcsd.month,rtcsd.year);
+        uart_puts(UART_ID, buffer);
+        vTaskDelay(pdMS_TO_TICKS(100));
+        sprintf(buffer,"hour: %2d:%2d:%2d\n ",rtcsd.hours,rtcsd.minutes,rtcsd.seconds);
+        uart_puts(UART_ID, buffer);
     }
 
 }
@@ -245,16 +196,16 @@ void task_guardiana_leds(void *params) {
 
     while(true)
     {
-        if (xQueueReceive(queue_setpoint, &recibido_setpoint, portMAX_DELAY) == pdPASS) 
+        if (xQueueReceive(queue_setpoint, &recibido_setpoint, portMAX_DELAY) == pdPASS)
         {
             val_max_setpoint = recibido_setpoint.setpoint_max;
             val_min_setpoint = recibido_setpoint.setpoint_min;
         }
 
-        if (xQueueReceive(queue_hcsr04, &recibido_hcsr04, portMAX_DELAY) == pdPASS) 
+        if (xQueueReceive(queue_hcsr04, &recibido_hcsr04, portMAX_DELAY) == pdPASS)
         {
             // Si superó el umbral → activa latch y guarda tiempo
-            if (recibido_hcsr04 > val_max_setpoint || recibido_hcsr04 < val_min_setpoint) 
+            if (recibido_hcsr04 > val_max_setpoint || recibido_hcsr04 < val_min_setpoint)
             {
                 alerta_latched = true;
                 tick_ultima_alerta = xTaskGetTickCount();
@@ -263,10 +214,10 @@ void task_guardiana_leds(void *params) {
         }
 
         // Si está activo y ya pasó el timeout → apagar
-        if (alerta_latched) 
+        if (alerta_latched)
         {
             TickType_t ahora = xTaskGetTickCount();
-            if ((ahora - tick_ultima_alerta) > pdMS_TO_TICKS(ALERTA_TIMEOUT_MS)) 
+            if ((ahora - tick_ultima_alerta) > pdMS_TO_TICKS(ALERTA_TIMEOUT_MS))
             {
                 alerta_latched = false;
             }
@@ -280,59 +231,59 @@ void task_guardiana_leds(void *params) {
 
     }
 
-} 
+}
 //---------------------------------------------------TAREA PARA INICAR EL SETPOINT------------------------------------------------
 void task_SetPoint(void *params)
 { uint32_t valor_adc, valor_altura;
-  estructura_setpoint data={.setpoint=0, .setpoint_max=0, .setpoint_min=0};  
+  estructura_setpoint data={.setpoint=0, .setpoint_max=0, .setpoint_min=0};
   float tension;
   char buffer[30];
   uint8_t pagina=0;
 
     while (true)
-    { 
-       if (xQueuePeek(cola_paginas, &pagina, portMAX_DELAY) == pdPASS) 
+    {
+       if (xQueuePeek(cola_paginas, &pagina, portMAX_DELAY) == pdPASS)
         {}
-       if (pagina == 1) 
+       if (pagina == 1)
        {
         valor_adc = adc_read();
-        tension = (valor_adc * 3.3f) / 4095; 
+        tension = (valor_adc * 3.3f) / 4095;
         valor_altura = ((valor_adc * 3.3f) / 4095)*10;
         data.setpoint = valor_altura;
         printf("PAGINA 1 |setpoint= %lu | Valor altura= %lu \n", data.setpoint, valor_altura);
-        } 
-        if(pagina==2) 
+        }
+        if(pagina==2)
         {
             valor_adc = adc_read();
-            tension = (valor_adc * 3.3f) / 4095; 
+            tension = (valor_adc * 3.3f) / 4095;
             valor_altura = ((valor_adc * 3.3f) / 4095)*10;
             data.setpoint_max = valor_altura;
             printf("PAGINA 2 |setpointMax= %.2f | Valor altura= %lu \n", data.setpoint_max, valor_altura);
         }
-        if(pagina==3) 
+        if(pagina==3)
         {
             valor_adc = adc_read();
-            tension = (valor_adc * 3.3f) / 4095; 
+            tension = (valor_adc * 3.3f) / 4095;
             valor_altura = ((valor_adc * 3.3f) / 4095)*10;
             data.setpoint_min = valor_altura;
             printf("PAGINA 3 |setpointMin= %.2f | Valor altura= %lu \n", data.setpoint_min, valor_altura);
         }
-        if(pagina==0) 
+        if(pagina==0)
         {
-            
+
             printf("PAGINA 0 |setpoint= %lu | setpoint_max=%.2f | setpoint_min= %.2f \n", data.setpoint,data.setpoint_max,data.setpoint_min);
         }
        xQueueSend(queue_setpoint, &data, 100); //Se quedara aqui ya que no se desopucpa la cola
        vTaskDelay(pdMS_TO_TICKS(100));
 }
-           
+
 }
 
 void task_monitor_gpio(void *pvParameters) {
     while (1) {
         printf("Estado GPIO24: %d \n", gpio_get(PIN_PAGINA));
         vTaskDelay(pdMS_TO_TICKS(100));
-       
+
     }
 }
 
@@ -354,33 +305,33 @@ void task_debounce_boton(void *pvParameters) {
     TickType_t last_debounce_time = 0;
     const TickType_t debounce_delay = pdMS_TO_TICKS(50);  // 50 ms debounce
 
-    
+
     printf("Antede de la cola Contador= %d\n",contador);
     xQueueOverwrite(cola_paginas, &contador);
     printf("Despues de la cola Contador= %d\n",contador);
-    while (1) 
+    while (1)
     {
         bool current_state = gpio_get(PIN_PAGINA);
-        if (current_state != last_state) 
+        if (current_state != last_state)
         {
             last_debounce_time = xTaskGetTickCount();
         }
-        if ((xTaskGetTickCount() - last_debounce_time) > debounce_delay) 
+        if ((xTaskGetTickCount() - last_debounce_time) > debounce_delay)
         {
-           
-            if (current_state != stable_state) 
+
+            if (current_state != stable_state)
             {
                 stable_state = current_state;
-                
-                if (stable_state == true) 
-                { 
+
+                if (stable_state == true)
+                {
                     contador++;
                     if(contador == 4)
                     {
                         contador = 0;
                     }
                     xQueueOverwrite(cola_paginas, &contador);
-                    
+
                 }
             }
         }
@@ -393,9 +344,9 @@ void task_rtc(void *pvParameters)
 {
     ds3231_time_t toma_fecha;
 
-    while (true) 
+    while (true)
     {
-        if (ds3231_get_time(I2C, &toma_fecha)) 
+        if (ds3231_get_time(I2C, &toma_fecha))
         {
             printf("Hora: %02d:%02d:%02d - Fecha: %02d/%02d/20%02d\n",
                   toma_fecha.hours,
@@ -405,8 +356,8 @@ void task_rtc(void *pvParameters)
                   toma_fecha.month,
                   toma_fecha.year);
             xQueueSend(queue_rtc,&toma_fecha,pdMS_TO_TICKS(100)); //Si se usa maxPORT_DELAY se bloqeuara
-        } 
-        else 
+        }
+        else
         {
             printf("Error leyendo el RTC\n");
             toma_fecha.hours = 0;
@@ -415,13 +366,15 @@ void task_rtc(void *pvParameters)
             toma_fecha.date = 0;
             toma_fecha.month = 0;
             toma_fecha.year = 0;
-            xQueueSend(queue_rtc,&toma_fecha,portMAX_DELAY);     
+            xQueueSend(queue_rtc,&toma_fecha,portMAX_DELAY);
         }
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
+//----------------------------------------------------TAREA DE XXXXXXXXX------------------------------------------------------------
+
 /*---------------------------------------------------PROGRAMA PRINCIPAL-----------------------------------------------------------*/
-int main(void) 
+int main(void)
 {
     stdio_init_all();
     configuracion_gpio_boton();
@@ -440,12 +393,12 @@ int main(void)
     xTaskCreate(task_init, "Init", 256, NULL, 3, NULL);
     xTaskCreate(task_SetPoint,"SetPoint",256,NULL,2,NULL);
     //xTaskCreate(task_monitor_gpio,"boton",256,NULL,2,NULL);
-    xTaskCreate(task_hcsr04,"MedicionDeDistancia",256,NULL,2,NULL);
-    //xTaskCreate(task_guardiana_sd,"guardianaSD",256,NULL,2,NULL);
-    xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
+    //xTaskCreate(task_hcsr04,"MedicionDeDistancia",256,NULL,2,NULL);
+    xTaskCreate(task_guardiana_sd,"guardianaSD",256,NULL,2,NULL);
+    //xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
     xTaskCreate(task_debounce_boton, "debounce_boton", 1024, NULL, 1, NULL);
     //xTaskCreate(task_guardiana_leds,"guardianaLEDS",256,NULL,2,NULL);
-    //xTaskCreate(task_rtc,"regsitro_fecha",256,NULL,2,NULL);
+    xTaskCreate(task_rtc,"regsitro_fecha",256,NULL,2,NULL);
 
     // Arranca el scheduler
     vTaskStartScheduler();
