@@ -5,6 +5,7 @@
 #include "pwm_lib.h"
 #include "HC_SR04.h"
 #include "ds3231.h"
+#include "hardware/uart.h"
 //Caebceras de FreeRTOS
 #include "FreeRTOS.h"
 #include "task.h"
@@ -28,11 +29,11 @@
 #define PIN_ECHO    15 //Pin 20 de la placa
 // PIN de potenciometro de setpoint
 #define PIN_ADC     26 //Pin
-// Pines SPI para la Raspberry Pi Pico 2
-#define PIN_MISO  00
-#define PIN_CS    01
-#define PIN_SCK   02
-#define PIN_MOSI  03
+// Pines UART1 
+#define PIN_TX  4
+#define PIN_RX  5
+#define UART_ID uart1
+#define UART_BAUDRATE 115200
 // Alertas
 #define GPIO_LED_MAX 16
 #define GPIO_LED_MIN 17
@@ -63,22 +64,6 @@ typedef struct
 }estructura_setpoint;
 
 /*--------------------------------------TAREAS DE FREERTOS--------------------------------------------------------------------*/
-//-----------------------------------------TAREA DE INICIALIZACION-------------------------------------------------------------
-
-void init_spi_sd(void) {
-    spi_init(spi0, 1000 * 1000); // 1 MHz
-
-    gpio_set_function(PIN_MISO, GPIO_FUNC_SPI);
-    gpio_set_function(PIN_CS, GPIO_FUNC_SIO); // CS como GPIO normal
-    gpio_set_function(PIN_SCK, GPIO_FUNC_SPI);
-    gpio_set_function(PIN_MOSI, GPIO_FUNC_SPI);
-
-    gpio_init(PIN_CS);
-    gpio_set_dir(PIN_CS, GPIO_OUT);
-    gpio_put(PIN_CS, 1); // Desactivar CS inicialmente
-    
-}
-
 void task_init(void *params) 
 {
     // Inicializacion de GPIO para HC-SR04
@@ -98,9 +83,6 @@ void task_init(void *params)
     lcd_clear();
     lcd_set_cursor(0,0);
     lcd_string("STARTING....");
-    //Inicializo el modulo SD
-    printf("Inicializando SPI para SD...\n");
-    init_spi_sd();
     //Inicializo el PWM
     pwm_init_config(&cooler);
     //COnfiguro pines de los leds banderas
@@ -135,7 +117,6 @@ void task_hcsr04(void *params)
     }
 }
 //---------------------------------------------------TAREA GUARDIANA LCD----------------------------------------------------------
-
 void task_guardiana_lcd(void *pvParameter) 
 {
     float val_hcsr04=0.0f;
@@ -169,64 +150,34 @@ void task_guardiana_lcd(void *pvParameter)
 }
 
 //---------------------------------------------------TAREA GUARDIANA DE MODULO SD-------------------------------------------------
-void task_guardiana_sd(void *params) {
+void task_guardiana_sd(void *params) 
+{ estructura_setpoint datasd;
+  ds3231_time_t rtcsd;
+  char buffer[30];
 
-    //uint16_t val_altura = 0, val_max = 0, val_min = 0, val_hcsr04 = 0, val_rtc = 0, val_max_salida = 0, val_min_salida = 0;
+    uart_init(UART_ID, UART_BAUDRATE);
+    gpio_set_function(PIN_TX, GPIO_FUNC_UART);
+    gpio_set_function(PIN_RX, GPIO_FUNC_UART);
+    
+    while(true) 
+    {
+        xQueueReceive(queue_setpoint, &datasd, pdMS_TO_TICKS(100));
+        sprintf(buffer,"Altura seteada: %lu\n ",datasd.setpoint);
+        uart_puts(UART_ID, buffer);
+        vTaskDelay(pdMS_TO_TICKS(200));
+        sprintf(buffer,"Altura maxima: %.2f\n ",datasd.setpoint_max);
+        uart_puts(UART_ID, buffer);
+        vTaskDelay(pdMS_TO_TICKS(200));
+        sprintf(buffer,"Altura minima: %.2f\n ",datasd.setpoint_min);
+        uart_puts(UART_ID, buffer);
+        vTaskDelay(pdMS_TO_TICKS(200));
 
-    vTaskDelay(pdMS_TO_TICKS(5000));
-
-    FATFS fs;
-    FRESULT fr;
-    UINT escritos;
-
-    while(1) {
-        //xQueueReceive(queue_hcsr04, &val_hcsr04, pdMS_TO_TICKS(100));
-        //xQueueReceive(queue_altura, &val_altura, pdMS_TO_TICKS(100));
-        //xQueueReceive(queue_rtc, &val_rtc, pdMS_TO_TICKS(100));
-        //xQueueReceive(queue_setpoint, &val_setpoint, pdMS_TO_TICKS(100));
-
-        // Montar el sistema de archivos
-        fr = pf_mount(&fs);
-        if (fr != FR_OK) {
-            printf("Error al montar: %d\n", fr);
-            return;
-        }
-
-        // Abrir archivo existente o crear uno nuevo (solo lectura/escritura secuencial)
-        fr = pf_open("log.txt");
-        if (fr != FR_OK) {
-            printf("Error al abrir: %d\n", fr);
-            return;
-        }        
-
-        const char* mensaje = "Hola Mundo\r\n";
-
-        // Posicionarse al final del archivo (simulación de append)
-        fr = pf_lseek(fs.fsize);  // Podés usar pf_lseek(tamaño_anterior) si querés continuar desde el final
-        if (fr != FR_OK) {
-            printf("Error en lseek: %d\n", fr);
-            return;
-        }
-
-        printf("valor de lseek: %lu - ", fs.fsize);
-        printf("valor de mensaje: %s - ", mensaje);
-
-        // Escribir datos
-        fr = pf_write(mensaje, strlen(mensaje), &escritos);
-        if (fr != FR_OK) {
-            printf("Error escribiendo: %d\n", fr);
-            return;
-        }
-
-        // Finalizar escritura (con 0 bytes)
-        fr = pf_write(0, 0, &escritos);  // Necesario para finalizar buffer en Petit FatFs
-        if (fr != FR_OK) {
-            printf("Error finalizando escritura: %d\n", fr);
-        }
-
-        printf("Escritura completa: %u bytes\n", escritos);
-
-        vTaskDelay(pdMS_TO_TICKS(1000)); 
+        xQueueReceive(queue_rtc,&rtcsd,pdMS_TO_TICKS(100));
+        sprintf(buffer,"date: %d/%d/%d\n ",rtcsd.day,rtcsd.month,rtcsd.year);
+        uart_puts(UART_ID, buffer);
+        vTaskDelay(pdMS_TO_TICKS(100));
+        sprintf(buffer,"hour: %2d:%2d:%2d\n ",rtcsd.hours,rtcsd.minutes,rtcsd.seconds);
+        uart_puts(UART_ID, buffer);
     }
 
 }
@@ -420,6 +371,8 @@ void task_rtc(void *pvParameters)
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
+//----------------------------------------------------TAREA DE XXXXXXXXX------------------------------------------------------------
+
 /*---------------------------------------------------PROGRAMA PRINCIPAL-----------------------------------------------------------*/
 int main(void) 
 {
@@ -440,12 +393,12 @@ int main(void)
     xTaskCreate(task_init, "Init", 256, NULL, 3, NULL);
     xTaskCreate(task_SetPoint,"SetPoint",256,NULL,2,NULL);
     //xTaskCreate(task_monitor_gpio,"boton",256,NULL,2,NULL);
-    xTaskCreate(task_hcsr04,"MedicionDeDistancia",256,NULL,2,NULL);
-    //xTaskCreate(task_guardiana_sd,"guardianaSD",256,NULL,2,NULL);
-    xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
+    //xTaskCreate(task_hcsr04,"MedicionDeDistancia",256,NULL,2,NULL);
+    xTaskCreate(task_guardiana_sd,"guardianaSD",256,NULL,2,NULL);
+    //xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
     xTaskCreate(task_debounce_boton, "debounce_boton", 1024, NULL, 1, NULL);
     //xTaskCreate(task_guardiana_leds,"guardianaLEDS",256,NULL,2,NULL);
-    //xTaskCreate(task_rtc,"regsitro_fecha",256,NULL,2,NULL);
+    xTaskCreate(task_rtc,"regsitro_fecha",256,NULL,2,NULL);
 
     // Arranca el scheduler
     vTaskStartScheduler();

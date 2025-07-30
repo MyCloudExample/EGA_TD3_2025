@@ -3561,6 +3561,12 @@
 		(uuid "47fb5aed-dbee-444b-b7ce-23e162eaf3bb")
 	)
 	(junction
+		(at 277.114 127)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "48cdbcf2-03c3-4fde-8b5c-aaaf22600cc8")
+	)
+	(junction
 		(at 38.862 42.418)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4260,6 +4266,16 @@
 	)
 	(wire
 		(pts
+			(xy 277.114 127) (xy 277.114 129.286)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ad84389-2c9b-41d2-8192-1db9fb904a48")
+	)
+	(wire
+		(pts
 			(xy 51.054 136.652) (xy 51.054 142.24)
 		)
 		(stroke
@@ -4367,6 +4383,16 @@
 			(type default)
 		)
 		(uuid "8142d23d-43e2-4927-823e-d7c1d67b6dc0")
+	)
+	(wire
+		(pts
+			(xy 277.114 127) (xy 278.765 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "82dbc0d4-0670-47a6-a9f2-5cff9a48297b")
 	)
 	(wire
 		(pts
@@ -4890,7 +4916,7 @@
 	)
 	(wire
 		(pts
-			(xy 275.59 127) (xy 278.765 127)
+			(xy 275.59 127) (xy 277.114 127)
 		)
 		(stroke
 			(width 0)
@@ -8630,6 +8656,72 @@
 			(project "EGA"
 				(path "/1d57e6f0-0119-4d90-b16e-372a255001d1"
 					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 277.114 129.286 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7d07bc0b-9f37-492e-86d7-1133e21635c5")
+		(property "Reference" "#PWR03"
+			(at 277.114 135.636 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 277.114 134.366 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 277.114 129.286 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 277.114 129.286 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 277.114 129.286 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f0396f36-a387-4994-90b6-4bcbdcb5b8f4")
+		)
+		(instances
+			(project "EGA"
+				(path "/1d57e6f0-0119-4d90-b16e-372a255001d1"
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)

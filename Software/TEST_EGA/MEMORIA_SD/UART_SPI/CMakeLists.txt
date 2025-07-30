@@ -28,34 +28,31 @@ set(PICO_BOARD pico2 CACHE STRING "Board type")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(TESTEO_SD C CXX ASM)
+project(UART_SPI C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
-add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../pico-rv32ima/pico-rv32ima ${CMAKE_BINARY_DIR}/pico-rv32ima)
 
-add_executable(TESTEO_SD TESTEO_SD.c )
+add_executable(UART_SPI UART_SPI.c )
 
-pico_set_program_name(TESTEO_SD "TESTEO_SD")
-pico_set_program_version(TESTEO_SD "0.1")
+pico_set_program_name(UART_SPI "UART_SPI")
+pico_set_program_version(UART_SPI "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(TESTEO_SD 0)
-pico_enable_stdio_usb(TESTEO_SD 1)
+pico_enable_stdio_uart(UART_SPI 0)
+pico_enable_stdio_usb(UART_SPI 0)
 
 # Add the standard library to the build
-target_link_libraries(TESTEO_SD
+target_link_libraries(UART_SPI
         pico_stdlib
-        hardware_spi
-        petitfatfs
-        )
+        hardware_uart)
 
 # Add the standard include files to the build
-target_include_directories(TESTEO_SD PRIVATE
+target_include_directories(UART_SPI PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
 )
 
-pico_add_extra_outputs(TESTEO_SD)
+pico_add_extra_outputs(UART_SPI)
 
