@@ -59,10 +59,8 @@ target_link_libraries(firmware
     lcd
     HC_SR04
     hardware_adc
-    hardware_spi
     ds3231
-    petitfatfs
-
+    hardware_uart
 )
 
 # Add the standard include files to the build

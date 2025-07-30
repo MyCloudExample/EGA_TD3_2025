@@ -1,4 +1,4 @@
-// Padded and checksummed version of: C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA/Software/EGA_TD3/Firmware/build/pico-rv32ima/slower_boot2.bin
+// Padded and checksummed version of: C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/pico-rv32ima/slower_boot2.bin
 
 .cpu cortex-m0plus
 .thumb

@@ -1,4 +1,4 @@
-// Padded and checksummed version of: C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA/Software/EGA_TD3/Firmware/build/pico-sdk/src/rp2350/boot_stage2/bs2_default.bin
+// Padded and checksummed version of: C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/pico-sdk/src/rp2350/boot_stage2/bs2_default.bin
 
 .cpu cortex-m0plus
 .thumb

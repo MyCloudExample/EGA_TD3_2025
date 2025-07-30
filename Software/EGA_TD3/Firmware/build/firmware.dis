@@ -1,5 +1,5 @@
 
-C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA/Software/EGA_TD3/Firmware/build/firmware.elf:     file format elf32-littlearm
+C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/firmware.elf:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
@@ -47,16 +47,16 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  21 .debug_rnglists 00005c5a  00000000  00000000  00084d80  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_line   0002ed89  00000000  00000000  0008a9da  2**0
+ 22 .debug_line   0002eed6  00000000  00000000  0008a9da  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 23 .debug_str    0000c64b  00000000  00000000  000b9763  2**0
+ 23 .debug_str    0000c6c9  00000000  00000000  000b98b0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 24 .debug_frame  00004d74  00000000  00000000  000c5db0  2**2
+ 24 .debug_frame  00004d74  00000000  00000000  000c5f7c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 25 .debug_line_str 000002b8  00000000  00000000  000cab24  2**0
+ 25 .debug_line_str 000002c1  00000000  00000000  000cacf0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
-C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA/Software/EGA_TD3/Firmware/build/firmware.elf:     file format elf32-littlearm
+C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/firmware.elf:     file format elf32-littlearm
 
 
 Disassembly of section .text:
@@ -14834,7 +14834,7 @@ Disassembly of section .data:
 2000017a:	f38c 8810 	msr	PRIMASK, ip
 2000017e:	4630      	mov	r0, r6
 20000180:	4629      	mov	r1, r5
-20000182:	f001 f9a1 	bl	200014c8 <__best_effort_wfe_or_timeout_veneer>
+20000182:	f001 f9b5 	bl	200014f0 <__best_effort_wfe_or_timeout_veneer>
 20000186:	b9e8      	cbnz	r0, 200001c4 <mutex_enter_block_until+0x64>
 20000188:	6821      	ldr	r1, [r4, #0]
 2000018a:	f3ef 8c10 	mrs	ip, PRIMASK
@@ -14903,7 +14903,7 @@ Disassembly of section .data:
 20000234:	b570      	push	{r4, r5, r6, lr}
 20000236:	4605      	mov	r5, r0
 20000238:	460c      	mov	r4, r1
-2000023a:	f001 f955 	bl	200014e8 <__time_us_64_veneer>
+2000023a:	f001 f949 	bl	200014d0 <__time_us_64_veneer>
 2000023e:	4602      	mov	r2, r0
 20000240:	460b      	mov	r3, r1
 20000242:	f44f 707a 	mov.w	r0, #1000	@ 0x3e8
@@ -14979,7 +14979,7 @@ Disassembly of section .data:
 200002ea:	6759      	str	r1, [r3, #116]	@ 0x74
 200002ec:	6799      	str	r1, [r3, #120]	@ 0x78
 200002ee:	67d9      	str	r1, [r3, #124]	@ 0x7c
-200002f0:	f001 f8ee 	bl	200014d0 <__memset_veneer>
+200002f0:	f001 f8f2 	bl	200014d8 <__memset_veneer>
 200002f4:	4b03      	ldr	r3, [pc, #12]	@ (20000304 <reset_non_control_endpoints+0x5c>)
 200002f6:	4a04      	ldr	r2, [pc, #16]	@ (20000308 <reset_non_control_endpoints+0x60>)
 200002f8:	601a      	str	r2, [r3, #0]
@@ -15484,7 +15484,7 @@ Disassembly of section .data:
 20000882:	e786      	b.n	20000792 <dcd_rp2040_irq+0x3f6>
 20000884:	4810      	ldr	r0, [pc, #64]	@ (200008c8 <dcd_rp2040_irq+0x52c>)
 20000886:	ea86 0105 	eor.w	r1, r6, r5
-2000088a:	f000 fe25 	bl	200014d8 <__panic_veneer>
+2000088a:	f000 fe1d 	bl	200014c8 <__panic_veneer>
 2000088e:	bf00      	nop
 20000890:	200027b0 	.word	0x200027b0
 20000894:	20002730 	.word	0x20002730
@@ -15743,7 +15743,7 @@ Disassembly of section .data:
 20000af8:	bd10      	pop	{r4, pc}
 20000afa:	7881      	ldrb	r1, [r0, #2]
 20000afc:	4802      	ldr	r0, [pc, #8]	@ (20000b08 <_hw_endpoint_buffer_control_update32+0x40>)
-20000afe:	f000 fceb 	bl	200014d8 <__panic_veneer>
+20000afe:	f000 fce3 	bl	200014c8 <__panic_veneer>
 20000b02:	bf00      	nop
 20000b04:	50110000 	.word	0x50110000
 20000b08:	100096ec 	.word	0x100096ec
@@ -15813,7 +15813,7 @@ Disassembly of section .data:
 20000b9c:	e7f8      	b.n	20000b90 <hw_endpoint_xfer_continue+0x20>
 20000b9e:	7881      	ldrb	r1, [r0, #2]
 20000ba0:	4801      	ldr	r0, [pc, #4]	@ (20000ba8 <hw_endpoint_xfer_continue+0x38>)
-20000ba2:	f000 fc99 	bl	200014d8 <__panic_veneer>
+20000ba2:	f000 fc91 	bl	200014c8 <__panic_veneer>
 20000ba6:	bf00      	nop
 20000ba8:	1000970c 	.word	0x1000970c
 
@@ -15859,7 +15859,7 @@ Disassembly of section .data:
 20000c08:	61a2      	str	r2, [r4, #24]
 20000c0a:	4649      	mov	r1, r9
 20000c0c:	4620      	mov	r0, r4
-20000c0e:	f000 fc67 	bl	200014e0 <__tu_fifo_write_veneer>
+20000c0e:	f000 fc6b 	bl	200014e8 <__tu_fifo_write_veneer>
 20000c12:	2300      	movs	r3, #0
 20000c14:	6962      	ldr	r2, [r4, #20]
 20000c16:	e8c2 3f8f 	stlb	r3, [r2]
@@ -15876,7 +15876,7 @@ Disassembly of section .data:
 20000c36:	462a      	mov	r2, r5
 20000c38:	f899 1001 	ldrb.w	r1, [r9, #1]
 20000c3c:	f899 0000 	ldrb.w	r0, [r9]
-20000c40:	f000 fc56 	bl	200014f0 <__tud_event_hook_cb_veneer>
+20000c40:	f000 fc4e 	bl	200014e0 <__tud_event_hook_cb_veneer>
 20000c44:	b005      	add	sp, #20
 20000c46:	e8bd 83f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
 20000c4a:	4a5d      	ldr	r2, [pc, #372]	@ (20000dc0 <dcd_event_handler+0x214>)
@@ -15961,7 +15961,7 @@ Disassembly of section .data:
 20000d0c:	4620      	mov	r0, r4
 20000d0e:	61a2      	str	r2, [r4, #24]
 20000d10:	a901      	add	r1, sp, #4
-20000d12:	f000 fbe5 	bl	200014e0 <__tu_fifo_write_veneer>
+20000d12:	f000 fbe9 	bl	200014e8 <__tu_fifo_write_veneer>
 20000d16:	6963      	ldr	r3, [r4, #20]
 20000d18:	e8c3 6f8f 	stlb	r6, [r3]
 20000d1c:	69a3      	ldr	r3, [r4, #24]
@@ -15971,7 +15971,7 @@ Disassembly of section .data:
 20000d28:	462a      	mov	r2, r5
 20000d2a:	f89d 1005 	ldrb.w	r1, [sp, #5]
 20000d2e:	f89d 0004 	ldrb.w	r0, [sp, #4]
-20000d32:	f000 fbdd 	bl	200014f0 <__tud_event_hook_cb_veneer>
+20000d32:	f000 fbd5 	bl	200014e0 <__tud_event_hook_cb_veneer>
 20000d36:	e785      	b.n	20000c44 <dcd_event_handler+0x98>
 20000d38:	7823      	ldrb	r3, [r4, #0]
 20000d3a:	2700      	movs	r7, #0
@@ -16000,7 +16000,7 @@ Disassembly of section .data:
 20000d7e:	4630      	mov	r0, r6
 20000d80:	61b2      	str	r2, [r6, #24]
 20000d82:	a901      	add	r1, sp, #4
-20000d84:	f000 fbac 	bl	200014e0 <__tu_fifo_write_veneer>
+20000d84:	f000 fbb0 	bl	200014e8 <__tu_fifo_write_veneer>
 20000d88:	6973      	ldr	r3, [r6, #20]
 20000d8a:	e8c3 7f8f 	stlb	r7, [r3]
 20000d8e:	69b3      	ldr	r3, [r6, #24]
@@ -16015,7 +16015,7 @@ Disassembly of section .data:
 20000da6:	462a      	mov	r2, r5
 20000da8:	f89d 1005 	ldrb.w	r1, [sp, #5]
 20000dac:	f89d 0004 	ldrb.w	r0, [sp, #4]
-20000db0:	f000 fb9e 	bl	200014f0 <__tud_event_hook_cb_veneer>
+20000db0:	f000 fb96 	bl	200014e0 <__tud_event_hook_cb_veneer>
 20000db4:	e785      	b.n	20000cc2 <dcd_event_handler+0x116>
 20000db6:	bf00      	nop
 20000db8:	20002030 	.word	0x20002030
@@ -16648,29 +16648,29 @@ Disassembly of section .data:
 200014c4:	4770      	bx	lr
 200014c6:	bf00      	nop
 
-200014c8 <__best_effort_wfe_or_timeout_veneer>:
-200014c8:	f85f f000 	ldr.w	pc, [pc]	@ 200014cc <__best_effort_wfe_or_timeout_veneer+0x4>
-200014cc:	100017a9 	.word	0x100017a9
+200014c8 <__panic_veneer>:
+200014c8:	f85f f000 	ldr.w	pc, [pc]	@ 200014cc <__panic_veneer+0x4>
+200014cc:	10000a79 	.word	0x10000a79
 
-200014d0 <__memset_veneer>:
-200014d0:	f85f f000 	ldr.w	pc, [pc]	@ 200014d4 <__memset_veneer+0x4>
-200014d4:	10008df5 	.word	0x10008df5
+200014d0 <__time_us_64_veneer>:
+200014d0:	f85f f000 	ldr.w	pc, [pc]	@ 200014d4 <__time_us_64_veneer+0x4>
+200014d4:	100018b1 	.word	0x100018b1
 
-200014d8 <__panic_veneer>:
-200014d8:	f85f f000 	ldr.w	pc, [pc]	@ 200014dc <__panic_veneer+0x4>
-200014dc:	10000a79 	.word	0x10000a79
+200014d8 <__memset_veneer>:
+200014d8:	f85f f000 	ldr.w	pc, [pc]	@ 200014dc <__memset_veneer+0x4>
+200014dc:	10008df5 	.word	0x10008df5
 
-200014e0 <__tu_fifo_write_veneer>:
-200014e0:	f85f f000 	ldr.w	pc, [pc]	@ 200014e4 <__tu_fifo_write_veneer+0x4>
-200014e4:	100061d5 	.word	0x100061d5
+200014e0 <__tud_event_hook_cb_veneer>:
+200014e0:	f85f f000 	ldr.w	pc, [pc]	@ 200014e4 <__tud_event_hook_cb_veneer+0x4>
+200014e4:	100047fd 	.word	0x100047fd
 
-200014e8 <__time_us_64_veneer>:
-200014e8:	f85f f000 	ldr.w	pc, [pc]	@ 200014ec <__time_us_64_veneer+0x4>
-200014ec:	100018b1 	.word	0x100018b1
+200014e8 <__tu_fifo_write_veneer>:
+200014e8:	f85f f000 	ldr.w	pc, [pc]	@ 200014ec <__tu_fifo_write_veneer+0x4>
+200014ec:	100061d5 	.word	0x100061d5
 
-200014f0 <__tud_event_hook_cb_veneer>:
-200014f0:	f85f f000 	ldr.w	pc, [pc]	@ 200014f4 <__tud_event_hook_cb_veneer+0x4>
-200014f4:	100047fd 	.word	0x100047fd
+200014f0 <__best_effort_wfe_or_timeout_veneer>:
+200014f0:	f85f f000 	ldr.w	pc, [pc]	@ 200014f4 <__best_effort_wfe_or_timeout_veneer+0x4>
+200014f4:	100017a9 	.word	0x100017a9
 
 200014f8 <cooler>:
 200014f8:	00000010 00000000 00000000 000030d3     .............0..

@@ -11,10 +11,6 @@
 #include "task.h"
 #include "semphr.h"
 #include "queue.h"
-//includes del modulo SD
-#include "hardware/spi.h"
-#include "pff.h"
-#include "diskio.h"
 #include "string.h"
 /*-------------------------------------DEFINICION DE PINES PARA EL PROYECTO-------------------------------------------------*/
 #define PIN_SDA     8 //Pin 11 de la placa

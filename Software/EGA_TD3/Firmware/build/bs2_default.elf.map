@@ -69,9 +69,9 @@ LOAD linker stubs
  .debug_line    0x00000000       0xb4 pico-sdk/src/rp2350/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
 
 .debug_line_str
-                0x00000000      0x125
+                0x00000000      0x12e
  .debug_line_str
-                0x00000000      0x125 pico-sdk/src/rp2350/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
+                0x00000000      0x12e pico-sdk/src/rp2350/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
 
 .debug_info     0x00000000       0x25
  .debug_info    0x00000000       0x25 pico-sdk/src/rp2350/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
@@ -83,5 +83,5 @@ LOAD linker stubs
  .debug_aranges
                 0x00000000       0x20 pico-sdk/src/rp2350/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
 
-.debug_str      0x00000000       0xab
- .debug_str     0x00000000       0xab pico-sdk/src/rp2350/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj
+.debug_str      0x00000000       0xb4
+ .debug_str     0x00000000       0xb4 pico-sdk/src/rp2350/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj

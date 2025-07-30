@@ -1,5 +1,5 @@
 
-C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA/Software/EGA_TD3/Firmware/build/pico-rv32ima/pico-rv32ima.elf:     file format elf32-littlearm
+C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/pico-rv32ima/pico-rv32ima.elf:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
@@ -51,16 +51,16 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  23 .debug_rnglists 000064a9  00000000  00000000  0008ddd8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 24 .debug_line   0002eb28  00000000  00000000  00094281  2**0
+ 24 .debug_line   0002ebc1  00000000  00000000  00094281  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 25 .debug_str    0000ba9e  00000000  00000000  000c2da9  2**0
+ 25 .debug_str    0000bb13  00000000  00000000  000c2e42  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 26 .debug_frame  00004f9c  00000000  00000000  000ce848  2**2
+ 26 .debug_frame  00004f9c  00000000  00000000  000ce958  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 27 .debug_line_str 000002b8  00000000  00000000  000d37e4  2**0
+ 27 .debug_line_str 000002c1  00000000  00000000  000d38f4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
-C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA/Software/EGA_TD3/Firmware/build/pico-rv32ima/pico-rv32ima.elf:     file format elf32-littlearm
+C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/pico-rv32ima/pico-rv32ima.elf:     file format elf32-littlearm
 
 
 Disassembly of section .flashtext:
@@ -22526,7 +22526,7 @@ Disassembly of section .data:
 2000e874:	64656c69 	.word	0x64656c69
 2000e878:	00000020 	.word	0x00000020
 2000e87c:	206c754a 	.word	0x206c754a
-2000e880:	32203931 	.word	0x32203931
+2000e880:	32203033 	.word	0x32203033
 2000e884:	00353230 	.word	0x00353230
 2000e888:	0000003b 	.word	0x0000003b
 2000e88c:	47414d49 	.word	0x47414d49

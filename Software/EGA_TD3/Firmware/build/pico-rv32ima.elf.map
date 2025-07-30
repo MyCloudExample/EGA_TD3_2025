@@ -279,7 +279,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000       0x13 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdlib/stdlib.c.obj
  .debug_line    0x00000000      0x135 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdlib/stdlib.c.obj
- .debug_str     0x00000000      0x1ef pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdlib/stdlib.c.obj
+ .debug_str     0x00000000      0x1f8 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdlib/stdlib.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdlib/stdlib.c.obj
  .debug_frame   0x00000000       0x20 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdlib/stdlib.c.obj
  .ARM.attributes
@@ -355,7 +355,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000       0x13 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2350/pico_platform/platform.c.obj
  .debug_line    0x00000000      0x254 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2350/pico_platform/platform.c.obj
- .debug_str     0x00000000      0x230 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2350/pico_platform/platform.c.obj
+ .debug_str     0x00000000      0x239 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2350/pico_platform/platform.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2350/pico_platform/platform.c.obj
  .debug_frame   0x00000000       0x20 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2350/pico_platform/platform.c.obj
  .ARM.attributes
@@ -459,7 +459,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000      0x172 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/sem.c.obj
  .debug_line    0x00000000      0xa65 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/sem.c.obj
- .debug_str     0x00000000      0x540 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/sem.c.obj
+ .debug_str     0x00000000      0x549 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/sem.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/sem.c.obj
  .debug_frame   0x00000000       0xf4 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/sem.c.obj
  .ARM.attributes
@@ -556,7 +556,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000       0x5b pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_time/timeout_helper.c.obj
  .debug_line    0x00000000      0x4df pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_time/timeout_helper.c.obj
- .debug_str     0x00000000      0x431 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_time/timeout_helper.c.obj
+ .debug_str     0x00000000      0x43a pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_time/timeout_helper.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_time/timeout_helper.c.obj
  .debug_frame   0x00000000       0x7c pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_time/timeout_helper.c.obj
  .ARM.attributes
@@ -642,7 +642,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000       0x31 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_util/datetime.c.obj
  .debug_line    0x00000000      0x2d9 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_util/datetime.c.obj
- .debug_str     0x00000000      0x2e3 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_util/datetime.c.obj
+ .debug_str     0x00000000      0x2ec pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_util/datetime.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_util/datetime.c.obj
  .debug_frame   0x00000000       0x98 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_util/datetime.c.obj
  .ARM.attributes
@@ -684,7 +684,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000      0x453 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_util/pheap.c.obj
  .debug_line    0x00000000     0x1398 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_util/pheap.c.obj
- .debug_str     0x00000000      0x419 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_util/pheap.c.obj
+ .debug_str     0x00000000      0x422 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_util/pheap.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_util/pheap.c.obj
  .debug_frame   0x00000000      0x1a0 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_util/pheap.c.obj
  .ARM.attributes
@@ -726,7 +726,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000      0x241 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_uart/uart.c.obj
  .debug_line    0x00000000      0xea1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_uart/uart.c.obj
- .debug_str     0x00000000      0xe90 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_uart/uart.c.obj
+ .debug_str     0x00000000      0xe99 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_uart/uart.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_uart/uart.c.obj
  .debug_frame   0x00000000       0xfc pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_uart/uart.c.obj
  .ARM.attributes
@@ -804,7 +804,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000      0x1cc pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
  .debug_line    0x00000000      0x9ca pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
- .debug_str     0x00000000      0x74f pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_str     0x00000000      0x758 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
  .debug_frame   0x00000000       0xec pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
  .ARM.attributes
@@ -873,7 +873,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000       0x5b pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_flash/flash.c.obj
  .debug_line    0x00000000      0x573 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_flash/flash.c.obj
- .debug_str     0x00000000      0x925 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_flash/flash.c.obj
+ .debug_str     0x00000000      0x92e pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_flash/flash.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_flash/flash.c.obj
  .debug_frame   0x00000000       0xd8 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_flash/flash.c.obj
  .ARM.attributes
@@ -895,7 +895,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_divider/divider.c.obj
  .debug_line    0x00000000      0x181 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_divider/divider.c.obj
- .debug_str     0x00000000      0x203 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_divider/divider.c.obj
+ .debug_str     0x00000000      0x20c pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_divider/divider.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_divider/divider.c.obj
  .ARM.attributes
                 0x00000000       0x38 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_divider/divider.c.obj
@@ -922,7 +922,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000       0x13 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.obj
  .debug_line    0x00000000      0x14e pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.obj
- .debug_str     0x00000000      0x230 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.obj
+ .debug_str     0x00000000      0x239 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.obj
  .debug_frame   0x00000000       0x20 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init_stack_guard.c.obj
  .ARM.attributes
@@ -935,12 +935,12 @@ Discarded input sections
  .text.ctzdi    0x00000000       0x18 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .debug_line    0x00000000       0x75 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .debug_line_str
-                0x00000000       0xa2 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x00000000       0xab pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .debug_info    0x00000000       0x23 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .debug_abbrev  0x00000000       0x12 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .debug_aranges
                 0x00000000       0x30 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
- .debug_str     0x00000000       0xb0 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+ .debug_str     0x00000000       0xb9 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .debug_rnglists
                 0x00000000       0x1f pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .ARM.attributes
@@ -997,7 +997,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000      0x17e pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_divider/divider_compiler.c.obj
  .debug_line    0x00000000      0x7c0 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_divider/divider_compiler.c.obj
- .debug_str     0x00000000      0x4b3 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_divider/divider_compiler.c.obj
+ .debug_str     0x00000000      0x4bc pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_divider/divider_compiler.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_divider/divider_compiler.c.obj
  .debug_frame   0x00000000      0x1bc pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_divider/divider_compiler.c.obj
  .ARM.attributes
@@ -1078,7 +1078,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000      0x5f8 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_math.c.obj
  .debug_line    0x00000000     0x2c7a pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_math.c.obj
- .debug_str     0x00000000      0x52c pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_math.c.obj
+ .debug_str     0x00000000      0x535 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_math.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_math.c.obj
  .debug_frame   0x00000000      0x538 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_math.c.obj
  .ARM.attributes
@@ -1127,12 +1127,12 @@ Discarded input sections
                 0x00000000       0x6a pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_fma_dcp.S.obj
  .debug_line    0x00000000      0x1f1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_fma_dcp.S.obj
  .debug_line_str
-                0x00000000       0xa2 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_fma_dcp.S.obj
+                0x00000000       0xab pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_fma_dcp.S.obj
  .debug_info    0x00000000       0x23 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_fma_dcp.S.obj
  .debug_abbrev  0x00000000       0x12 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_fma_dcp.S.obj
  .debug_aranges
                 0x00000000       0x30 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_fma_dcp.S.obj
- .debug_str     0x00000000       0xb0 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_fma_dcp.S.obj
+ .debug_str     0x00000000       0xb9 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_fma_dcp.S.obj
  .debug_rnglists
                 0x00000000       0x20 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_fma_dcp.S.obj
  .ARM.attributes
@@ -1158,12 +1158,12 @@ Discarded input sections
                 0x00000000      0x320 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_sci_m33.S.obj
  .debug_line    0x00000000      0x4a7 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_sci_m33.S.obj
  .debug_line_str
-                0x00000000       0xa2 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_sci_m33.S.obj
+                0x00000000       0xab pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_sci_m33.S.obj
  .debug_info    0x00000000       0x23 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_sci_m33.S.obj
  .debug_abbrev  0x00000000       0x12 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_sci_m33.S.obj
  .debug_aranges
                 0x00000000       0x58 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_sci_m33.S.obj
- .debug_str     0x00000000       0xb0 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_sci_m33.S.obj
+ .debug_str     0x00000000       0xb9 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_sci_m33.S.obj
  .debug_rnglists
                 0x00000000       0x41 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_sci_m33.S.obj
  .ARM.attributes
@@ -1183,12 +1183,12 @@ Discarded input sections
                 0x00000000       0x72 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_conv_m33.S.obj
  .debug_line    0x00000000      0x1ca pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_conv_m33.S.obj
  .debug_line_str
-                0x00000000       0xa3 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_conv_m33.S.obj
+                0x00000000       0xac pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_conv_m33.S.obj
  .debug_info    0x00000000       0x23 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_conv_m33.S.obj
  .debug_abbrev  0x00000000       0x12 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_conv_m33.S.obj
  .debug_aranges
                 0x00000000       0x40 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_conv_m33.S.obj
- .debug_str     0x00000000       0xb1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_conv_m33.S.obj
+ .debug_str     0x00000000       0xba pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_conv_m33.S.obj
  .debug_rnglists
                 0x00000000       0x2d pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_conv_m33.S.obj
  .ARM.attributes
@@ -1270,7 +1270,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000      0x426 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_math.c.obj
  .debug_line    0x00000000     0x25b9 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_math.c.obj
- .debug_str     0x00000000      0x4ec pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_math.c.obj
+ .debug_str     0x00000000      0x4f5 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_math.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_math.c.obj
  .debug_frame   0x00000000      0x404 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_math.c.obj
  .ARM.attributes
@@ -1296,12 +1296,12 @@ Discarded input sections
                 0x00000000       0x18 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_conv32_vfp.S.obj
  .debug_line    0x00000000       0xe1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_conv32_vfp.S.obj
  .debug_line_str
-                0x00000000       0xa3 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_conv32_vfp.S.obj
+                0x00000000       0xac pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_conv32_vfp.S.obj
  .debug_info    0x00000000       0x23 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_conv32_vfp.S.obj
  .debug_abbrev  0x00000000       0x12 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_conv32_vfp.S.obj
  .debug_aranges
                 0x00000000       0x58 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_conv32_vfp.S.obj
- .debug_str     0x00000000       0xb1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_conv32_vfp.S.obj
+ .debug_str     0x00000000       0xba pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_conv32_vfp.S.obj
  .debug_rnglists
                 0x00000000       0x3d pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_conv32_vfp.S.obj
  .ARM.attributes
@@ -1321,12 +1321,12 @@ Discarded input sections
                 0x00000000       0x68 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_common_m33.S.obj
  .debug_line    0x00000000      0x19e pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_common_m33.S.obj
  .debug_line_str
-                0x00000000       0xa3 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_common_m33.S.obj
+                0x00000000       0xac pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_common_m33.S.obj
  .debug_info    0x00000000       0x23 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_common_m33.S.obj
  .debug_abbrev  0x00000000       0x12 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_common_m33.S.obj
  .debug_aranges
                 0x00000000       0x40 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_common_m33.S.obj
- .debug_str     0x00000000       0xb1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_common_m33.S.obj
+ .debug_str     0x00000000       0xba pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_common_m33.S.obj
  .debug_rnglists
                 0x00000000       0x2d pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_common_m33.S.obj
  .ARM.attributes
@@ -1348,12 +1348,12 @@ Discarded input sections
                 0x00000000      0x2cc pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_sci_m33_vfp.S.obj
  .debug_line    0x00000000      0x263 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_sci_m33_vfp.S.obj
  .debug_line_str
-                0x00000000       0xa4 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_sci_m33_vfp.S.obj
+                0x00000000       0xad pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_sci_m33_vfp.S.obj
  .debug_info    0x00000000       0x23 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_sci_m33_vfp.S.obj
  .debug_abbrev  0x00000000       0x12 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_sci_m33_vfp.S.obj
  .debug_aranges
                 0x00000000       0x48 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_sci_m33_vfp.S.obj
- .debug_str     0x00000000       0xb2 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_sci_m33_vfp.S.obj
+ .debug_str     0x00000000       0xbb pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_sci_m33_vfp.S.obj
  .debug_rnglists
                 0x00000000       0x35 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_float/float_sci_m33_vfp.S.obj
  .ARM.attributes
@@ -1409,7 +1409,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000      0x283 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_atomic/atomic.c.obj
  .debug_line    0x00000000     0x11a1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_atomic/atomic.c.obj
- .debug_str     0x00000000      0x4f9 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_atomic/atomic.c.obj
+ .debug_str     0x00000000      0x502 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_atomic/atomic.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_atomic/atomic.c.obj
  .debug_frame   0x00000000      0x1bc pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_atomic/atomic.c.obj
  .ARM.attributes
@@ -1432,7 +1432,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000       0x31 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_cxx_options/new_delete.cpp.obj
  .debug_line    0x00000000      0x27a pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_cxx_options/new_delete.cpp.obj
- .debug_str     0x00000000      0x3b6 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_cxx_options/new_delete.cpp.obj
+ .debug_str     0x00000000      0x3bf pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_cxx_options/new_delete.cpp.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_cxx_options/new_delete.cpp.obj
  .debug_frame   0x00000000       0x70 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_cxx_options/new_delete.cpp.obj
  .ARM.attributes
@@ -1604,7 +1604,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000      0x1f2 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .debug_line    0x00000000      0xf61 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .debug_str     0x00000000     0x11b6 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .debug_str     0x00000000     0x11bf pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .debug_frame   0x00000000      0x170 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .ARM.attributes
@@ -1711,7 +1711,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000      0x186 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_flash/flash.c.obj
  .debug_line    0x00000000      0xe21 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_flash/flash.c.obj
- .debug_str     0x00000000      0x8c8 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_flash/flash.c.obj
+ .debug_str     0x00000000      0x8d1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_flash/flash.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_flash/flash.c.obj
  .debug_frame   0x00000000      0x1f4 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_flash/flash.c.obj
  .ARM.attributes
@@ -1740,7 +1740,7 @@ Discarded input sections
  .debug_rnglists
                 0x00000000       0x31 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_xip_cache/xip_cache.c.obj
  .debug_line    0x00000000      0x346 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_xip_cache/xip_cache.c.obj
- .debug_str     0x00000000      0x372 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_xip_cache/xip_cache.c.obj
+ .debug_str     0x00000000      0x37b pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_xip_cache/xip_cache.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_xip_cache/xip_cache.c.obj
  .debug_frame   0x00000000       0x70 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_xip_cache/xip_cache.c.obj
  .ARM.attributes
@@ -1850,7 +1850,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/audio/audio_device.c.obj
  .debug_line    0x00000000       0x6e pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/audio/audio_device.c.obj
- .debug_str     0x00000000      0x13d pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/audio/audio_device.c.obj
+ .debug_str     0x00000000      0x146 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/audio/audio_device.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/audio/audio_device.c.obj
  .ARM.attributes
                 0x00000000       0x38 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/audio/audio_device.c.obj
@@ -1883,7 +1883,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/dfu/dfu_device.c.obj
  .debug_line    0x00000000       0x6a pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/dfu/dfu_device.c.obj
- .debug_str     0x00000000      0x139 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/dfu/dfu_device.c.obj
+ .debug_str     0x00000000      0x142 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/dfu/dfu_device.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/dfu/dfu_device.c.obj
  .ARM.attributes
                 0x00000000       0x38 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/dfu/dfu_device.c.obj
@@ -1895,7 +1895,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
  .debug_line    0x00000000       0x6d pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
- .debug_str     0x00000000      0x13c pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
+ .debug_str     0x00000000      0x145 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
  .ARM.attributes
                 0x00000000       0x38 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj
@@ -1907,7 +1907,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/hid/hid_device.c.obj
  .debug_line    0x00000000       0x6a pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/hid/hid_device.c.obj
- .debug_str     0x00000000      0x139 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/hid/hid_device.c.obj
+ .debug_str     0x00000000      0x142 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/hid/hid_device.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/hid/hid_device.c.obj
  .ARM.attributes
                 0x00000000       0x38 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/hid/hid_device.c.obj
@@ -1919,7 +1919,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/midi/midi_device.c.obj
  .debug_line    0x00000000       0x6c pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/midi/midi_device.c.obj
- .debug_str     0x00000000      0x13b pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/midi/midi_device.c.obj
+ .debug_str     0x00000000      0x144 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/midi/midi_device.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/midi/midi_device.c.obj
  .ARM.attributes
                 0x00000000       0x38 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/midi/midi_device.c.obj
@@ -1931,7 +1931,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/msc/msc_device.c.obj
  .debug_line    0x00000000       0x6a pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/msc/msc_device.c.obj
- .debug_str     0x00000000      0x139 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/msc/msc_device.c.obj
+ .debug_str     0x00000000      0x142 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/msc/msc_device.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/msc/msc_device.c.obj
  .ARM.attributes
                 0x00000000       0x38 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/msc/msc_device.c.obj
@@ -1943,7 +1943,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
  .debug_line    0x00000000       0x70 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
- .debug_str     0x00000000      0x13f pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
+ .debug_str     0x00000000      0x148 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
  .ARM.attributes
                 0x00000000       0x38 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj
@@ -1955,7 +1955,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/net/ncm_device.c.obj
  .debug_line    0x00000000       0x6a pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/net/ncm_device.c.obj
- .debug_str     0x00000000      0x139 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/net/ncm_device.c.obj
+ .debug_str     0x00000000      0x142 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/net/ncm_device.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/net/ncm_device.c.obj
  .ARM.attributes
                 0x00000000       0x38 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/net/ncm_device.c.obj
@@ -1967,7 +1967,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
  .debug_line    0x00000000       0x70 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
- .debug_str     0x00000000      0x13f pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
+ .debug_str     0x00000000      0x148 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
  .ARM.attributes
                 0x00000000       0x38 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj
@@ -1979,7 +1979,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/vendor/vendor_device.c.obj
  .debug_line    0x00000000       0x70 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/vendor/vendor_device.c.obj
- .debug_str     0x00000000      0x13f pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/vendor/vendor_device.c.obj
+ .debug_str     0x00000000      0x148 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/vendor/vendor_device.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/vendor/vendor_device.c.obj
  .ARM.attributes
                 0x00000000       0x38 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/vendor/vendor_device.c.obj
@@ -1991,7 +1991,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x18 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/video/video_device.c.obj
  .debug_line    0x00000000       0x6e pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/video/video_device.c.obj
- .debug_str     0x00000000      0x13d pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/video/video_device.c.obj
+ .debug_str     0x00000000      0x146 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/video/video_device.c.obj
  .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/video/video_device.c.obj
  .ARM.attributes
                 0x00000000       0x38 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/video/video_device.c.obj
@@ -2049,23 +2049,23 @@ Discarded input sections
                 0x00000000       0xdc pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/common/tusb_fifo.c.obj
  .text.tu_fifo_get_write_info
                 0x00000000       0x70 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/common/tusb_fifo.c.obj
- .text          0x00000000        0x0 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
- .data          0x00000000        0x0 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
- .bss           0x00000000        0x0 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+ .text          0x00000000        0x0 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/715ab2c4cb6e8f8e6f1d896168e0d7ec/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+ .data          0x00000000        0x0 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/715ab2c4cb6e8f8e6f1d896168e0d7ec/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+ .bss           0x00000000        0x0 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/715ab2c4cb6e8f8e6f1d896168e0d7ec/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
  .text.rp2040_usb_device_enumeration_fix
-                0x00000000        0x4 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
- .debug_info    0x00000000       0x8d pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
- .debug_abbrev  0x00000000       0x43 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+                0x00000000        0x4 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/715ab2c4cb6e8f8e6f1d896168e0d7ec/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+ .debug_info    0x00000000       0x8d pico-rv32ima/CMakeFiles/pico-rv32ima.dir/715ab2c4cb6e8f8e6f1d896168e0d7ec/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+ .debug_abbrev  0x00000000       0x43 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/715ab2c4cb6e8f8e6f1d896168e0d7ec/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
  .debug_aranges
-                0x00000000       0x20 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+                0x00000000       0x20 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/715ab2c4cb6e8f8e6f1d896168e0d7ec/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
  .debug_rnglists
-                0x00000000       0x13 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
- .debug_line    0x00000000      0x13b pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
- .debug_str     0x00000000      0x220 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
- .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
- .debug_frame   0x00000000       0x20 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+                0x00000000       0x13 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/715ab2c4cb6e8f8e6f1d896168e0d7ec/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+ .debug_line    0x00000000      0x13b pico-rv32ima/CMakeFiles/pico-rv32ima.dir/715ab2c4cb6e8f8e6f1d896168e0d7ec/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+ .debug_str     0x00000000      0x229 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/715ab2c4cb6e8f8e6f1d896168e0d7ec/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+ .comment       0x00000000       0x46 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/715ab2c4cb6e8f8e6f1d896168e0d7ec/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+ .debug_frame   0x00000000       0x20 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/715ab2c4cb6e8f8e6f1d896168e0d7ec/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
  .ARM.attributes
-                0x00000000       0x38 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+                0x00000000       0x38 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/715ab2c4cb6e8f8e6f1d896168e0d7ec/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
  .text          0x00000000        0x0 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/hw/bsp/rp2040/family.c.obj
  .data          0x00000000        0x0 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/hw/bsp/rp2040/family.c.obj
  .bss           0x00000000        0x0 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/hw/bsp/rp2040/family.c.obj
@@ -4692,7 +4692,7 @@ LOAD pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1
 LOAD pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/video/video_device.c.obj
 LOAD pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/tusb.c.obj
 LOAD pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/common/tusb_fifo.c.obj
-LOAD pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
+LOAD pico-rv32ima/CMakeFiles/pico-rv32ima.dir/715ab2c4cb6e8f8e6f1d896168e0d7ec/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 LOAD pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/hw/bsp/rp2040/family.c.obj
 LOAD pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_pio/pio.c.obj
 LOAD pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_dma/dma.c.obj
@@ -5423,120 +5423,120 @@ LOAD linker stubs
  .debug_rnglists
                 0x0000642f       0x7a pico-rv32ima/ps2/libps2.a(ps2.c.obj)
 
-.debug_line     0x00000000    0x2eb28
- .debug_line    0x00000000      0x991 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/main.c.obj
- .debug_line    0x00000991      0x9af pico-rv32ima/CMakeFiles/pico-rv32ima.dir/psram.c.obj
- .debug_line    0x00001340      0xbcc pico-rv32ima/CMakeFiles/pico-rv32ima.dir/cache.c.obj
- .debug_line    0x00001f0c      0x9c6 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/console.c.obj
- .debug_line    0x000028d2      0xe01 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/terminal.c.obj
- .debug_line    0x000036d3     0x1bdf pico-rv32ima/CMakeFiles/pico-rv32ima.dir/emulator.c.obj
- .debug_line    0x000052b2      0x518 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/get_serial.c.obj
- .debug_line    0x000057ca      0x3d8 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/usb_descriptors.c.obj
- .debug_line    0x00005ba2     0x1bb1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_line    0x00007753      0x285 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_platform_panic/panic.c.obj
- .debug_line    0x000079d8      0x810 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/hardware_claim/claim.c.obj
- .debug_line    0x000081e8      0x424 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync/sync.c.obj
- .debug_line    0x0000860c      0x3a4 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.obj
- .debug_line    0x000089b0     0x1708 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_irq/irq.c.obj
- .debug_line    0x0000a0b8      0x270 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/lock_core.c.obj
- .debug_line    0x0000a328     0x1280 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/mutex.c.obj
- .debug_line    0x0000b5a8      0x3c0 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/critical_section.c.obj
- .debug_line    0x0000b968     0x315e pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_time/time.c.obj
- .debug_line    0x0000eac6     0x1d68 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_timer/timer.c.obj
- .debug_line    0x0001082e      0xd3a pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_util/queue.c.obj
- .debug_line    0x00011568     0x1e69 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_line    0x000133d1      0x4d9 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_pll/pll.c.obj
- .debug_line    0x000138aa      0x3ec pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_vreg/vreg.c.obj
- .debug_line    0x00013c96      0x33a pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_ticks/ticks.c.obj
- .debug_line    0x00013fd0      0x690 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_line    0x00014660      0x3ad pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom_lock.c.obj
- .debug_line    0x00014a0d      0x427 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_boot_lock/boot_lock.c.obj
- .debug_line    0x00014e34      0x35c pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_line    0x00015190      0x319 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_line    0x000154a9      0x5dc pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init.c.obj
- .debug_line    0x00015a85      0x580 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.obj
- .debug_line    0x00016005      0x28f pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_aeabi_dcp.S.obj
- .debug_line    0x00016294      0x492 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_malloc/malloc.c.obj
- .debug_line    0x00016726      0x1f5 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
- .debug_line    0x0001691b     0x1bb6 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_printf/printf.c.obj
- .debug_line    0x000184d1       0xa1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_crt0/crt0.S.obj
- .debug_line    0x00018572      0x830 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_clib_interface/newlib_interface.c.obj
- .debug_line    0x00018da2     0x1541 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_line    0x0001a2e3     0x1b0c pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_multicore/multicore.c.obj
- .debug_line    0x0001bdef      0x73e pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_unique_id/unique_id.c.obj
- .debug_line    0x0001c52d     0x14e7 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_spi/spi.c.obj
- .debug_line    0x0001da14     0x1ea6 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
- .debug_line    0x0001f8ba      0xc60 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
- .debug_line    0x0002051a     0x2617 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd.c.obj
- .debug_line    0x00022b31      0x73b pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd_control.c.obj
- .debug_line    0x0002326c     0x1070 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/cdc/cdc_device.c.obj
- .debug_line    0x000242dc     0x1342 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/tusb.c.obj
- .debug_line    0x0002561e     0x18fe pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/common/tusb_fifo.c.obj
- .debug_line    0x00026f1c      0xb09 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/hw/bsp/rp2040/family.c.obj
- .debug_line    0x00027a25     0x1df1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_pio/pio.c.obj
- .debug_line    0x00029816      0x752 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_dma/dma.c.obj
- .debug_line    0x00029f68     0x10f4 pico-rv32ima/petitfatfs/libpetitfatfs.a(pff.c.obj)
- .debug_line    0x0002b05c      0xceb pico-rv32ima/petitfatfs/libpetitfatfs.a(mmcbbp.c.obj)
- .debug_line    0x0002bd47     0x22ea pico-rv32ima/vga/libvga.a(vga.c.obj)
- .debug_line    0x0002e031      0xaf7 pico-rv32ima/ps2/libps2.a(ps2.c.obj)
+.debug_line     0x00000000    0x2ebc1
+ .debug_line    0x00000000      0x9a3 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/main.c.obj
+ .debug_line    0x000009a3      0x9b8 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/psram.c.obj
+ .debug_line    0x0000135b      0xbd5 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/cache.c.obj
+ .debug_line    0x00001f30      0x9cf pico-rv32ima/CMakeFiles/pico-rv32ima.dir/console.c.obj
+ .debug_line    0x000028ff      0xe1c pico-rv32ima/CMakeFiles/pico-rv32ima.dir/terminal.c.obj
+ .debug_line    0x0000371b     0x1bf1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/emulator.c.obj
+ .debug_line    0x0000530c      0x521 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/get_serial.c.obj
+ .debug_line    0x0000582d      0x3e1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/usb_descriptors.c.obj
+ .debug_line    0x00005c0e     0x1bb1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_line    0x000077bf      0x285 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_platform_panic/panic.c.obj
+ .debug_line    0x00007a44      0x810 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/hardware_claim/claim.c.obj
+ .debug_line    0x00008254      0x424 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_line    0x00008678      0x3a4 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.obj
+ .debug_line    0x00008a1c     0x1708 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_line    0x0000a124      0x270 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/lock_core.c.obj
+ .debug_line    0x0000a394     0x1280 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/mutex.c.obj
+ .debug_line    0x0000b614      0x3c0 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/critical_section.c.obj
+ .debug_line    0x0000b9d4     0x315e pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_time/time.c.obj
+ .debug_line    0x0000eb32     0x1d68 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_line    0x0001089a      0xd3a pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_util/queue.c.obj
+ .debug_line    0x000115d4     0x1e69 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_line    0x0001343d      0x4d9 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_line    0x00013916      0x3ec pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_vreg/vreg.c.obj
+ .debug_line    0x00013d02      0x33a pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_ticks/ticks.c.obj
+ .debug_line    0x0001403c      0x690 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_line    0x000146cc      0x3ad pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom_lock.c.obj
+ .debug_line    0x00014a79      0x427 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_boot_lock/boot_lock.c.obj
+ .debug_line    0x00014ea0      0x35c pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_line    0x000151fc      0x319 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_line    0x00015515      0x5dc pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init.c.obj
+ .debug_line    0x00015af1      0x580 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.obj
+ .debug_line    0x00016071      0x28f pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_aeabi_dcp.S.obj
+ .debug_line    0x00016300      0x492 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_malloc/malloc.c.obj
+ .debug_line    0x00016792      0x1f5 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+ .debug_line    0x00016987     0x1bb6 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_printf/printf.c.obj
+ .debug_line    0x0001853d       0xa1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_crt0/crt0.S.obj
+ .debug_line    0x000185de      0x830 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_clib_interface/newlib_interface.c.obj
+ .debug_line    0x00018e0e     0x1541 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_line    0x0001a34f     0x1b0c pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_multicore/multicore.c.obj
+ .debug_line    0x0001be5b      0x73e pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_unique_id/unique_id.c.obj
+ .debug_line    0x0001c599     0x14e7 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_spi/spi.c.obj
+ .debug_line    0x0001da80     0x1ea6 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+ .debug_line    0x0001f926      0xc60 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ .debug_line    0x00020586     0x2617 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd.c.obj
+ .debug_line    0x00022b9d      0x73b pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd_control.c.obj
+ .debug_line    0x000232d8     0x1070 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+ .debug_line    0x00024348     0x1342 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/tusb.c.obj
+ .debug_line    0x0002568a     0x18fe pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/common/tusb_fifo.c.obj
+ .debug_line    0x00026f88      0xb09 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/hw/bsp/rp2040/family.c.obj
+ .debug_line    0x00027a91     0x1df1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_pio/pio.c.obj
+ .debug_line    0x00029882      0x752 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_dma/dma.c.obj
+ .debug_line    0x00029fd4     0x10fd pico-rv32ima/petitfatfs/libpetitfatfs.a(pff.c.obj)
+ .debug_line    0x0002b0d1      0xcf4 pico-rv32ima/petitfatfs/libpetitfatfs.a(mmcbbp.c.obj)
+ .debug_line    0x0002bdc5     0x22fc pico-rv32ima/vga/libvga.a(vga.c.obj)
+ .debug_line    0x0002e0c1      0xb00 pico-rv32ima/ps2/libps2.a(ps2.c.obj)
 
-.debug_str      0x00000000     0xba9e
- .debug_str     0x00000000     0xba9e pico-rv32ima/CMakeFiles/pico-rv32ima.dir/main.c.obj
-                               0x11b2 (size before relaxing)
- .debug_str     0x0000ba9e      0xab1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/psram.c.obj
- .debug_str     0x0000ba9e      0x8ea pico-rv32ima/CMakeFiles/pico-rv32ima.dir/cache.c.obj
- .debug_str     0x0000ba9e      0xd01 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/console.c.obj
- .debug_str     0x0000ba9e      0xc8d pico-rv32ima/CMakeFiles/pico-rv32ima.dir/terminal.c.obj
- .debug_str     0x0000ba9e      0xf47 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/emulator.c.obj
- .debug_str     0x0000ba9e      0x253 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/get_serial.c.obj
- .debug_str     0x0000ba9e     0x1177 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/usb_descriptors.c.obj
- .debug_str     0x0000ba9e      0xd53 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_str     0x0000ba9e      0x237 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_platform_panic/panic.c.obj
- .debug_str     0x0000ba9e      0x3a9 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/hardware_claim/claim.c.obj
- .debug_str     0x0000ba9e      0x354 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync/sync.c.obj
- .debug_str     0x0000ba9e      0xc01 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.obj
- .debug_str     0x0000ba9e      0xc6e pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_irq/irq.c.obj
- .debug_str     0x0000ba9e      0x246 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/lock_core.c.obj
- .debug_str     0x0000ba9e      0x91a pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/mutex.c.obj
- .debug_str     0x0000ba9e      0x31a pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/critical_section.c.obj
- .debug_str     0x0000ba9e     0x1336 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_time/time.c.obj
- .debug_str     0x0000ba9e      0xbd4 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_timer/timer.c.obj
- .debug_str     0x0000ba9e      0x499 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_util/queue.c.obj
- .debug_str     0x0000ba9e      0xb95 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_str     0x0000ba9e      0x4cd pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_pll/pll.c.obj
- .debug_str     0x0000ba9e      0x744 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_vreg/vreg.c.obj
- .debug_str     0x0000ba9e      0x2fa pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_ticks/ticks.c.obj
- .debug_str     0x0000ba9e      0x6eb pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_str     0x0000ba9e      0x2e2 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom_lock.c.obj
- .debug_str     0x0000ba9e      0x2c0 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_boot_lock/boot_lock.c.obj
- .debug_str     0x0000ba9e      0x273 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_str     0x0000ba9e      0x2c9 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_str     0x0000ba9e     0x120e pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init.c.obj
- .debug_str     0x0000ba9e      0x515 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.obj
- .debug_str     0x0000ba9e       0xb2 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_aeabi_dcp.S.obj
- .debug_str     0x0000ba9e      0x59e pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_malloc/malloc.c.obj
- .debug_str     0x0000ba9e      0x438 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
- .debug_str     0x0000ba9e      0x4df pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_printf/printf.c.obj
- .debug_str     0x0000ba9e       0xa4 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_crt0/crt0.S.obj
- .debug_str     0x0000ba9e      0x8b5 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_clib_interface/newlib_interface.c.obj
- .debug_str     0x0000ba9e      0xff1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_str     0x0000ba9e     0x131e pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_multicore/multicore.c.obj
- .debug_str     0x0000ba9e      0x2c5 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_unique_id/unique_id.c.obj
- .debug_str     0x0000ba9e      0x7b0 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_spi/spi.c.obj
- .debug_str     0x0000ba9e     0x1403 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
- .debug_str     0x0000ba9e      0xbfa pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
- .debug_str     0x0000ba9e     0x1c50 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd.c.obj
- .debug_str     0x0000ba9e      0x825 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd_control.c.obj
- .debug_str     0x0000ba9e     0x18a4 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/cdc/cdc_device.c.obj
- .debug_str     0x0000ba9e      0xf6e pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/tusb.c.obj
- .debug_str     0x0000ba9e      0x657 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/common/tusb_fifo.c.obj
- .debug_str     0x0000ba9e     0x11ca pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/hw/bsp/rp2040/family.c.obj
- .debug_str     0x0000ba9e     0x11f1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_pio/pio.c.obj
- .debug_str     0x0000ba9e      0x6a2 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_dma/dma.c.obj
- .debug_str     0x0000ba9e      0x455 pico-rv32ima/petitfatfs/libpetitfatfs.a(pff.c.obj)
- .debug_str     0x0000ba9e      0xb62 pico-rv32ima/petitfatfs/libpetitfatfs.a(mmcbbp.c.obj)
- .debug_str     0x0000ba9e     0x1761 pico-rv32ima/vga/libvga.a(vga.c.obj)
- .debug_str     0x0000ba9e      0xd8a pico-rv32ima/ps2/libps2.a(ps2.c.obj)
+.debug_str      0x00000000     0xbb13
+ .debug_str     0x00000000     0xbb13 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/main.c.obj
+                               0x11c4 (size before relaxing)
+ .debug_str     0x0000bb13      0xac3 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/psram.c.obj
+ .debug_str     0x0000bb13      0x8fc pico-rv32ima/CMakeFiles/pico-rv32ima.dir/cache.c.obj
+ .debug_str     0x0000bb13      0xd13 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/console.c.obj
+ .debug_str     0x0000bb13      0xc9f pico-rv32ima/CMakeFiles/pico-rv32ima.dir/terminal.c.obj
+ .debug_str     0x0000bb13      0xf59 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/emulator.c.obj
+ .debug_str     0x0000bb13      0x265 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/get_serial.c.obj
+ .debug_str     0x0000bb13     0x1189 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/usb_descriptors.c.obj
+ .debug_str     0x0000bb13      0xd5c pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_str     0x0000bb13      0x240 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_platform_panic/panic.c.obj
+ .debug_str     0x0000bb13      0x3b2 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/hardware_claim/claim.c.obj
+ .debug_str     0x0000bb13      0x35d pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_str     0x0000bb13      0xc0a pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.obj
+ .debug_str     0x0000bb13      0xc77 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_str     0x0000bb13      0x24f pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/lock_core.c.obj
+ .debug_str     0x0000bb13      0x923 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/mutex.c.obj
+ .debug_str     0x0000bb13      0x323 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/critical_section.c.obj
+ .debug_str     0x0000bb13     0x133f pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_time/time.c.obj
+ .debug_str     0x0000bb13      0xbdd pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_str     0x0000bb13      0x4a2 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_util/queue.c.obj
+ .debug_str     0x0000bb13      0xb9e pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_str     0x0000bb13      0x4d6 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_str     0x0000bb13      0x74d pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_vreg/vreg.c.obj
+ .debug_str     0x0000bb13      0x303 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_ticks/ticks.c.obj
+ .debug_str     0x0000bb13      0x6f4 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_str     0x0000bb13      0x2eb pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom_lock.c.obj
+ .debug_str     0x0000bb13      0x2c9 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_boot_lock/boot_lock.c.obj
+ .debug_str     0x0000bb13      0x27c pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_str     0x0000bb13      0x2d2 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_str     0x0000bb13     0x1217 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init.c.obj
+ .debug_str     0x0000bb13      0x51e pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.obj
+ .debug_str     0x0000bb13       0xbb pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_aeabi_dcp.S.obj
+ .debug_str     0x0000bb13      0x5a7 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_malloc/malloc.c.obj
+ .debug_str     0x0000bb13      0x441 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+ .debug_str     0x0000bb13      0x4e8 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_printf/printf.c.obj
+ .debug_str     0x0000bb13       0xad pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_crt0/crt0.S.obj
+ .debug_str     0x0000bb13      0x8be pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_clib_interface/newlib_interface.c.obj
+ .debug_str     0x0000bb13      0xffa pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_str     0x0000bb13     0x1327 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_multicore/multicore.c.obj
+ .debug_str     0x0000bb13      0x2ce pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_unique_id/unique_id.c.obj
+ .debug_str     0x0000bb13      0x7b9 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_spi/spi.c.obj
+ .debug_str     0x0000bb13     0x140c pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+ .debug_str     0x0000bb13      0xc03 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ .debug_str     0x0000bb13     0x1c59 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd.c.obj
+ .debug_str     0x0000bb13      0x82e pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd_control.c.obj
+ .debug_str     0x0000bb13     0x18ad pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+ .debug_str     0x0000bb13      0xf77 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/tusb.c.obj
+ .debug_str     0x0000bb13      0x660 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/common/tusb_fifo.c.obj
+ .debug_str     0x0000bb13     0x11d3 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/hw/bsp/rp2040/family.c.obj
+ .debug_str     0x0000bb13     0x11fa pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_pio/pio.c.obj
+ .debug_str     0x0000bb13      0x6ab pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_dma/dma.c.obj
+ .debug_str     0x0000bb13      0x467 pico-rv32ima/petitfatfs/libpetitfatfs.a(pff.c.obj)
+ .debug_str     0x0000bb13      0xb74 pico-rv32ima/petitfatfs/libpetitfatfs.a(mmcbbp.c.obj)
+ .debug_str     0x0000bb13     0x1773 pico-rv32ima/vga/libvga.a(vga.c.obj)
+ .debug_str     0x0000bb13      0xd9c pico-rv32ima/ps2/libps2.a(ps2.c.obj)
 
 .debug_frame    0x00000000     0x4f9c
  .debug_frame   0x00000000       0xa0 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/main.c.obj
@@ -5633,17 +5633,17 @@ LOAD linker stubs
  .debug_frame   0x00004f14       0x88 C:/Users/nahue/.pico-sdk/toolchain/14_2_Rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v8-m.main+fp/softfp\libg.a(libc_a-wcsnrtombs.o)
 
 .debug_line_str
-                0x00000000      0x2b8
+                0x00000000      0x2c1
  .debug_line_str
-                0x00000000      0x2b8 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_aeabi_dcp.S.obj
-                                 0xa4 (size before relaxing)
+                0x00000000      0x2c1 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_aeabi_dcp.S.obj
+                                 0xad (size before relaxing)
  .debug_line_str
-                0x000002b8       0x96 pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_crt0/crt0.S.obj
+                0x000002c1       0x9f pico-rv32ima/CMakeFiles/pico-rv32ima.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_crt0/crt0.S.obj
  .debug_line_str
-                0x000002b8       0xd4 C:/Users/nahue/.pico-sdk/toolchain/14_2_Rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v8-m.main+fp/softfp\libgcc.a(_arm_addsubdf3.o)
+                0x000002c1       0xd4 C:/Users/nahue/.pico-sdk/toolchain/14_2_Rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v8-m.main+fp/softfp\libgcc.a(_arm_addsubdf3.o)
  .debug_line_str
-                0x000002b8       0xcf C:/Users/nahue/.pico-sdk/toolchain/14_2_Rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v8-m.main+fp/softfp\libgcc.a(_aeabi_uldivmod.o)
+                0x000002c1       0xcf C:/Users/nahue/.pico-sdk/toolchain/14_2_Rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v8-m.main+fp/softfp\libgcc.a(_aeabi_uldivmod.o)
  .debug_line_str
-                0x000002b8       0xd3 C:/Users/nahue/.pico-sdk/toolchain/14_2_Rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v8-m.main+fp/softfp\libgcc.a(_dvmd_tls.o)
+                0x000002c1       0xd3 C:/Users/nahue/.pico-sdk/toolchain/14_2_Rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v8-m.main+fp/softfp\libgcc.a(_dvmd_tls.o)
  .debug_line_str
-                0x000002b8       0xe9 C:/Users/nahue/.pico-sdk/toolchain/14_2_Rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v8-m.main+fp/softfp\libg.a(libc_a-memcpy.o)
+                0x000002c1       0xe9 C:/Users/nahue/.pico-sdk/toolchain/14_2_Rel1/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v8-m.main+fp/softfp\libg.a(libc_a-memcpy.o)
