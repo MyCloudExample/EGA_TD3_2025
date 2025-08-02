@@ -5180,6 +5180,16 @@
 		)
 		(uuid 5383780a-1598-4b41-9676-40cdebb239ba)
 	)
+	(text "PARA PLACA DE PRUEBA SE USA EL GPIO11\nCAMBIAR AL GPIO11 EN DISEÑO DEFINITIVO\n\n"
+		(exclude_from_sim no)
+		(at 211.582 160.782 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "136d4697-4917-4082-8570-add8c42533a0")
+	)
 	(text "ALIMENTACION DE 12V, 5V , 3.3V"
 		(exclude_from_sim no)
 		(at 93.98 22.225 0)

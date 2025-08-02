@@ -28,39 +28,32 @@ set(PICO_BOARD pico2 CACHE STRING "Board type")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(EXAMPLE1 C CXX ASM)
+project(TEST_2 C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
-#Adicion de libreria para senson ultrasonico
-add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../HC_SR04 ${CMAKE_BINARY_DIR}/HC_SR04)
-add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../pwm_lib ${CMAKE_BINARY_DIR}/pwm_lib)
-add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../pid_controller ${CMAKE_BINARY_DIR}/pid_controller)
-
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(EXAMPLE1 EXAMPLE1.c )
+add_executable(TEST_2 TEST_2.c )
 
-pico_set_program_name(EXAMPLE1 "EXAMPLE1")
-pico_set_program_version(EXAMPLE1 "0.1")
+pico_set_program_name(TEST_2 "TEST_2")
+pico_set_program_version(TEST_2 "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(EXAMPLE1 0)
-pico_enable_stdio_usb(EXAMPLE1 1)
+pico_enable_stdio_uart(TEST_2 0)
+pico_enable_stdio_usb(TEST_2 1)
 
 # Add the standard library to the build
-target_link_libraries(EXAMPLE1
+target_link_libraries(TEST_2
         pico_stdlib
-        HC_SR04
-        pwm_lib
-        pid_controller
+        hardware_pwm
         hardware_adc)
 
 # Add the standard include files to the build
-target_include_directories(EXAMPLE1 PRIVATE
+target_include_directories(TEST_2 PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
 )
 
-pico_add_extra_outputs(EXAMPLE1)
+pico_add_extra_outputs(TEST_2)
 
