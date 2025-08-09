@@ -1,64 +1,86 @@
 #include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
 #include "pico/stdlib.h"
 #include "hardware/adc.h"
 #include "lcd.h"
 #include "pwm_lib.h"
 #include "HC_SR04.h"
 #include "ds3231.h"
+#include "pid_controller.h"
 #include "hardware/uart.h"
-//Caebceras de FreeRTOS
+#include "string.h"
+//========================================CABECERAS DE FREERTOS=====================================================================
 #include "FreeRTOS.h"
 #include "task.h"
 #include "semphr.h"
 #include "queue.h"
-#include "string.h"
-/*-------------------------------------DEFINICION DE PINES PARA EL PROYECTO-------------------------------------------------*/
+/*-------------------------------------DEFINICION DE PINES PARA EL PROYECTO---------------------------------------------------------*/
+//========================================DEFINICION DE I2C=========================================================================
 #define PIN_SDA     8 //Pin 11 de la placa
 #define PIN_SCL     9 //Pin 12 de la placa
 #define I2C         i2c0 //Puerto del i2c
 #define ADDR        0x27 //Direccion del LCD en I2C
 #define FREQ        400000 //Frecuencia de 100KHz para el i2c
-#define PIN_PWM     16 //Pin 21 de la placa
-#define PIN_RPM     17 //Pin 22 de la placa
-// Pines de HC-SR04
+//========================================DEFINICION DE FAN=========================================================================
+#define PIN_PWM     11 //Pin 21 de la placa
+#define PIN_RPM     10 //Pin 22 de la placa
+//NOTA EN LA PLACA DE PRUEBA SE USA EL PIN 11 PARA EL PWM, PERO EN LA PLACA PCB SE UTILIZA EL PIN 10, RECORDAR CAMBIARLO
+//========================================PINES DE HC-SR04==========================================================================
 #define PIN_TRIG    14 //Pin 19 de la placa
 #define PIN_ECHO    15 //Pin 20 de la placa
-// PIN de potenciometro de setpoint
+//========================================PIN DE POTENCIOMETRO PARA EL SETPOINT=====================================================
 #define PIN_ADC     26 //Pin
-// Pines UART1 
+//=======================================PINES PARA EL UART=========================================================================
 #define PIN_TX  4
 #define PIN_RX  5
 #define UART_ID uart1
 #define UART_BAUDRATE 115200
-// Alertas
-#define GPIO_LED_MAX 16
-#define GPIO_LED_MIN 17
+//========================================BANDERAS DE ALERTAS=======================================================================
+#define GPIO_LED_MAX 12
+#define GPIO_LED_MIN 13
 #define ALERTA_TIMEOUT_MS 3000
-// Boton de cambio de pagina, conmuta en la opciones de task_setpoint
+//=======================================BOTON SE SELECCION PARA LOS SETPOINT=======================================================
 #define PIN_PAGINA  18 // Pin 24 de la placa
 #define DEBOUNCE_TIME_MS 50
 #define MULTI_PRESS_TIMEOUT 300
-/*--------------------------------------VARAIBLES DE RPOGRAMA, COLAS Y SEMAFOROS----------------------------------------------*/
-pwm_config_t cooler={.pin=PIN_PWM, .wrap=12499, .clk_div=10};
+//========================================PARAMETROS FISICOS PARA EL CONTROL PID====================================================
+#define BALL_DIAMETER_CM 7.8f
+#define BALL_WEIGHT_G 9.0f
+#define TARGET_HEIGHT 20.0f //Para testeo de la tarea task_pid
+#define SENSOR_HEIGHT 45.0f
+//========================================PARAMETROS INICIALES (SE DEBEN AJUSTAR DURANTE LAS PRUEBAS)===============================
+#define BASE_PWM 2500       // Incrementado inicialmente
+#define KP 6.0f             // Cuanto mayor sea el Kp mas rapida sera la respuesta, si es muy grande habra osiclacion e inestabilidad
+#define KI 1.7f             // Elimina error en regimen permanente, si es muy grande la respuesta sera lenta y existira overshot
+#define KD 1.2f             // Amortigua las oscilaciones, si es muy alto provocara oscilacion ya que amplifica el ruido
+#define MIN_PWM 1800        // Mínimo absoluto
+#define MAX_PWM 4000        // Máximo seguro
+#define DT      0.01f       //FActor para ajustar el tiempo de muestreo
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------VARAIBLES DE RPOGRAMA, COLAS Y SEMAFOROS----------------------------------------------------*/
+//========================================VARIABLES QUE NO SON PROPIAS DE FREERTOS==================================================
+pwm_config_t cooler={.pin=PIN_PWM, .wrap=4999, .clk_div=1.0f};
 hc_sr04_t sensor;
-SemaphoreHandle_t sem_mutex;
-QueueHandle_t queue_rtc;
-QueueHandle_t queue_hcsr04;
-QueueHandle_t queue_setpoint;
-QueueHandle_t queue_pwm;
-QueueHandle_t queue_altura;
-QueueHandle_t queue_max;
-QueueHandle_t queue_min;
-QueueHandle_t queue_max_salida;
-QueueHandle_t queue_min_salida;
-QueueHandle_t cola_paginas;
 typedef struct
 {
     uint32_t setpoint;
     float setpoint_min;
     float setpoint_max;
 }estructura_setpoint;
-
+//========================================ELEMENTOS DE FREERTOS=====================================================================
+SemaphoreHandle_t sem_mutex;
+QueueHandle_t queue_rtc; //Envia datos desde task_rtc a task_pid, task_guardian_lcd
+QueueHandle_t queue_hcsr04; //Envia datos desde task_hc_sr04 a task_pid, task_guardiana_lcd, task_guardiana_sd
+QueueHandle_t queue_setpoint; //Envia datos desde task_setpoint a task_pid, task_guardiana_lcd, task_guardiana_sd
+QueueHandle_t queue_leds; //Envia datos a la tarea task_guardiana_leds 
+QueueHandle_t queue_altura;
+QueueHandle_t queue_max;
+QueueHandle_t queue_min;
+QueueHandle_t queue_max_salida;
+QueueHandle_t queue_min_salida;
+QueueHandle_t cola_paginas;
+/*----------------------------------------------------------------------------------------------------------------------------------*/
 /*--------------------------------------TAREAS DE FREERTOS--------------------------------------------------------------------*/
 void task_init(void *params) 
 {
@@ -109,7 +131,7 @@ void task_hcsr04(void *params)
             printf("Tarea: task_hcssr04, Distancia= %.2f cm\n",valor_medido);
             xQueueSend(queue_hcsr04,&valor_medido,pdMS_TO_TICKS(100));
         }
-        vTaskDelay(pdMS_TO_TICKS(2000));
+        vTaskDelay(pdMS_TO_TICKS(20));
     }
 }
 //---------------------------------------------------TAREA GUARDIANA LCD----------------------------------------------------------
@@ -180,8 +202,8 @@ void task_guardiana_sd(void *params)
 //---------------------------------------------------TAREA GUARDIANA DE LEDS------------------------------------------------------
 void task_guardiana_leds(void *params) {
     bool alerta_latched = false;
-    estructura_setpoint recibido_setpoint;
-    float recibido_hcsr04 = 0, val_max_setpoint = 0, val_min_setpoint = 0;
+    estructura_setpoint data;
+    float altura = 0;
     TickType_t tick_ultima_alerta = 0;
     gpio_init(GPIO_LED_MAX); //Inicio el pin 16
     gpio_set_dir(GPIO_LED_MAX, GPIO_OUT); //Se configura como salida
@@ -192,20 +214,21 @@ void task_guardiana_leds(void *params) {
 
     while(true)
     {
-        if (xQueueReceive(queue_setpoint, &recibido_setpoint, portMAX_DELAY) == pdPASS) 
+        if (xQueueReceive(queue_setpoint, &data, portMAX_DELAY) == pdPASS) 
         {
-            val_max_setpoint = recibido_setpoint.setpoint_max;
-            val_min_setpoint = recibido_setpoint.setpoint_min;
+            printf("TARGET:%lu,MAX:%.2f,MIN:%.2f",data.setpoint,data.setpoint_max,data.setpoint_min);
         }
 
-        if (xQueueReceive(queue_hcsr04, &recibido_hcsr04, portMAX_DELAY) == pdPASS) 
+        if (xQueueReceive(queue_hcsr04, &altura, portMAX_DELAY) == pdPASS) 
         {
             // Si superó el umbral → activa latch y guarda tiempo
-            if (recibido_hcsr04 > val_max_setpoint || recibido_hcsr04 < val_min_setpoint) 
+            if (altura > data.setpoint_max || altura < data.setpoint_min) 
             {
                 alerta_latched = true;
                 tick_ultima_alerta = xTaskGetTickCount();
-                printf("task_guardiana_leds | Supero un limite");
+                gpio_put(GPIO_LED_MAX,1);
+                gpio_put(GPIO_LED_MIN,1);
+                //printf("task_guardiana_leds | Supero un limite");
             }
         }
 
@@ -222,8 +245,7 @@ void task_guardiana_leds(void *params) {
         // Control de LED
         gpio_put(GPIO_LED_MAX, 0);
         gpio_put(GPIO_LED_MIN, 0);
-        printf("task_guardiana_leds | SetPoinrMax: %.2f | SetPointMin: %.2f | Medicion: %.2f\n", val_max_setpoint,val_min_setpoint,recibido_hcsr04);
-        vTaskDelay(pdMS_TO_TICKS(500));
+        vTaskDelay(pdMS_TO_TICKS(100));
 
     }
 
@@ -269,7 +291,7 @@ void task_SetPoint(void *params)
             
             printf("PAGINA 0 |setpoint= %lu | setpoint_max=%.2f | setpoint_min= %.2f \n", data.setpoint,data.setpoint_max,data.setpoint_min);
         }
-       xQueueSend(queue_setpoint, &data, 100); //Se quedara aqui ya que no se desopucpa la cola
+       xQueueSend(queue_setpoint, &data, pdMS_TO_TICKS(100)); //Se quedara aqui ya que no se desopucpa la cola
        vTaskDelay(pdMS_TO_TICKS(100));
 }
            
@@ -368,7 +390,92 @@ void task_rtc(void *pvParameters)
     }
 }
 //----------------------------------------------------TAREA DE XXXXXXXXX------------------------------------------------------------
+void task_pid(void *pvParameters)
+{ 
+    float TARGET=0.0f;
+    estructura_setpoint data;
+   // 1. Verificación PWM
+    pwm_config_t fan = {
+        .pin = PIN_PWM,
+        .wrap = 4999,
+        .clk_div = 1.0f
+    };
+    pwm_init_config(&fan);
+    
+    // Prueba manual del ventilador
+    /*printf("Prueba manual del ventilador:\n");
+    for(int pwm = 3500; pwm <= MAX_PWM; pwm += 500) {
+        pwm_set_level(&fan, pwm);
+        printf("PWM: %d, ¿Está soplando? (espera 3 seg)\n", pwm);
+        sleep_ms(3000);
+    }*/
 
+    // 2. Verificación sensor
+    hc_sr04_t sensor;
+    hc_sr04_init(&sensor, PIN_TRIG, PIN_ECHO);
+    /*printf("\nPrueba del sensor:\n");
+    for(int i = 0; i < 5; i++) {
+        float dist = hc_sr04_get_distance_cm(&sensor);
+        printf("Medición %d: %.2f cm\n", i+1, dist);
+        sleep_ms(200);
+    }*/
+
+    // 3. Sistema completo
+    PIDController pid = {
+        .Kp = KP, .Ki = KI, .Kd = KD,
+        .tau = 0.03f,
+        .limMin = MIN_PWM,
+        .limMax = MAX_PWM,
+        .integrator = (MAX_PWM + MIN_PWM)/2.0f,
+        .prevError = 0,
+        .differentiator = 0,
+        .prevmedicion = TARGET,
+        .out = MAX_PWM * 0.7f
+    };
+    PIDController_Init(&pid);
+
+    float filtered_height = TARGET;
+    const float alpha = 0.3f;
+    pwm_set_level(&fan,3500);
+    sleep_ms(3000);
+    printf("Fin de prueba de elevacion con 3500\n");
+
+    while(true) 
+    {
+        xQueueReceive(queue_setpoint,&data,pdMS_TO_TICKS(5));
+        printf("Altura de task_setpoint:%lu, %.2f, %.2f\n",data.setpoint, data.setpoint_max,data.setpoint_min);
+        TARGET = (float)(data.setpoint);
+        //Medición robusta
+        float raw_dist = hc_sr04_get_distance_cm(&sensor);
+        if(raw_dist <= 2.0f && raw_dist >= SENSOR_HEIGHT -2.0f) 
+        {
+            printf("Medicion invalida:%.2f cm\n",raw_dist);
+            pwm_set_level(&fan,MAX_PWM*0.8f);
+            continue;
+        } 
+        float current_height = SENSOR_HEIGHT - raw_dist;
+        xQueueSend(queue_hcsr04,&current_height,pdMS_TO_TICKS(5));
+        filtered_height = alpha * current_height + (1-alpha) * filtered_height;
+        //Control PID
+        float control = PIDController_Update(&pid, TARGET, filtered_height, 0.02f);
+        uint16_t pwm = (int16_t)(control);
+        //Limites de seguridad con histeresis
+        static uint16_t last_pwm = BASE_PWM;
+        if(abs(pwm - last_pwm > 100))
+        {
+            pwm = (pwm + last_pwm*2)/3; //Promedio ponderado
+        }
+        pwm = (pwm < MIN_PWM) ? MIN_PWM : (pwm > MAX_PWM) ? MAX_PWM : pwm;
+        pwm_set_level(&fan, pwm);
+        last_pwm=pwm;
+
+        //printf("Control: %.2f | PWM: %d\n", control, pwm);
+        //printf("Alt: %.2fcm | PWM: %4d | Err: %.2f\n", filtered_height, pwm, TARGET_HEIGHT - filtered_height);
+        printf("Altura:%.2f,Maximo:45,Minimo:0\n",filtered_height); //Para Serial Plotter en Arduino IDE
+        vTaskDelay(pdMS_TO_TICKS((int)(DT*1000)));
+    }    
+           
+}
 /*---------------------------------------------------PROGRAMA PRINCIPAL-----------------------------------------------------------*/
 int main(void) 
 {
@@ -379,7 +486,7 @@ int main(void)
     queue_rtc = xQueueCreate(5,sizeof(float));
     queue_hcsr04 = xQueueCreate(5,sizeof(float));
     queue_setpoint = xQueueCreate(5,sizeof(estructura_setpoint));
-    queue_pwm = xQueueCreate(5,sizeof(uint16_t));
+    queue_leds = xQueueCreate(5,sizeof(uint16_t));
     queue_altura = xQueueCreate(5,sizeof(uint16_t));
     queue_max_salida = xQueueCreate(5,sizeof(uint16_t));
     queue_min_salida = xQueueCreate(5,sizeof(uint16_t));
@@ -390,11 +497,12 @@ int main(void)
     xTaskCreate(task_SetPoint,"SetPoint",256,NULL,2,NULL);
     //xTaskCreate(task_monitor_gpio,"boton",256,NULL,2,NULL);
     //xTaskCreate(task_hcsr04,"MedicionDeDistancia",256,NULL,2,NULL);
-    xTaskCreate(task_guardiana_sd,"guardianaSD",256,NULL,2,NULL);
-    //xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
+    //xTaskCreate(task_guardiana_sd,"guardianaSD",256,NULL,2,NULL);
+    xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
     xTaskCreate(task_debounce_boton, "debounce_boton", 1024, NULL, 1, NULL);
     //xTaskCreate(task_guardiana_leds,"guardianaLEDS",256,NULL,2,NULL);
-    xTaskCreate(task_rtc,"regsitro_fecha",256,NULL,2,NULL);
+    //xTaskCreate(task_rtc,"regsitro_fecha",256,NULL,2,NULL);
+    xTaskCreate(task_pid,"control_pid",256,NULL,2,NULL);
 
     // Arranca el scheduler
     vTaskStartScheduler();

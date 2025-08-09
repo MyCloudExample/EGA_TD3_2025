@@ -17,7 +17,7 @@
 // Configuración física
 #define BALL_DIAMETER_CM 7.8f
 #define BALL_WEIGHT_G 9.0f
-#define TARGET_HEIGHT 10.0f
+#define TARGET_HEIGHT 30.0f
 #define SENSOR_HEIGHT 45.0f
 
 // Parámetros iniciales (ajustar durante prueba)

@@ -370,6 +370,15 @@ pico_sdk_IS_TOP_LEVEL:STATIC=OFF
 pico_sdk_SOURCE_DIR:STATIC=C:/Users/nahue/.pico-sdk/sdk/2.1.1
 
 //Value Computed by CMake
+pid_controller_BINARY_DIR:STATIC=C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/pid_controller
+
+//Value Computed by CMake
+pid_controller_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+pid_controller_SOURCE_DIR:STATIC=C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/pid_controller
+
+//Value Computed by CMake
 pwm_lib_BINARY_DIR:STATIC=C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/pwm_lib
 
 //Value Computed by CMake
@@ -500,7 +509,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=110
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=111
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
