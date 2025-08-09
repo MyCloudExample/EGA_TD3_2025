@@ -235,3 +235,6 @@ C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Fir
 C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/ds3231/CMakeFiles/ds3231.dir
 C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/ds3231/CMakeFiles/edit_cache.dir
 C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/ds3231/CMakeFiles/rebuild_cache.dir
+C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/pid_controller/CMakeFiles/pid_controller.dir
+C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/pid_controller/CMakeFiles/edit_cache.dir
+C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/pid_controller/CMakeFiles/rebuild_cache.dir
