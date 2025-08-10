@@ -74,7 +74,7 @@ QueueHandle_t queue_rtc; //Envia datos desde task_rtc a task_pid, task_guardian_
 QueueHandle_t queue_hcsr04; //Envia datos desde task_hc_sr04 a task_pid, task_guardiana_lcd, task_guardiana_sd
 QueueHandle_t queue_setpoint; //Envia datos desde task_setpoint a task_pid, task_guardiana_lcd, task_guardiana_sd
 QueueHandle_t queue_leds; //Envia datos a la tarea task_guardiana_leds 
-QueueHandle_t queue_altura;
+QueueHandle_t queue_sd; //Envia datos a la memoria SD
 QueueHandle_t queue_max;
 QueueHandle_t queue_min;
 QueueHandle_t queue_max_salida;
@@ -171,7 +171,7 @@ void task_guardiana_lcd(void *pvParameter)
 void task_guardiana_sd(void *params) 
 { estructura_setpoint datasd;
   ds3231_time_t rtcsd;
-  char buffer[30];
+  char buffer[200];
 
     uart_init(UART_ID, UART_BAUDRATE);
     gpio_set_function(PIN_TX, GPIO_FUNC_UART);
@@ -179,23 +179,11 @@ void task_guardiana_sd(void *params)
     
     while(true) 
     {
-        xQueueReceive(queue_setpoint, &datasd, pdMS_TO_TICKS(100));
-        sprintf(buffer,"Altura seteada: %lu\n ",datasd.setpoint);
-        uart_puts(UART_ID, buffer);
-        vTaskDelay(pdMS_TO_TICKS(200));
-        sprintf(buffer,"Altura maxima: %.2f\n ",datasd.setpoint_max);
-        uart_puts(UART_ID, buffer);
-        vTaskDelay(pdMS_TO_TICKS(200));
-        sprintf(buffer,"Altura minima: %.2f\n ",datasd.setpoint_min);
-        uart_puts(UART_ID, buffer);
-        vTaskDelay(pdMS_TO_TICKS(200));
-
+        xQueueReceive(queue_sd, &datasd, pdMS_TO_TICKS(100));
         xQueueReceive(queue_rtc,&rtcsd,pdMS_TO_TICKS(100));
-        sprintf(buffer,"date: %d/%d/%d\n ",rtcsd.day,rtcsd.month,rtcsd.year);
+        sprintf(buffer,"FECHA:%d/%d/%d, HORA:%2d:%2d:%2d, Altura seteada:%lu, Altura maxima:%.2f, Altura minima:%.2f\n",rtcsd.day,rtcsd.month,rtcsd.year,rtcsd.hours,rtcsd.minutes,rtcsd.seconds,datasd.setpoint, datasd.setpoint_max,datasd.setpoint_min);
         uart_puts(UART_ID, buffer);
-        vTaskDelay(pdMS_TO_TICKS(100));
-        sprintf(buffer,"hour: %2d:%2d:%2d\n ",rtcsd.hours,rtcsd.minutes,rtcsd.seconds);
-        uart_puts(UART_ID, buffer);
+        vTaskDelay(pdMS_TO_TICKS(200));
     }
 
 }
@@ -287,6 +275,7 @@ void task_SetPoint(void *params)
         }
        xQueueSend(queue_setpoint, &data, pdMS_TO_TICKS(100)); //Se quedara aqui ya que no se desopucpa la cola
        xQueueSend(queue_leds,&data,pdMS_TO_TICKS(100));
+       xQueueSend(queue_sd,&data,pdMS_TO_TICKS(100)); //Envia datos a la task_guardian_sd
        vTaskDelay(pdMS_TO_TICKS(100));
 }
            
@@ -482,7 +471,7 @@ int main(void)
     queue_hcsr04 = xQueueCreate(5,sizeof(float));
     queue_setpoint = xQueueCreate(5,sizeof(estructura_setpoint));
     queue_leds = xQueueCreate(5,sizeof(estructura_setpoint));
-    queue_altura = xQueueCreate(5,sizeof(uint16_t));
+    queue_sd = xQueueCreate(5,sizeof(estructura_setpoint));
     queue_max_salida = xQueueCreate(5,sizeof(uint16_t));
     queue_min_salida = xQueueCreate(5,sizeof(uint16_t));
     cola_paginas = xQueueCreate(1, sizeof(uint8_t));   // cola que posee una unica posicion para memorizar el cambio de paginas
@@ -492,7 +481,7 @@ int main(void)
     xTaskCreate(task_SetPoint,"SetPoint",256,NULL,2,NULL);
     //xTaskCreate(task_monitor_gpio,"boton",256,NULL,2,NULL);
     //xTaskCreate(task_hcsr04,"MedicionDeDistancia",256,NULL,2,NULL);
-    //xTaskCreate(task_guardiana_sd,"guardianaSD",256,NULL,2,NULL);
+    xTaskCreate(task_guardiana_sd,"guardianaSD",256,NULL,2,NULL);
     xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
     xTaskCreate(task_debounce_boton, "debounce_boton", 1024, NULL, 1, NULL);
     xTaskCreate(task_guardiana_leds,"guardianaLEDS",256,NULL,2,NULL);
