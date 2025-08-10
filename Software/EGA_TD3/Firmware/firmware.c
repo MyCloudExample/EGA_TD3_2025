@@ -100,7 +100,9 @@ void task_init(void *params)
     lcd_init(I2C,ADDR);
     lcd_clear();
     lcd_set_cursor(0,0);
-    lcd_string("STARTING....");
+    lcd_string("UTN-FRA | TD3 | G:9");
+    for (uint32_t i = 0; i <10000000; i++)
+    {}
     //Inicializo el PWM
     pwm_init_config(&cooler);
     //COnfiguro pines de los leds banderas

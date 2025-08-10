@@ -3951,53 +3951,52 @@ LOAD C:/Users/nahue/.pico-sdk/toolchain/14_2_Rel1/bin/../lib/gcc/arm-none-eabi/1
 .rodata         0x10009648      0x5f8
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .rodata*)
  .rodata.task_guardiana_leds.str1.4
-                0x10009648      0x374 CMakeFiles/firmware.dir/firmware.c.obj
+                0x10009648      0x378 CMakeFiles/firmware.dir/firmware.c.obj
                                  0x1d (size before relaxing)
  .rodata.task_guardiana_lcd.str1.4
-                0x100099bc       0x30 CMakeFiles/firmware.dir/firmware.c.obj
+                0x100099c0       0x30 CMakeFiles/firmware.dir/firmware.c.obj
  .rodata.task_debounce_boton.str1.4
-                0x100099bc       0x41 CMakeFiles/firmware.dir/firmware.c.obj
+                0x100099c0       0x41 CMakeFiles/firmware.dir/firmware.c.obj
  .rodata.task_pid.str1.4
-                0x100099bc       0x70 CMakeFiles/firmware.dir/firmware.c.obj
+                0x100099c0       0x70 CMakeFiles/firmware.dir/firmware.c.obj
  .rodata.task_init.str1.4
-                0x100099bc       0x20 CMakeFiles/firmware.dir/firmware.c.obj
+                0x100099c0       0x24 CMakeFiles/firmware.dir/firmware.c.obj
  .rodata.task_guardiana_sd.str1.4
-                0x100099bc       0x5e CMakeFiles/firmware.dir/firmware.c.obj
+                0x100099c0       0x5e CMakeFiles/firmware.dir/firmware.c.obj
  .rodata.main.str1.4
-                0x100099bc       0x5c CMakeFiles/firmware.dir/firmware.c.obj
+                0x100099c0       0x5c CMakeFiles/firmware.dir/firmware.c.obj
  .rodata.panic.str1.4
-                0x100099bc       0x12 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_platform_panic/panic.c.obj
+                0x100099c0       0x12 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_platform_panic/panic.c.obj
  .rodata.spin_lock_claim_unused.str1.4
-                0x100099bc       0x1b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync/sync.c.obj
+                0x100099c0       0x1b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync/sync.c.obj
  .rodata.user_irq_claim_unused.str1.4
-                0x100099bc       0x1b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x100099c0       0x1b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_irq/irq.c.obj
  .rodata.timer_hardware_alarm_claim.str1.4
-                0x100099bc       0x22 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_timer/timer.c.obj
+                0x100099c0       0x22 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_timer/timer.c.obj
  .rodata.hard_assertion_failure.str1.4
-                0x100099bc        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100099c0        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime/runtime.c.obj
  .rodata.__wrap_malloc.str1.4
-                0x100099bc        0xe CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_malloc/malloc.c.obj
+                0x100099c0        0xe CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_malloc/malloc.c.obj
  .rodata.str1.4
-                0x100099bc       0x44 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+                0x100099c0       0x44 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
  .rodata.__bi_84
-                0x100099bc        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+                0x100099c0        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
  .rodata.__bi_78
-                0x100099c8        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+                0x100099cc        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
  .rodata.__bi_60
-                0x100099d4        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+                0x100099d8        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
  .rodata.__bi_54
-                0x100099e0        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+                0x100099e4        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
  .rodata.__bi_48
-                0x100099ec        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+                0x100099f0        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
  .rodata.__bi_42
-                0x100099f8        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+                0x100099fc        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
  .rodata.__bi_34
-                0x10009a04        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+                0x10009a08        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
  .rodata.__bi_26
-                0x10009a10        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+                0x10009a14        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
  .rodata._ftoa.str1.4
-                0x10009a1c       0x15 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_printf/printf.c.obj
- *fill*         0x10009a1c        0x4 
+                0x10009a20       0x15 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_printf/printf.c.obj
  .rodata.pow10.0
                 0x10009a20       0x50 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_printf/printf.c.obj
  .rodata.crlf_str.0
@@ -4856,125 +4855,125 @@ LOAD linker stubs
  .comment       0x00000045       0x46 HC_SR04/libHC_SR04.a(HC_SR04.c.obj)
  .comment       0x00000045       0x46 pid_controller/libpid_controller.a(pid_controller.c.obj)
 
-.debug_info     0x00000000    0x46414
- .debug_info    0x00000000     0x2e54 CMakeFiles/firmware.dir/firmware.c.obj
- .debug_info    0x00002e54     0x2446 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_info    0x0000529a      0x1be CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_platform_panic/panic.c.obj
- .debug_info    0x00005458      0xb78 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/hardware_claim/claim.c.obj
- .debug_info    0x00005fd0      0x46f CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync/sync.c.obj
- .debug_info    0x0000643f     0x145e CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.obj
- .debug_info    0x0000789d     0x260d CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_irq/irq.c.obj
- .debug_info    0x00009eaa      0x187 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/lock_core.c.obj
- .debug_info    0x0000a031     0x1e7c CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/mutex.c.obj
- .debug_info    0x0000bead      0x389 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/critical_section.c.obj
- .debug_info    0x0000c236     0x5487 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_time/time.c.obj
- .debug_info    0x000116bd     0x30c6 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_timer/timer.c.obj
- .debug_info    0x00014783     0x19a6 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_uart/uart.c.obj
- .debug_info    0x00016129     0x28a2 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_info    0x000189cb      0x507 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_pll/pll.c.obj
- .debug_info    0x00018ed2      0xba4 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
- .debug_info    0x00019a76      0x26c CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_ticks/ticks.c.obj
- .debug_info    0x00019ce2      0x914 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_info    0x0001a5f6      0x1c4 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom_lock.c.obj
- .debug_info    0x0001a7ba      0x316 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_boot_lock/boot_lock.c.obj
- .debug_info    0x0001aad0      0x1b1 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_info    0x0001ac81      0x21a CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_info    0x0001ae9b     0x1bcd CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init.c.obj
- .debug_info    0x0001ca68      0x7c9 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.obj
- .debug_info    0x0001d231       0x23 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_aeabi_dcp.S.obj
- .debug_info    0x0001d254      0x3e4 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_malloc/malloc.c.obj
- .debug_info    0x0001d638      0x2e2 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
- .debug_info    0x0001d91a     0x22ff CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_printf/printf.c.obj
- .debug_info    0x0001fc19       0x23 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_crt0/crt0.S.obj
- .debug_info    0x0001fc3c      0xbdf CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_clib_interface/newlib_interface.c.obj
- .debug_info    0x0002081b     0x1c5b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_info    0x00022476      0xb12 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
- .debug_info    0x00022f88     0x1f93 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
- .debug_info    0x00024f1b      0x72b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
- .debug_info    0x00025646      0x2b7 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_unique_id/unique_id.c.obj
- .debug_info    0x000258fd     0x2d28 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
- .debug_info    0x00028625     0x126b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
- .debug_info    0x00029890     0x4b88 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd.c.obj
- .debug_info    0x0002e418      0xc13 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd_control.c.obj
- .debug_info    0x0002f02b     0x210b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/cdc/cdc_device.c.obj
- .debug_info    0x00031136     0x178d CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/vendor/vendor_device.c.obj
- .debug_info    0x000328c3     0x2081 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/tusb.c.obj
- .debug_info    0x00034944     0x28a2 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/common/tusb_fifo.c.obj
- .debug_info    0x000371e6      0x83b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_exception/exception.c.obj
- .debug_info    0x00037a21     0x1d1c CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_i2c/i2c.c.obj
- .debug_info    0x0003973d      0x410 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_adc/adc.c.obj
- .debug_info    0x00039b4d     0x2b9a freertos/libfreertos.a(queue.c.obj)
- .debug_info    0x0003c6e7     0x333d freertos/libfreertos.a(tasks.c.obj)
- .debug_info    0x0003fa24     0x1902 freertos/libfreertos.a(timers.c.obj)
- .debug_info    0x00041326      0x188 freertos/libfreertos.a(heap_3.c.obj)
- .debug_info    0x000414ae     0x1c46 freertos/libfreertos.a(port.c.obj)
- .debug_info    0x000430f4      0x14d freertos/libfreertos.a(portasm.c.obj)
- .debug_info    0x00043241      0xc2d freertos/libfreertos.a(event_groups.c.obj)
- .debug_info    0x00043e6e      0x2b5 freertos/libfreertos.a(list.c.obj)
- .debug_info    0x00044123      0x9e2 pwm_lib/libpwm_lib.a(pwm_lib.c.obj)
- .debug_info    0x00044b05      0xbde lcd/liblcd.a(lcd.c.obj)
- .debug_info    0x000456e3      0xbcc HC_SR04/libHC_SR04.a(HC_SR04.c.obj)
- .debug_info    0x000462af      0x165 pid_controller/libpid_controller.a(pid_controller.c.obj)
+.debug_info     0x00000000    0x46424
+ .debug_info    0x00000000     0x2e64 CMakeFiles/firmware.dir/firmware.c.obj
+ .debug_info    0x00002e64     0x2446 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_info    0x000052aa      0x1be CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_platform_panic/panic.c.obj
+ .debug_info    0x00005468      0xb78 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/hardware_claim/claim.c.obj
+ .debug_info    0x00005fe0      0x46f CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_info    0x0000644f     0x145e CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.obj
+ .debug_info    0x000078ad     0x260d CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_info    0x00009eba      0x187 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/lock_core.c.obj
+ .debug_info    0x0000a041     0x1e7c CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/mutex.c.obj
+ .debug_info    0x0000bebd      0x389 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/critical_section.c.obj
+ .debug_info    0x0000c246     0x5487 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_time/time.c.obj
+ .debug_info    0x000116cd     0x30c6 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_info    0x00014793     0x19a6 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_uart/uart.c.obj
+ .debug_info    0x00016139     0x28a2 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_info    0x000189db      0x507 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_info    0x00018ee2      0xba4 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_info    0x00019a86      0x26c CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_ticks/ticks.c.obj
+ .debug_info    0x00019cf2      0x914 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_info    0x0001a606      0x1c4 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom_lock.c.obj
+ .debug_info    0x0001a7ca      0x316 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_boot_lock/boot_lock.c.obj
+ .debug_info    0x0001aae0      0x1b1 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_info    0x0001ac91      0x21a CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_info    0x0001aeab     0x1bcd CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init.c.obj
+ .debug_info    0x0001ca78      0x7c9 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.obj
+ .debug_info    0x0001d241       0x23 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_aeabi_dcp.S.obj
+ .debug_info    0x0001d264      0x3e4 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_malloc/malloc.c.obj
+ .debug_info    0x0001d648      0x2e2 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+ .debug_info    0x0001d92a     0x22ff CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_printf/printf.c.obj
+ .debug_info    0x0001fc29       0x23 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_crt0/crt0.S.obj
+ .debug_info    0x0001fc4c      0xbdf CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_clib_interface/newlib_interface.c.obj
+ .debug_info    0x0002082b     0x1c5b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_info    0x00022486      0xb12 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+ .debug_info    0x00022f98     0x1f93 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+ .debug_info    0x00024f2b      0x72b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+ .debug_info    0x00025656      0x2b7 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_unique_id/unique_id.c.obj
+ .debug_info    0x0002590d     0x2d28 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+ .debug_info    0x00028635     0x126b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ .debug_info    0x000298a0     0x4b88 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd.c.obj
+ .debug_info    0x0002e428      0xc13 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd_control.c.obj
+ .debug_info    0x0002f03b     0x210b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+ .debug_info    0x00031146     0x178d CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/vendor/vendor_device.c.obj
+ .debug_info    0x000328d3     0x2081 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/tusb.c.obj
+ .debug_info    0x00034954     0x28a2 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/common/tusb_fifo.c.obj
+ .debug_info    0x000371f6      0x83b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_exception/exception.c.obj
+ .debug_info    0x00037a31     0x1d1c CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_i2c/i2c.c.obj
+ .debug_info    0x0003974d      0x410 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_adc/adc.c.obj
+ .debug_info    0x00039b5d     0x2b9a freertos/libfreertos.a(queue.c.obj)
+ .debug_info    0x0003c6f7     0x333d freertos/libfreertos.a(tasks.c.obj)
+ .debug_info    0x0003fa34     0x1902 freertos/libfreertos.a(timers.c.obj)
+ .debug_info    0x00041336      0x188 freertos/libfreertos.a(heap_3.c.obj)
+ .debug_info    0x000414be     0x1c46 freertos/libfreertos.a(port.c.obj)
+ .debug_info    0x00043104      0x14d freertos/libfreertos.a(portasm.c.obj)
+ .debug_info    0x00043251      0xc2d freertos/libfreertos.a(event_groups.c.obj)
+ .debug_info    0x00043e7e      0x2b5 freertos/libfreertos.a(list.c.obj)
+ .debug_info    0x00044133      0x9e2 pwm_lib/libpwm_lib.a(pwm_lib.c.obj)
+ .debug_info    0x00044b15      0xbde lcd/liblcd.a(lcd.c.obj)
+ .debug_info    0x000456f3      0xbcc HC_SR04/libHC_SR04.a(HC_SR04.c.obj)
+ .debug_info    0x000462bf      0x165 pid_controller/libpid_controller.a(pid_controller.c.obj)
 
-.debug_abbrev   0x00000000     0xbedc
- .debug_abbrev  0x00000000      0x5b9 CMakeFiles/firmware.dir/firmware.c.obj
- .debug_abbrev  0x000005b9      0x56d CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_abbrev  0x00000b26      0x12b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_platform_panic/panic.c.obj
- .debug_abbrev  0x00000c51      0x35e CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/hardware_claim/claim.c.obj
- .debug_abbrev  0x00000faf      0x22f CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync/sync.c.obj
- .debug_abbrev  0x000011de      0x26e CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.obj
- .debug_abbrev  0x0000144c      0x644 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_irq/irq.c.obj
- .debug_abbrev  0x00001a90      0x11e CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/lock_core.c.obj
- .debug_abbrev  0x00001bae      0x49b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/mutex.c.obj
- .debug_abbrev  0x00002049      0x23a CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/critical_section.c.obj
- .debug_abbrev  0x00002283      0x644 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_time/time.c.obj
- .debug_abbrev  0x000028c7      0x4f9 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_timer/timer.c.obj
- .debug_abbrev  0x00002dc0      0x367 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_uart/uart.c.obj
- .debug_abbrev  0x00003127      0x4f0 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_abbrev  0x00003617      0x1a8 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_pll/pll.c.obj
- .debug_abbrev  0x000037bf      0x34b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
- .debug_abbrev  0x00003b0a      0x146 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_ticks/ticks.c.obj
- .debug_abbrev  0x00003c50      0x36d CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_abbrev  0x00003fbd       0xfb CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom_lock.c.obj
- .debug_abbrev  0x000040b8      0x1de CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_boot_lock/boot_lock.c.obj
- .debug_abbrev  0x00004296      0x109 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_abbrev  0x0000439f      0x182 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_abbrev  0x00004521      0x2dd CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init.c.obj
- .debug_abbrev  0x000047fe      0x2b8 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.obj
- .debug_abbrev  0x00004ab6       0x12 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_aeabi_dcp.S.obj
- .debug_abbrev  0x00004ac8      0x1b9 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_malloc/malloc.c.obj
- .debug_abbrev  0x00004c81       0xb8 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
- .debug_abbrev  0x00004d39      0x505 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_printf/printf.c.obj
- .debug_abbrev  0x0000523e       0x12 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_crt0/crt0.S.obj
- .debug_abbrev  0x00005250      0x375 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_clib_interface/newlib_interface.c.obj
- .debug_abbrev  0x000055c5      0x609 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_abbrev  0x00005bce      0x3b6 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
- .debug_abbrev  0x00005f84      0x5f4 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
- .debug_abbrev  0x00006578      0x16c CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
- .debug_abbrev  0x000066e4      0x1b2 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_unique_id/unique_id.c.obj
- .debug_abbrev  0x00006896      0x610 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
- .debug_abbrev  0x00006ea6      0x48e CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
- .debug_abbrev  0x00007334      0x84e CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd.c.obj
- .debug_abbrev  0x00007b82      0x3ed CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd_control.c.obj
- .debug_abbrev  0x00007f6f      0x5ac CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/cdc/cdc_device.c.obj
- .debug_abbrev  0x0000851b      0x4d0 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/vendor/vendor_device.c.obj
- .debug_abbrev  0x000089eb      0x575 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/tusb.c.obj
- .debug_abbrev  0x00008f60      0x44d CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/common/tusb_fifo.c.obj
- .debug_abbrev  0x000093ad      0x2ea CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_exception/exception.c.obj
- .debug_abbrev  0x00009697      0x4a5 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_i2c/i2c.c.obj
- .debug_abbrev  0x00009b3c      0x141 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_adc/adc.c.obj
- .debug_abbrev  0x00009c7d      0x415 freertos/libfreertos.a(queue.c.obj)
- .debug_abbrev  0x0000a092      0x4fc freertos/libfreertos.a(tasks.c.obj)
- .debug_abbrev  0x0000a58e      0x3ee freertos/libfreertos.a(timers.c.obj)
- .debug_abbrev  0x0000a97c      0x136 freertos/libfreertos.a(heap_3.c.obj)
- .debug_abbrev  0x0000aab2      0x57b freertos/libfreertos.a(port.c.obj)
- .debug_abbrev  0x0000b02d       0xb6 freertos/libfreertos.a(portasm.c.obj)
- .debug_abbrev  0x0000b0e3      0x2d6 freertos/libfreertos.a(event_groups.c.obj)
- .debug_abbrev  0x0000b3b9      0x114 freertos/libfreertos.a(list.c.obj)
- .debug_abbrev  0x0000b4cd      0x34f pwm_lib/libpwm_lib.a(pwm_lib.c.obj)
- .debug_abbrev  0x0000b81c      0x2d1 lcd/liblcd.a(lcd.c.obj)
- .debug_abbrev  0x0000baed      0x2fe HC_SR04/libHC_SR04.a(HC_SR04.c.obj)
- .debug_abbrev  0x0000bdeb       0xf1 pid_controller/libpid_controller.a(pid_controller.c.obj)
+.debug_abbrev   0x00000000     0xbef2
+ .debug_abbrev  0x00000000      0x5cf CMakeFiles/firmware.dir/firmware.c.obj
+ .debug_abbrev  0x000005cf      0x56d CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_abbrev  0x00000b3c      0x12b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_platform_panic/panic.c.obj
+ .debug_abbrev  0x00000c67      0x35e CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/hardware_claim/claim.c.obj
+ .debug_abbrev  0x00000fc5      0x22f CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_abbrev  0x000011f4      0x26e CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.obj
+ .debug_abbrev  0x00001462      0x644 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_abbrev  0x00001aa6      0x11e CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/lock_core.c.obj
+ .debug_abbrev  0x00001bc4      0x49b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/mutex.c.obj
+ .debug_abbrev  0x0000205f      0x23a CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/critical_section.c.obj
+ .debug_abbrev  0x00002299      0x644 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_time/time.c.obj
+ .debug_abbrev  0x000028dd      0x4f9 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_abbrev  0x00002dd6      0x367 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_uart/uart.c.obj
+ .debug_abbrev  0x0000313d      0x4f0 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_abbrev  0x0000362d      0x1a8 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_abbrev  0x000037d5      0x34b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_abbrev  0x00003b20      0x146 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_ticks/ticks.c.obj
+ .debug_abbrev  0x00003c66      0x36d CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_abbrev  0x00003fd3       0xfb CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom_lock.c.obj
+ .debug_abbrev  0x000040ce      0x1de CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_boot_lock/boot_lock.c.obj
+ .debug_abbrev  0x000042ac      0x109 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_abbrev  0x000043b5      0x182 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_abbrev  0x00004537      0x2dd CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init.c.obj
+ .debug_abbrev  0x00004814      0x2b8 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.obj
+ .debug_abbrev  0x00004acc       0x12 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_aeabi_dcp.S.obj
+ .debug_abbrev  0x00004ade      0x1b9 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_malloc/malloc.c.obj
+ .debug_abbrev  0x00004c97       0xb8 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+ .debug_abbrev  0x00004d4f      0x505 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_printf/printf.c.obj
+ .debug_abbrev  0x00005254       0x12 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_crt0/crt0.S.obj
+ .debug_abbrev  0x00005266      0x375 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_clib_interface/newlib_interface.c.obj
+ .debug_abbrev  0x000055db      0x609 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_abbrev  0x00005be4      0x3b6 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+ .debug_abbrev  0x00005f9a      0x5f4 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+ .debug_abbrev  0x0000658e      0x16c CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+ .debug_abbrev  0x000066fa      0x1b2 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_unique_id/unique_id.c.obj
+ .debug_abbrev  0x000068ac      0x610 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+ .debug_abbrev  0x00006ebc      0x48e CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ .debug_abbrev  0x0000734a      0x84e CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd.c.obj
+ .debug_abbrev  0x00007b98      0x3ed CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd_control.c.obj
+ .debug_abbrev  0x00007f85      0x5ac CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+ .debug_abbrev  0x00008531      0x4d0 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/vendor/vendor_device.c.obj
+ .debug_abbrev  0x00008a01      0x575 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/tusb.c.obj
+ .debug_abbrev  0x00008f76      0x44d CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/common/tusb_fifo.c.obj
+ .debug_abbrev  0x000093c3      0x2ea CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_exception/exception.c.obj
+ .debug_abbrev  0x000096ad      0x4a5 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_i2c/i2c.c.obj
+ .debug_abbrev  0x00009b52      0x141 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_adc/adc.c.obj
+ .debug_abbrev  0x00009c93      0x415 freertos/libfreertos.a(queue.c.obj)
+ .debug_abbrev  0x0000a0a8      0x4fc freertos/libfreertos.a(tasks.c.obj)
+ .debug_abbrev  0x0000a5a4      0x3ee freertos/libfreertos.a(timers.c.obj)
+ .debug_abbrev  0x0000a992      0x136 freertos/libfreertos.a(heap_3.c.obj)
+ .debug_abbrev  0x0000aac8      0x57b freertos/libfreertos.a(port.c.obj)
+ .debug_abbrev  0x0000b043       0xb6 freertos/libfreertos.a(portasm.c.obj)
+ .debug_abbrev  0x0000b0f9      0x2d6 freertos/libfreertos.a(event_groups.c.obj)
+ .debug_abbrev  0x0000b3cf      0x114 freertos/libfreertos.a(list.c.obj)
+ .debug_abbrev  0x0000b4e3      0x34f pwm_lib/libpwm_lib.a(pwm_lib.c.obj)
+ .debug_abbrev  0x0000b832      0x2d1 lcd/liblcd.a(lcd.c.obj)
+ .debug_abbrev  0x0000bb03      0x2fe HC_SR04/libHC_SR04.a(HC_SR04.c.obj)
+ .debug_abbrev  0x0000be01       0xf1 pid_controller/libpid_controller.a(pid_controller.c.obj)
 
 .debug_loclists
                 0x00000000    0x215ac
@@ -5320,65 +5319,65 @@ LOAD linker stubs
  .debug_rnglists
                 0x00005a05       0x1a pid_controller/libpid_controller.a(pid_controller.c.obj)
 
-.debug_line     0x00000000    0x2e62a
- .debug_line    0x00000000     0x13fd CMakeFiles/firmware.dir/firmware.c.obj
- .debug_line    0x000013fd     0x1bb1 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_gpio/gpio.c.obj
- .debug_line    0x00002fae      0x285 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_platform_panic/panic.c.obj
- .debug_line    0x00003233      0x810 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/hardware_claim/claim.c.obj
- .debug_line    0x00003a43      0x424 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync/sync.c.obj
- .debug_line    0x00003e67      0x3a4 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.obj
- .debug_line    0x0000420b     0x1708 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_irq/irq.c.obj
- .debug_line    0x00005913      0x270 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/lock_core.c.obj
- .debug_line    0x00005b83     0x1280 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/mutex.c.obj
- .debug_line    0x00006e03      0x3c0 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/critical_section.c.obj
- .debug_line    0x000071c3     0x315e CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_time/time.c.obj
- .debug_line    0x0000a321     0x1d68 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_timer/timer.c.obj
- .debug_line    0x0000c089      0xea1 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_uart/uart.c.obj
- .debug_line    0x0000cf2a     0x1e69 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_clocks/clocks.c.obj
- .debug_line    0x0000ed93      0x4d9 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_pll/pll.c.obj
- .debug_line    0x0000f26c      0x9ca CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
- .debug_line    0x0000fc36      0x33a CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_ticks/ticks.c.obj
- .debug_line    0x0000ff70      0x690 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom.c.obj
- .debug_line    0x00010600      0x3ad CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom_lock.c.obj
- .debug_line    0x000109ad      0x427 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_boot_lock/boot_lock.c.obj
- .debug_line    0x00010dd4      0x35c CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_xosc/xosc.c.obj
- .debug_line    0x00011130      0x319 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime/runtime.c.obj
- .debug_line    0x00011449      0x5dc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init.c.obj
- .debug_line    0x00011a25      0x580 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.obj
- .debug_line    0x00011fa5      0x28f CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_aeabi_dcp.S.obj
- .debug_line    0x00012234      0x296 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_malloc/malloc.c.obj
- .debug_line    0x000124ca      0x1f5 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
- .debug_line    0x000126bf     0x1bb6 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_printf/printf.c.obj
- .debug_line    0x00014275       0xa1 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_crt0/crt0.S.obj
- .debug_line    0x00014316      0x830 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_clib_interface/newlib_interface.c.obj
- .debug_line    0x00014b46     0x152b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio/stdio.c.obj
- .debug_line    0x00016071      0x50e CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
- .debug_line    0x0001657f     0x1143 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
- .debug_line    0x000176c2      0x3bf CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
- .debug_line    0x00017a81      0x73e CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_unique_id/unique_id.c.obj
- .debug_line    0x000181bf     0x1ea6 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
- .debug_line    0x0001a065      0xc60 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
- .debug_line    0x0001acc5     0x26ac CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd.c.obj
- .debug_line    0x0001d371      0x73b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd_control.c.obj
- .debug_line    0x0001daac     0x1070 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/cdc/cdc_device.c.obj
- .debug_line    0x0001eb1c      0xa66 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/vendor/vendor_device.c.obj
- .debug_line    0x0001f582     0x1342 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/tusb.c.obj
- .debug_line    0x000208c4     0x18fe CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/common/tusb_fifo.c.obj
- .debug_line    0x000221c2      0x592 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_exception/exception.c.obj
- .debug_line    0x00022754     0x128b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_i2c/i2c.c.obj
- .debug_line    0x000239df      0x3ef CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_adc/adc.c.obj
- .debug_line    0x00023dce     0x290d freertos/libfreertos.a(queue.c.obj)
- .debug_line    0x000266db     0x3633 freertos/libfreertos.a(tasks.c.obj)
- .debug_line    0x00029d0e      0xe6a freertos/libfreertos.a(timers.c.obj)
- .debug_line    0x0002ab78      0x29e freertos/libfreertos.a(heap_3.c.obj)
- .debug_line    0x0002ae16     0x12e9 freertos/libfreertos.a(port.c.obj)
- .debug_line    0x0002c0ff      0x2c9 freertos/libfreertos.a(portasm.c.obj)
- .debug_line    0x0002c3c8      0x9cf freertos/libfreertos.a(event_groups.c.obj)
- .debug_line    0x0002cd97      0x418 freertos/libfreertos.a(list.c.obj)
- .debug_line    0x0002d1af      0x5ff pwm_lib/libpwm_lib.a(pwm_lib.c.obj)
- .debug_line    0x0002d7ae      0x546 lcd/liblcd.a(lcd.c.obj)
- .debug_line    0x0002dcf4      0x6db HC_SR04/libHC_SR04.a(HC_SR04.c.obj)
- .debug_line    0x0002e3cf      0x25b pid_controller/libpid_controller.a(pid_controller.c.obj)
+.debug_line     0x00000000    0x2e636
+ .debug_line    0x00000000     0x1409 CMakeFiles/firmware.dir/firmware.c.obj
+ .debug_line    0x00001409     0x1bb1 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_gpio/gpio.c.obj
+ .debug_line    0x00002fba      0x285 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_platform_panic/panic.c.obj
+ .debug_line    0x0000323f      0x810 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/hardware_claim/claim.c.obj
+ .debug_line    0x00003a4f      0x424 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync/sync.c.obj
+ .debug_line    0x00003e73      0x3a4 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.obj
+ .debug_line    0x00004217     0x1708 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_irq/irq.c.obj
+ .debug_line    0x0000591f      0x270 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/lock_core.c.obj
+ .debug_line    0x00005b8f     0x1280 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/mutex.c.obj
+ .debug_line    0x00006e0f      0x3c0 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_sync/critical_section.c.obj
+ .debug_line    0x000071cf     0x315e CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/common/pico_time/time.c.obj
+ .debug_line    0x0000a32d     0x1d68 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_timer/timer.c.obj
+ .debug_line    0x0000c095      0xea1 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_uart/uart.c.obj
+ .debug_line    0x0000cf36     0x1e69 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_clocks/clocks.c.obj
+ .debug_line    0x0000ed9f      0x4d9 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_pll/pll.c.obj
+ .debug_line    0x0000f278      0x9ca CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_watchdog/watchdog.c.obj
+ .debug_line    0x0000fc42      0x33a CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_ticks/ticks.c.obj
+ .debug_line    0x0000ff7c      0x690 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom.c.obj
+ .debug_line    0x0001060c      0x3ad CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_bootrom/bootrom_lock.c.obj
+ .debug_line    0x000109b9      0x427 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_boot_lock/boot_lock.c.obj
+ .debug_line    0x00010de0      0x35c CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_xosc/xosc.c.obj
+ .debug_line    0x0001113c      0x319 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime/runtime.c.obj
+ .debug_line    0x00011455      0x5dc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init.c.obj
+ .debug_line    0x00011a31      0x580 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.obj
+ .debug_line    0x00011fb1      0x28f CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_double/double_aeabi_dcp.S.obj
+ .debug_line    0x00012240      0x296 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_malloc/malloc.c.obj
+ .debug_line    0x000124d6      0x1f5 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+ .debug_line    0x000126cb     0x1bb6 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_printf/printf.c.obj
+ .debug_line    0x00014281       0xa1 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_crt0/crt0.S.obj
+ .debug_line    0x00014322      0x830 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_clib_interface/newlib_interface.c.obj
+ .debug_line    0x00014b52     0x152b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio/stdio.c.obj
+ .debug_line    0x0001607d      0x50e CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+ .debug_line    0x0001658b     0x1143 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+ .debug_line    0x000176ce      0x3bf CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+ .debug_line    0x00017a8d      0x73e CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_unique_id/unique_id.c.obj
+ .debug_line    0x000181cb     0x1ea6 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+ .debug_line    0x0001a071      0xc60 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ .debug_line    0x0001acd1     0x26ac CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd.c.obj
+ .debug_line    0x0001d37d      0x73b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/device/usbd_control.c.obj
+ .debug_line    0x0001dab8     0x1070 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+ .debug_line    0x0001eb28      0xa66 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/class/vendor/vendor_device.c.obj
+ .debug_line    0x0001f58e     0x1342 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/tusb.c.obj
+ .debug_line    0x000208d0     0x18fe CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/lib/tinyusb/src/common/tusb_fifo.c.obj
+ .debug_line    0x000221ce      0x592 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_exception/exception.c.obj
+ .debug_line    0x00022760     0x128b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_i2c/i2c.c.obj
+ .debug_line    0x000239eb      0x3ef CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_adc/adc.c.obj
+ .debug_line    0x00023dda     0x290d freertos/libfreertos.a(queue.c.obj)
+ .debug_line    0x000266e7     0x3633 freertos/libfreertos.a(tasks.c.obj)
+ .debug_line    0x00029d1a      0xe6a freertos/libfreertos.a(timers.c.obj)
+ .debug_line    0x0002ab84      0x29e freertos/libfreertos.a(heap_3.c.obj)
+ .debug_line    0x0002ae22     0x12e9 freertos/libfreertos.a(port.c.obj)
+ .debug_line    0x0002c10b      0x2c9 freertos/libfreertos.a(portasm.c.obj)
+ .debug_line    0x0002c3d4      0x9cf freertos/libfreertos.a(event_groups.c.obj)
+ .debug_line    0x0002cda3      0x418 freertos/libfreertos.a(list.c.obj)
+ .debug_line    0x0002d1bb      0x5ff pwm_lib/libpwm_lib.a(pwm_lib.c.obj)
+ .debug_line    0x0002d7ba      0x546 lcd/liblcd.a(lcd.c.obj)
+ .debug_line    0x0002dd00      0x6db HC_SR04/libHC_SR04.a(HC_SR04.c.obj)
+ .debug_line    0x0002e3db      0x25b pid_controller/libpid_controller.a(pid_controller.c.obj)
 
 .debug_str      0x00000000     0xc6ea
  .debug_str     0x00000000     0xc6ea CMakeFiles/firmware.dir/firmware.c.obj
