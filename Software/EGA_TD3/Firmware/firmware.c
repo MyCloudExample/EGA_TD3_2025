@@ -45,10 +45,10 @@
 #define DEBOUNCE_TIME_MS 50
 #define MULTI_PRESS_TIMEOUT 300
 //========================================PARAMETROS FISICOS PARA EL CONTROL PID====================================================
-#define BALL_DIAMETER_CM 7.8f
-#define BALL_WEIGHT_G 9.0f
+#define BALL_DIAMETER_CM 7.8f //Diametro de la pelota
+#define BALL_WEIGHT_G 9.0f   //Peso de la pelota
 #define TARGET_HEIGHT 20.0f //Para testeo de la tarea task_pid
-#define SENSOR_HEIGHT 45.0f
+#define SENSOR_HEIGHT 45.0f //Altura del sensor
 //========================================PARAMETROS INICIALES (SE DEBEN AJUSTAR DURANTE LAS PRUEBAS)===============================
 #define BASE_PWM 2500       // Incrementado inicialmente
 #define KP 6.0f             // Cuanto mayor sea el Kp mas rapida sera la respuesta, si es muy grande habra osiclacion e inestabilidad
@@ -56,7 +56,7 @@
 #define KD 1.2f             // Amortigua las oscilaciones, si es muy alto provocara oscilacion ya que amplifica el ruido
 #define MIN_PWM 1800        // Mínimo absoluto
 #define MAX_PWM 4000        // Máximo seguro
-#define DT      0.01f       //FActor para ajustar el tiempo de muestreo
+#define DT      0.01f       //Factor para ajustar el tiempo de muestreo
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 /*--------------------------------------VARAIBLES DE RPOGRAMA, COLAS Y SEMAFOROS----------------------------------------------------*/
 //========================================VARIABLES QUE NO SON PROPIAS DE FREERTOS==================================================
@@ -79,7 +79,7 @@ QueueHandle_t queue_max;
 QueueHandle_t queue_min;
 QueueHandle_t queue_max_salida;
 QueueHandle_t queue_min_salida;
-QueueHandle_t cola_paginas;
+QueueHandle_t cola_paginas; //Envia datos a la tarea tas_setpoint
 /*----------------------------------------------------------------------------------------------------------------------------------*/
 /*--------------------------------------TAREAS DE FREERTOS--------------------------------------------------------------------*/
 void task_init(void *params) 
@@ -200,11 +200,10 @@ void task_guardiana_sd(void *params)
 
 }
 //---------------------------------------------------TAREA GUARDIANA DE LEDS------------------------------------------------------
-void task_guardiana_leds(void *params) {
-    bool alerta_latched = false;
+void task_guardiana_leds(void *params) 
+{
     estructura_setpoint data;
     float altura = 0;
-    TickType_t tick_ultima_alerta = 0;
     gpio_init(GPIO_LED_MAX); //Inicio el pin 16
     gpio_set_dir(GPIO_LED_MAX, GPIO_OUT); //Se configura como salida
     gpio_put(GPIO_LED_MAX, 0); // Se coloca un 0 a la salida
@@ -214,42 +213,37 @@ void task_guardiana_leds(void *params) {
 
     while(true)
     {
-        if (xQueueReceive(queue_setpoint, &data, portMAX_DELAY) == pdPASS) 
+        if (xQueueReceive(queue_leds, &data, portMAX_DELAY) == pdPASS) 
         {
             printf("TARGET:%lu,MAX:%.2f,MIN:%.2f",data.setpoint,data.setpoint_max,data.setpoint_min);
         }
 
         if (xQueueReceive(queue_hcsr04, &altura, portMAX_DELAY) == pdPASS) 
         {
-            // Si superó el umbral → activa latch y guarda tiempo
-            if (altura > data.setpoint_max || altura < data.setpoint_min) 
+            if(altura > data.setpoint_max)
             {
-                alerta_latched = true;
-                tick_ultima_alerta = xTaskGetTickCount();
-                gpio_put(GPIO_LED_MAX,1);
-                gpio_put(GPIO_LED_MIN,1);
-                //printf("task_guardiana_leds | Supero un limite");
+                gpio_put(GPIO_LED_MAX,true);
+                //vTaskDelay(pdMS_TO_TICKS(100));
+            }
+            if(altura < data.setpoint_max)
+            {
+                gpio_put(GPIO_LED_MAX,false);
+                //vTaskDelay(pdMS_TO_TICKS(100));
+            }
+            if(altura < data.setpoint_min)
+            {
+                gpio_put(GPIO_LED_MIN,true);
+                //vTaskDelay(pdMS_TO_TICKS(100));
+            }
+            if(altura > data.setpoint_min)
+            {
+                gpio_put(GPIO_LED_MIN,false);
+                //vTaskDelay(pdMS_TO_TICKS(100));
             }
         }
-
-        // Si está activo y ya pasó el timeout → apagar
-        if (alerta_latched) 
-        {
-            TickType_t ahora = xTaskGetTickCount();
-            if ((ahora - tick_ultima_alerta) > pdMS_TO_TICKS(ALERTA_TIMEOUT_MS)) 
-            {
-                alerta_latched = false;
-            }
-        }
-
-        // Control de LED
-        gpio_put(GPIO_LED_MAX, 0);
-        gpio_put(GPIO_LED_MIN, 0);
-        vTaskDelay(pdMS_TO_TICKS(100));
 
     }
-
-} 
+}
 //---------------------------------------------------TAREA PARA INICAR EL SETPOINT------------------------------------------------
 void task_SetPoint(void *params)
 { uint32_t valor_adc, valor_altura;
@@ -268,7 +262,7 @@ void task_SetPoint(void *params)
         tension = (valor_adc * 3.3f) / 4095; 
         valor_altura = ((valor_adc * 3.3f) / 4095)*10;
         data.setpoint = valor_altura;
-        printf("PAGINA 1 |setpoint= %lu | Valor altura= %lu \n", data.setpoint, valor_altura);
+        //printf("PAGINA 1 |setpoint= %lu | Valor altura= %lu \n", data.setpoint, valor_altura);
         } 
         if(pagina==2) 
         {
@@ -276,7 +270,7 @@ void task_SetPoint(void *params)
             tension = (valor_adc * 3.3f) / 4095; 
             valor_altura = ((valor_adc * 3.3f) / 4095)*10;
             data.setpoint_max = valor_altura;
-            printf("PAGINA 2 |setpointMax= %.2f | Valor altura= %lu \n", data.setpoint_max, valor_altura);
+            //printf("PAGINA 2 |setpointMax= %.2f | Valor altura= %lu \n", data.setpoint_max, valor_altura);
         }
         if(pagina==3) 
         {
@@ -284,14 +278,15 @@ void task_SetPoint(void *params)
             tension = (valor_adc * 3.3f) / 4095; 
             valor_altura = ((valor_adc * 3.3f) / 4095)*10;
             data.setpoint_min = valor_altura;
-            printf("PAGINA 3 |setpointMin= %.2f | Valor altura= %lu \n", data.setpoint_min, valor_altura);
+            //printf("PAGINA 3 |setpointMin= %.2f | Valor altura= %lu \n", data.setpoint_min, valor_altura);
         }
         if(pagina==0) 
         {
             
-            printf("PAGINA 0 |setpoint= %lu | setpoint_max=%.2f | setpoint_min= %.2f \n", data.setpoint,data.setpoint_max,data.setpoint_min);
+            //printf("PAGINA 0 |setpoint= %lu | setpoint_max=%.2f | setpoint_min= %.2f \n", data.setpoint,data.setpoint_max,data.setpoint_min);
         }
        xQueueSend(queue_setpoint, &data, pdMS_TO_TICKS(100)); //Se quedara aqui ya que no se desopucpa la cola
+       xQueueSend(queue_leds,&data,pdMS_TO_TICKS(100));
        vTaskDelay(pdMS_TO_TICKS(100));
 }
            
@@ -389,7 +384,7 @@ void task_rtc(void *pvParameters)
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
-//----------------------------------------------------TAREA DE XXXXXXXXX------------------------------------------------------------
+//----------------------------------------------------TAREA DE CONTROL PID------------------------------------------------------------
 void task_pid(void *pvParameters)
 { 
     float TARGET=0.0f;
@@ -486,7 +481,7 @@ int main(void)
     queue_rtc = xQueueCreate(5,sizeof(float));
     queue_hcsr04 = xQueueCreate(5,sizeof(float));
     queue_setpoint = xQueueCreate(5,sizeof(estructura_setpoint));
-    queue_leds = xQueueCreate(5,sizeof(uint16_t));
+    queue_leds = xQueueCreate(5,sizeof(estructura_setpoint));
     queue_altura = xQueueCreate(5,sizeof(uint16_t));
     queue_max_salida = xQueueCreate(5,sizeof(uint16_t));
     queue_min_salida = xQueueCreate(5,sizeof(uint16_t));
@@ -500,7 +495,7 @@ int main(void)
     //xTaskCreate(task_guardiana_sd,"guardianaSD",256,NULL,2,NULL);
     xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
     xTaskCreate(task_debounce_boton, "debounce_boton", 1024, NULL, 1, NULL);
-    //xTaskCreate(task_guardiana_leds,"guardianaLEDS",256,NULL,2,NULL);
+    xTaskCreate(task_guardiana_leds,"guardianaLEDS",256,NULL,2,NULL);
     //xTaskCreate(task_rtc,"regsitro_fecha",256,NULL,2,NULL);
     xTaskCreate(task_pid,"control_pid",256,NULL,2,NULL);
 
