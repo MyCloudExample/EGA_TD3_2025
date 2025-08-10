@@ -69,7 +69,7 @@ typedef struct
     float setpoint_max;
 }estructura_setpoint;
 //========================================ELEMENTOS DE FREERTOS=====================================================================
-SemaphoreHandle_t sem_mutex;
+SemaphoreHandle_t sem_mutexi2c;
 QueueHandle_t queue_rtc; //Envia datos desde task_rtc a task_pid, task_guardian_lcd
 QueueHandle_t queue_hcsr04; //Envia datos desde task_hc_sr04 a task_pid, task_guardiana_lcd, task_guardiana_sd
 QueueHandle_t queue_setpoint; //Envia datos desde task_setpoint a task_pid, task_guardiana_lcd, task_guardiana_sd
@@ -145,26 +145,29 @@ void task_guardiana_lcd(void *pvParameter)
 
     while (true) 
     {
-        xQueueReceive(queue_setpoint, &recepcion_lcd, pdMS_TO_TICKS(100));
-        xQueueReceive(queue_hcsr04, &val_hcsr04, pdMS_TO_TICKS(100));
+        if(xSemaphoreTake(sem_mutexi2c,portMAX_DELAY) == pdTRUE)
+        {
+            xQueueReceive(queue_setpoint, &recepcion_lcd, pdMS_TO_TICKS(100));
+            xQueueReceive(queue_hcsr04, &val_hcsr04, pdMS_TO_TICKS(100));
 
-        // Para pruebas de testeo
-        //printf("Tarea: task_guradiana_lcd, Altura: %.2f cm\n",val_hcsr04); //Datos del ultrasonico
-        // Limpio el LCD
-        lcd_clear();
-        // Muevo el cursor a la fila 0, columna 0
-        lcd_set_cursor(0, 0);
-        sprintf(buffer, "T:%lucm ", recepcion_lcd.setpoint);
-        lcd_string(buffer);
-        // Muevo el cursor a la fila 1, columna 0
-        lcd_set_cursor(1, 0);
-        sprintf(buffer, "M:%.2fcm | m:%.2f", recepcion_lcd.setpoint_max, recepcion_lcd.setpoint_min);
-        lcd_string(buffer);
-        // Muevo el cursor a la fila 2, columna 0, deto desde el sensor HC-SR04
-        lcd_set_cursor(2, 0);
-        sprintf(buffer, "HCSR04: %.2f cm", val_hcsr04);
-        lcd_string(buffer);
-
+            // Para pruebas de testeo
+            //printf("Tarea: task_guradiana_lcd, Altura: %.2f cm\n",val_hcsr04); //Datos del ultrasonico
+            // Limpio el LCD
+            lcd_clear();
+            // Muevo el cursor a la fila 0, columna 0
+            lcd_set_cursor(0, 0);
+            sprintf(buffer, "T:%lucm ", recepcion_lcd.setpoint);
+            lcd_string(buffer);
+            // Muevo el cursor a la fila 1, columna 0
+            lcd_set_cursor(1, 0);
+            sprintf(buffer, "M:%.2fcm | m:%.2f", recepcion_lcd.setpoint_max, recepcion_lcd.setpoint_min);
+            lcd_string(buffer);
+            // Muevo el cursor a la fila 2, columna 0, deto desde el sensor HC-SR04
+            lcd_set_cursor(2, 0);
+            sprintf(buffer, "HCSR04: %.2f cm", val_hcsr04);
+            lcd_string(buffer);
+        }
+        xSemaphoreGive(sem_mutexi2c);
         vTaskDelay(pdMS_TO_TICKS(500));
     }
 }
@@ -183,7 +186,7 @@ void task_guardiana_sd(void *params)
     {
         xQueueReceive(queue_sd, &datasd, pdMS_TO_TICKS(100));
         xQueueReceive(queue_rtc,&rtcsd,pdMS_TO_TICKS(100));
-        sprintf(buffer,"FECHA:%d/%d/%d, HORA:%2d:%2d:%2d, Altura seteada:%lu, Altura maxima:%.2f, Altura minima:%.2f\n",rtcsd.day,rtcsd.month,rtcsd.year,rtcsd.hours,rtcsd.minutes,rtcsd.seconds,datasd.setpoint, datasd.setpoint_max,datasd.setpoint_min);
+        sprintf(buffer,"FECHA:%02d/%02d/20%02d, HORA:%02d:%02d:%02d, Altura seteada:%lu, Altura maxima:%.2f, Altura minima:%.2f\n",rtcsd.day,rtcsd.month,rtcsd.year,rtcsd.hours,rtcsd.minutes,rtcsd.seconds,datasd.setpoint, datasd.setpoint_max,datasd.setpoint_min);
         uart_puts(UART_ID, buffer);
         vTaskDelay(pdMS_TO_TICKS(200));
     }
@@ -205,7 +208,7 @@ void task_guardiana_leds(void *params)
     {
         if (xQueueReceive(queue_leds, &data, portMAX_DELAY) == pdPASS) 
         {
-            printf("TARGET:%lu,MAX:%.2f,MIN:%.2f",data.setpoint,data.setpoint_max,data.setpoint_min);
+            //printf("TARGET:%lu,MAX:%.2f,MIN:%.2f",data.setpoint,data.setpoint_max,data.setpoint_min);
         }
 
         if (xQueueReceive(queue_hcsr04, &altura, portMAX_DELAY) == pdPASS) 
@@ -350,29 +353,29 @@ void task_rtc(void *pvParameters)
 
     while (true) 
     {
-        if (ds3231_get_time(I2C, &toma_fecha)) 
+        printf("Fuera del mutex\n");
+        if(xSemaphoreTake(sem_mutexi2c,portMAX_DELAY) == pdTRUE)
         {
-            printf("Hora: %02d:%02d:%02d - Fecha: %02d/%02d/20%02d\n",
-                  toma_fecha.hours,
-                  toma_fecha.minutes,
-                  toma_fecha.seconds,
-                  toma_fecha.date,
-                  toma_fecha.month,
-                  toma_fecha.year);
-            xQueueSend(queue_rtc,&toma_fecha,pdMS_TO_TICKS(100)); //Si se usa maxPORT_DELAY se bloqeuara
-        } 
-        else 
-        {
-            printf("Error leyendo el RTC\n");
-            toma_fecha.hours = 0;
-            toma_fecha.minutes = 0;
-            toma_fecha.seconds = 0;
-            toma_fecha.date = 0;
-            toma_fecha.month = 0;
-            toma_fecha.year = 0;
-            xQueueSend(queue_rtc,&toma_fecha,portMAX_DELAY);     
+            printf("Dentro del mutex\n");
+            if (ds3231_get_time(I2C, &toma_fecha)) 
+            {
+                printf("Hora: %02d:%02d:%02d - Fecha: %02d/%02d/20%02d\n",toma_fecha.hours, toma_fecha.minutes, toma_fecha.seconds, toma_fecha.date, toma_fecha.month, toma_fecha.year);
+                xQueueSend(queue_rtc,&toma_fecha,pdMS_TO_TICKS(100)); //Si se usa maxPORT_DELAY se bloqeuara
+            } 
+            else 
+            {
+                printf("Error leyendo el RTC\n");
+                toma_fecha.hours = 0;
+                toma_fecha.minutes = 0;
+                toma_fecha.seconds = 0;
+                toma_fecha.date = 0;
+                toma_fecha.month = 0;
+                toma_fecha.year = 0;
+                xQueueSend(queue_rtc,&toma_fecha,portMAX_DELAY);     
+            }
         }
-        vTaskDelay(pdMS_TO_TICKS(1000));
+        xSemaphoreGive(sem_mutexi2c);
+        vTaskDelay(pdMS_TO_TICKS(100));
     }
 }
 //----------------------------------------------------TAREA DE CONTROL PID------------------------------------------------------------
@@ -429,13 +432,13 @@ void task_pid(void *pvParameters)
     while(true) 
     {
         xQueueReceive(queue_setpoint,&data,pdMS_TO_TICKS(5));
-        printf("Altura de task_setpoint:%lu, %.2f, %.2f\n",data.setpoint, data.setpoint_max,data.setpoint_min);
+        //printf("Altura de task_setpoint:%lu, %.2f, %.2f\n",data.setpoint, data.setpoint_max,data.setpoint_min);
         TARGET = (float)(data.setpoint);
         //Medición robusta
         float raw_dist = hc_sr04_get_distance_cm(&sensor);
         if(raw_dist <= 2.0f && raw_dist >= SENSOR_HEIGHT -2.0f) 
         {
-            printf("Medicion invalida:%.2f cm\n",raw_dist);
+            //printf("Medicion invalida:%.2f cm\n",raw_dist);
             pwm_set_level(&fan,MAX_PWM*0.8f);
             continue;
         } 
@@ -457,7 +460,7 @@ void task_pid(void *pvParameters)
 
         //printf("Control: %.2f | PWM: %d\n", control, pwm);
         //printf("Alt: %.2fcm | PWM: %4d | Err: %.2f\n", filtered_height, pwm, TARGET_HEIGHT - filtered_height);
-        printf("Altura:%.2f,Maximo:45,Minimo:0\n",filtered_height); //Para Serial Plotter en Arduino IDE
+        //printf("Altura:%.2f,Maximo:45,Minimo:0\n",filtered_height); //Para Serial Plotter en Arduino IDE
         vTaskDelay(pdMS_TO_TICKS((int)(DT*1000)));
     }    
            
@@ -478,6 +481,7 @@ int main(void)
     queue_min_salida = xQueueCreate(5,sizeof(uint16_t));
     cola_paginas = xQueueCreate(1, sizeof(uint8_t));   // cola que posee una unica posicion para memorizar el cambio de paginas
     //xQueueOverwrite(cola_paginas, &pagina);
+    sem_mutexi2c = xSemaphoreCreateMutex();
     // Creacion de tareas
     xTaskCreate(task_init, "Init", 256, NULL, 3, NULL);
     xTaskCreate(task_SetPoint,"SetPoint",256,NULL,2,NULL);
@@ -487,7 +491,7 @@ int main(void)
     xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
     xTaskCreate(task_debounce_boton, "debounce_boton", 1024, NULL, 1, NULL);
     xTaskCreate(task_guardiana_leds,"guardianaLEDS",256,NULL,2,NULL);
-    //xTaskCreate(task_rtc,"regsitro_fecha",256,NULL,2,NULL);
+    xTaskCreate(task_rtc,"regsitro_fecha",256,NULL,2,NULL);
     xTaskCreate(task_pid,"control_pid",256,NULL,2,NULL);
 
     // Arranca el scheduler
