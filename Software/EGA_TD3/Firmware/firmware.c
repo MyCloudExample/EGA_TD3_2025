@@ -17,33 +17,33 @@
 #include "queue.h"
 /*-------------------------------------DEFINICION DE PINES PARA EL PROYECTO---------------------------------------------------------*/
 //========================================DEFINICION DE I2C=========================================================================
-#define PIN_SDA     8 //Pin 11 de la placa
-#define PIN_SCL     9 //Pin 12 de la placa
-#define I2C         i2c0 //Puerto del i2c
-#define ADDR        0x27 //Direccion del LCD en I2C
-#define FREQ        400000 //Frecuencia de 100KHz para el i2c
+#define PIN_SDA     8       //Pin 11 de la placa
+#define PIN_SCL     9       //Pin 12 de la placa
+#define I2C         i2c0    //Puerto del i2c
+#define ADDR        0x27    //Direccion del LCD en I2C
+#define FREQ        400000  //Frecuencia de 100KHz para el i2c
 //========================================DEFINICION DE FAN=========================================================================
-#define PIN_PWM     11 //Pin 21 de la placa
-#define PIN_RPM     10 //Pin 22 de la placa
+#define PIN_PWM     11      //Pin 21 de la placa
+#define PIN_RPM     10      //Pin 22 de la placa
 //NOTA EN LA PLACA DE PRUEBA SE USA EL PIN 11 PARA EL PWM, PERO EN LA PLACA PCB SE UTILIZA EL PIN 10, RECORDAR CAMBIARLO
 //========================================PINES DE HC-SR04==========================================================================
-#define PIN_TRIG    14 //Pin 19 de la placa
-#define PIN_ECHO    15 //Pin 20 de la placa
+#define PIN_TRIG    14      //Pin 19 de la placa
+#define PIN_ECHO    15      //Pin 20 de la placa
 //========================================PIN DE POTENCIOMETRO PARA EL SETPOINT=====================================================
-#define PIN_ADC     26 //Pin
+#define PIN_ADC     26      //Pin 31 de la placa
 //=======================================PINES PARA EL UART=========================================================================
-#define PIN_TX  4
-#define PIN_RX  5
-#define UART_ID uart1
-#define UART_BAUDRATE 115200
+#define PIN_TX  4           //Pin 6 de la placa
+#define PIN_RX  5           //Pin 7 de la placa
+#define UART_ID uart1       //Se utiliza el pueto UART 1
+#define UART_BAUDRATE 115200//Velocidad del UART 1
 //========================================BANDERAS DE ALERTAS=======================================================================
-#define GPIO_LED_MAX 12
-#define GPIO_LED_MIN 13
-#define ALERTA_TIMEOUT_MS 3000
+#define GPIO_LED_MAX 12     //Pin 16 de la placa
+#define GPIO_LED_MIN 13     //Pin 17 de la placa
+#define ALERTA_TIMEOUT_MS 3000//Tiempo de encendido, solo se uso para testeo
 //=======================================BOTON SE SELECCION PARA LOS SETPOINT=======================================================
-#define PIN_PAGINA  18 // Pin 24 de la placa
-#define DEBOUNCE_TIME_MS 50
-#define MULTI_PRESS_TIMEOUT 300
+#define PIN_PAGINA  18      // Pin 24 de la placa
+#define DEBOUNCE_TIME_MS 50//Tiempo para evitar rebotes
+#define MULTI_PRESS_TIMEOUT 300//Tiempo para evitar rebotes
 //========================================PARAMETROS FISICOS PARA EL CONTROL PID====================================================
 #define BALL_DIAMETER_CM 7.8f //Diametro de la pelota
 #define BALL_WEIGHT_G 9.0f   //Peso de la pelota
@@ -51,14 +51,14 @@
 #define SENSOR_HEIGHT 45.0f //Altura del sensor
 //========================================PARAMETROS INICIALES (SE DEBEN AJUSTAR DURANTE LAS PRUEBAS)===============================
 #define BASE_PWM 2500       // Incrementado inicialmente
-#define KP 6.0f             // Cuanto mayor sea el Kp mas rapida sera la respuesta, si es muy grande habra osiclacion e inestabilidad
-#define KI 1.7f             // Elimina error en regimen permanente, si es muy grande la respuesta sera lenta y existira overshot
-#define KD 1.2f             // Amortigua las oscilaciones, si es muy alto provocara oscilacion ya que amplifica el ruido
+#define KP 25.0f             // Cuanto mayor sea el Kp mas rapida sera la respuesta, si es muy grande habra osiclacion e inestabilidad
+#define KI 3.0f             // Elimina error en regimen permanente, si es muy grande la respuesta sera lenta y existira overshot
+#define KD 2.5f             // Amortigua las oscilaciones, si es muy alto provocara oscilacion ya que amplifica el ruido
 #define MIN_PWM 1800        // Mínimo absoluto
 #define MAX_PWM 4000        // Máximo seguro
 #define DT      0.01f       //Factor para ajustar el tiempo de muestreo
 /*----------------------------------------------------------------------------------------------------------------------------------*/
-/*--------------------------------------VARAIBLES DE RPOGRAMA, COLAS Y SEMAFOROS----------------------------------------------------*/
+/*----------------------------------------VARAIBLES DE RPOGRAMA, COLAS Y SEMAFOROS--------------------------------------------------*/
 //========================================VARIABLES QUE NO SON PROPIAS DE FREERTOS==================================================
 pwm_config_t cooler={.pin=PIN_PWM, .wrap=4999, .clk_div=1.0f};
 hc_sr04_t sensor;
@@ -69,7 +69,7 @@ typedef struct
     float setpoint_max;
 }estructura_setpoint;
 //========================================ELEMENTOS DE FREERTOS=====================================================================
-SemaphoreHandle_t sem_mutexi2c;
+SemaphoreHandle_t sem_mutexi2c;//Para sincronizar el uso del I2C por parte del LCD y el RTC
 QueueHandle_t queue_rtc; //Envia datos desde task_rtc a task_pid, task_guardian_lcd
 QueueHandle_t queue_hcsr04; //Envia datos desde task_hc_sr04 a task_pid, task_guardiana_lcd, task_guardiana_sd
 QueueHandle_t queue_setpoint; //Envia datos desde task_setpoint a task_pid, task_guardiana_lcd, task_guardiana_sd
@@ -81,7 +81,7 @@ QueueHandle_t queue_max_salida;
 QueueHandle_t queue_min_salida;
 QueueHandle_t cola_paginas; //Envia datos a la tarea tas_setpoint
 /*----------------------------------------------------------------------------------------------------------------------------------*/
-/*--------------------------------------TAREAS DE FREERTOS--------------------------------------------------------------------*/
+/*----------------------------------------TAREAS DE FREERTOS------------------------------------------------------------------------*/
 void task_init(void *params) 
 {
     // Inicializacion de GPIO para HC-SR04
@@ -117,7 +117,7 @@ void task_init(void *params)
     // Elimino la tarea para liberar recursos
     vTaskDelete(NULL);
 }
-//-------------------------------------------------TAREA DE SENSANDO DE LA ALTURA------------------------------------------------
+//----------------------------------------TAREA DE SENSANDO DE LA ALTURA------------------------------------------------------------
 void task_hcsr04(void *params)
 { float valor_medido=0.0;
 
@@ -136,7 +136,7 @@ void task_hcsr04(void *params)
         vTaskDelay(pdMS_TO_TICKS(20));
     }
 }
-//---------------------------------------------------TAREA GUARDIANA LCD----------------------------------------------------------
+//----------------------------------------TAREA GUARDIANA LCD-----------------------------------------------------------------------
 void task_guardiana_lcd(void *pvParameter) 
 {
     float val_hcsr04=0.0f;
@@ -172,7 +172,7 @@ void task_guardiana_lcd(void *pvParameter)
     }
 }
 
-//---------------------------------------------------TAREA GUARDIANA DE MODULO SD-------------------------------------------------
+//----------------------------------------TAREA GUARDIANA DE MODULO SD--------------------------------------------------------------
 void task_guardiana_sd(void *params) 
 { estructura_setpoint datasd;
   ds3231_time_t rtcsd;
@@ -192,7 +192,7 @@ void task_guardiana_sd(void *params)
     }
 
 }
-//---------------------------------------------------TAREA GUARDIANA DE LEDS------------------------------------------------------
+//----------------------------------------TAREA GUARDIANA DE LEDS-------------------------------------------------------------------
 void task_guardiana_leds(void *params) 
 {
     estructura_setpoint data;
@@ -237,7 +237,7 @@ void task_guardiana_leds(void *params)
 
     }
 }
-//---------------------------------------------------TAREA PARA INICAR EL SETPOINT------------------------------------------------
+//----------------------------------------TAREA PARA INICAR EL SETPOINT-------------------------------------------------------------
 void task_SetPoint(void *params)
 { uint32_t valor_adc, valor_altura;
   estructura_setpoint data={.setpoint=0, .setpoint_max=0, .setpoint_min=0};  
@@ -346,7 +346,7 @@ void task_debounce_boton(void *pvParameters) {
         vTaskDelay(pdMS_TO_TICKS(10));
     }
 }
-//----------------------------------------------------TAREA QUE MANIPULA EL RTC---------------------------------------------------
+//----------------------------------------TAREA QUE MANIPULA EL RTC-----------------------------------------------------------------
 void task_rtc(void *pvParameters)
 {
     ds3231_time_t toma_fecha;
@@ -378,7 +378,7 @@ void task_rtc(void *pvParameters)
         vTaskDelay(pdMS_TO_TICKS(100));
     }
 }
-//----------------------------------------------------TAREA DE CONTROL PID------------------------------------------------------------
+//---------------------------------------TAREA DE CONTROL PID-----------------------------------------------------------------------
 void task_pid(void *pvParameters)
 { 
     float TARGET=0.0f;
@@ -460,12 +460,12 @@ void task_pid(void *pvParameters)
 
         //printf("Control: %.2f | PWM: %d\n", control, pwm);
         //printf("Alt: %.2fcm | PWM: %4d | Err: %.2f\n", filtered_height, pwm, TARGET_HEIGHT - filtered_height);
-        //printf("Altura:%.2f,Maximo:45,Minimo:0\n",filtered_height); //Para Serial Plotter en Arduino IDE
+        printf("Altura:%.2f,Maximo:45,Minimo:0,SETPOINT:%lu\n",filtered_height, data.setpoint); //Para Serial Plotter en Arduino IDE
         vTaskDelay(pdMS_TO_TICKS((int)(DT*1000)));
     }    
            
 }
-/*---------------------------------------------------PROGRAMA PRINCIPAL-----------------------------------------------------------*/
+/*----------------------------------------PROGRAMA PRINCIPAL------------------------------------------------------------------------*/
 int main(void) 
 {
     stdio_init_all();
