@@ -20,7 +20,7 @@ typedef struct
 } PIDController;
 
 void PIDController_Init(PIDController *pid);
-float PIDController_Update(PIDController *pid, float setpoint, float measurement, float dt);
+float PIDController_Update(PIDController *pid, float setpoint, float mdicion, float dt);
 
 
 #endif // PID_CONTROLLER_H
