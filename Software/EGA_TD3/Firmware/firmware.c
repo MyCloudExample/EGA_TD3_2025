@@ -280,7 +280,8 @@ void task_SetPoint(void *params)
   float tension;
   char buffer[30];
   uint8_t pagina=0;
-
+  vTaskDelay(5000);
+    printf("Dentro de task_Setpoint\n");
     while (true)
     { 
        if (xQueuePeek(cola_paginas, &pagina, portMAX_DELAY) == pdPASS) 
@@ -291,7 +292,15 @@ void task_SetPoint(void *params)
         tension = (valor_adc * 3.3f) / 4095; 
         valor_altura = ((valor_adc * 3.3f) / 4095)*10;
         data.setpoint = valor_altura;
-        //printf("PAGINA 1 |setpoint= %lu | Valor altura= %lu \n", data.setpoint, valor_altura);
+        if(valor_altura > 28)
+        {
+            data.setpoint = 28;
+        }
+        if(valor_altura == 0)
+        {
+            data.setpoint = 5;
+        }
+        printf("PAGINA 1 |setpoint= %lu | Valor altura= %lu \n", data.setpoint, valor_altura);
         } 
         if(pagina==2) 
         {
@@ -299,21 +308,36 @@ void task_SetPoint(void *params)
             tension = (valor_adc * 3.3f) / 4095; 
             valor_altura = ((valor_adc * 3.3f) / 4095)*10;
             data.setpoint_max = valor_altura;
+            if(valor_altura > data.setpoint)
+            {
+                data.setpoint_max = valor_altura;
+            }
+            else
+            {
+                data.setpoint_max = data.setpoint + 1;
+            }
             
-            //printf("PAGINA 2 |setpointMax= %.2f | Valor altura= %lu \n", data.setpoint_max, valor_altura);
+            printf("PAGINA 2 |setpointMax= %.2f | Valor altura= %lu \n", data.setpoint_max, valor_altura);
         }
         if(pagina==3) 
         {
             valor_adc = adc_read();
             tension = (valor_adc * 3.3f) / 4095; 
             valor_altura = ((valor_adc * 3.3f) / 4095)*10;
-            data.setpoint_min = valor_altura;
-            //printf("PAGINA 3 |setpointMin= %.2f | Valor altura= %lu \n", data.setpoint_min, valor_altura);
+           if(valor_altura < data.setpoint)
+            {
+                data.setpoint_min = valor_altura;
+            }
+            else
+            {
+                data.setpoint_min = data.setpoint - 1.0f;
+            }
+            printf("PAGINA 3 |setpointMin= %.2f | Valor altura= %lu \n", data.setpoint_min, valor_altura);
         }
         if(pagina==0) 
         {
             
-            //printf("PAGINA 0 |setpoint= %lu | setpoint_max=%.2f | setpoint_min= %.2f \n", data.setpoint,data.setpoint_max,data.setpoint_min);
+            printf("PAGINA 0 |setpoint= %lu | setpoint_max=%.2f | setpoint_min= %.2f \n", data.setpoint,data.setpoint_max,data.setpoint_min);
         }
        xQueueSend(queue_setpoint, &data, pdMS_TO_TICKS(100)); //Se quedara aqui ya que no se desopucpa la cola
        xQueueSend(queue_leds,&data,pdMS_TO_TICKS(100));
@@ -525,11 +549,11 @@ int main(void)
     xTaskCreate(task_SetPoint,"SetPoint",256,NULL,2,NULL);
     //xTaskCreate(task_monitor_gpio,"boton",256,NULL,2,NULL);
     //xTaskCreate(task_hcsr04,"MedicionDeDistancia",256,NULL,2,NULL);
-    xTaskCreate(task_guardiana_sd,"guardianaSD",2048,NULL,2,NULL);
+    //xTaskCreate(task_guardiana_sd,"guardianaSD",2048,NULL,2,NULL);
     //xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
-    //xTaskCreate(task_debounce_boton, "debounce_boton", 1024, NULL, 1, NULL);
+    xTaskCreate(task_debounce_boton, "debounce_boton", 1024, NULL, 1, NULL);
     //xTaskCreate(task_guardiana_leds,"guardianaLEDS",256,NULL,2,NULL);
-    xTaskCreate(task_rtc,"regsitro_fecha",256,NULL,2,NULL);
+    //xTaskCreate(task_rtc,"regsitro_fecha",256,NULL,2,NULL);
     //xTaskCreate(task_pid,"control_pid",256,NULL,2,NULL);
 
     // Arranca el scheduler
