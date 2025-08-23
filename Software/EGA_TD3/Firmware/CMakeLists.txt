@@ -41,9 +41,11 @@ add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../HC_SR04 ${CMAKE_BINARY_DIR}/HC_SR0
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../pico-rv32ima/pico-rv32ima ${CMAKE_BINARY_DIR}/pico-rv32ima)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../ds3231 ${CMAKE_BINARY_DIR}/ds3231)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../pid_controller ${CMAKE_BINARY_DIR}/pid_controller)
+add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../no-OS-FatFS-SD-SDIO-SPI-RPi-Pico/examples/simple ${CMAKE_BINARY_DIR}/pico_sd_fatfs)
+
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(firmware firmware.c )
+add_executable(firmware firmware.c hw_config.c)
 
 pico_set_program_name(firmware "firmware")
 pico_set_program_version(firmware "0.1")
@@ -63,6 +65,7 @@ target_link_libraries(firmware
     ds3231
     hardware_uart
     pid_controller
+    pico_sd_fatfs
 )
 
 # Add the standard include files to the build

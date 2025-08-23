@@ -238,3 +238,6 @@ C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Fir
 C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/pid_controller/CMakeFiles/pid_controller.dir
 C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/pid_controller/CMakeFiles/edit_cache.dir
 C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/pid_controller/CMakeFiles/rebuild_cache.dir
+C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/pico_sd_fatfs/CMakeFiles/pico_sd_fatfs.dir
+C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/pico_sd_fatfs/CMakeFiles/edit_cache.dir
+C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/EGA_TD3/Firmware/build/pico_sd_fatfs/CMakeFiles/rebuild_cache.dir
