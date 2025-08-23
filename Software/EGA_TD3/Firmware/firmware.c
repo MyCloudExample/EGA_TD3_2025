@@ -10,6 +10,9 @@
 #include "pid_controller.h"
 #include "hardware/uart.h"
 #include "string.h"
+#include "hw_config.h"
+#include "f_util.h"
+#include "ff.h"
 //========================================CABECERAS DE FREERTOS=====================================================================
 #include "FreeRTOS.h"
 #include "task.h"
@@ -176,21 +179,54 @@ void task_guardiana_lcd(void *pvParameter)
 void task_guardiana_sd(void *params) 
 { estructura_setpoint datasd;
   ds3231_time_t rtcsd;
-  char buffer[200];
+  char buffer1[200], buffer2[200];
+  FATFS fs;
+  FIL fil;
+  const char* const filename = "dataloger.txt";
+  ds3231_time_t toma_fecha;
 
-    uart_init(UART_ID, UART_BAUDRATE);
-    gpio_set_function(PIN_TX, GPIO_FUNC_UART);
-    gpio_set_function(PIN_RX, GPIO_FUNC_UART);
-    
     while(true) 
     {
-        xQueueReceive(queue_sd, &datasd, pdMS_TO_TICKS(100));
-        xQueueReceive(queue_rtc,&rtcsd,pdMS_TO_TICKS(100));
-        sprintf(buffer,"FECHA:%02d/%02d/20%02d, HORA:%02d:%02d:%02d, Altura seteada:%lu, Altura maxima:%.2f, Altura minima:%.2f\n",rtcsd.day,rtcsd.month,rtcsd.year,rtcsd.hours,rtcsd.minutes,rtcsd.seconds,datasd.setpoint, datasd.setpoint_max,datasd.setpoint_min);
-        uart_puts(UART_ID, buffer);
-        vTaskDelay(pdMS_TO_TICKS(200));
-    }
+        xQueueReceive(queue_rtc, &toma_fecha,pdMS_TO_TICKS(100));
+        xQueueReceive(queue_sd, &datasd,pdMS_TO_TICKS(100));
+        vTaskDelay(5000);
+        sprintf(buffer1,"Hora: %02d:%02d:%02d,Fecha: %02d/%02d/20%02d",toma_fecha.hours, toma_fecha.minutes, toma_fecha.seconds, toma_fecha.date, toma_fecha.month, toma_fecha.year);
+        printf("TEXTO: %s\n",buffer1);
+        vTaskDelay(5000);
+        sprintf(buffer2,"Setpoint: %lu, SetpointMax: %.2f, SetpointMin: %.2f",datasd.setpoint, datasd.setpoint_max, datasd.setpoint_min);
+        printf("Setpoint: %s\n",buffer2);
+        vTaskDelay(5000);
+        
+        FRESULT fr = f_mount(&fs, "", 1);
+        if (FR_OK != fr) 
+        {
+            panic("f_mount error: %s (%d)\n", FRESULT_str(fr), fr);
+        }
 
+        // Se abre el archivo y se escribe en el archivo
+        fr = f_open(&fil, filename, FA_OPEN_APPEND | FA_WRITE);
+        if (FR_OK != fr && FR_EXIST != fr) 
+        {
+            panic("f_open(%s) error: %s (%d)\n", filename, FRESULT_str(fr), fr);
+        }
+        if (f_printf(&fil, buffer1) < 0 || f_printf(&fil, buffer2)) 
+        {
+            printf("Escritura fallida\n");
+        }
+
+        // Cierra el archivo
+        fr = f_close(&fil);
+        if (FR_OK != fr) 
+        {
+            printf("f_close error: %s (%d)\n", FRESULT_str(fr), fr);
+        }
+
+        // Desmonta la memoria SD
+        f_unmount("");
+
+        puts("Goodbye, world!");
+        for (;;);
+    }
 }
 //----------------------------------------TAREA GUARDIANA DE LEDS-------------------------------------------------------------------
 void task_guardiana_leds(void *params) 
@@ -282,6 +318,7 @@ void task_SetPoint(void *params)
        xQueueSend(queue_leds,&data,pdMS_TO_TICKS(100));
        xQueueSend(queue_sd,&data,pdMS_TO_TICKS(100)); //Envia datos a la task_guardian_sd
        vTaskDelay(pdMS_TO_TICKS(100));
+       //printf("Ejecucion \n");
 }
            
 }
@@ -487,12 +524,12 @@ int main(void)
     xTaskCreate(task_SetPoint,"SetPoint",256,NULL,2,NULL);
     //xTaskCreate(task_monitor_gpio,"boton",256,NULL,2,NULL);
     //xTaskCreate(task_hcsr04,"MedicionDeDistancia",256,NULL,2,NULL);
-    xTaskCreate(task_guardiana_sd,"guardianaSD",256,NULL,2,NULL);
-    xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
-    xTaskCreate(task_debounce_boton, "debounce_boton", 1024, NULL, 1, NULL);
-    xTaskCreate(task_guardiana_leds,"guardianaLEDS",256,NULL,2,NULL);
+    xTaskCreate(task_guardiana_sd,"guardianaSD",2048,NULL,2,NULL);
+    //xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
+    //xTaskCreate(task_debounce_boton, "debounce_boton", 1024, NULL, 1, NULL);
+    //xTaskCreate(task_guardiana_leds,"guardianaLEDS",256,NULL,2,NULL);
     xTaskCreate(task_rtc,"regsitro_fecha",256,NULL,2,NULL);
-    xTaskCreate(task_pid,"control_pid",256,NULL,2,NULL);
+    //xTaskCreate(task_pid,"control_pid",256,NULL,2,NULL);
 
     // Arranca el scheduler
     vTaskStartScheduler();
