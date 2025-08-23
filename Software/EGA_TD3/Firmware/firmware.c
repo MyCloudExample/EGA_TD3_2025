@@ -299,6 +299,7 @@ void task_SetPoint(void *params)
             tension = (valor_adc * 3.3f) / 4095; 
             valor_altura = ((valor_adc * 3.3f) / 4095)*10;
             data.setpoint_max = valor_altura;
+            
             //printf("PAGINA 2 |setpointMax= %.2f | Valor altura= %lu \n", data.setpoint_max, valor_altura);
         }
         if(pagina==3) 
