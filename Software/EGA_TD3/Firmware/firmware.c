@@ -171,7 +171,7 @@ void task_guardiana_lcd(void *pvParameter)
             lcd_string(buffer);
         }
         xSemaphoreGive(sem_mutexi2c);
-        vTaskDelay(pdMS_TO_TICKS(500));
+        vTaskDelay(pdMS_TO_TICKS(100));
     }
 }
 
@@ -291,15 +291,15 @@ void task_SetPoint(void *params)
         tension = (valor_adc * 3.3f) / 4095; 
         valor_altura = ((valor_adc * 3.3f) / 4095)*10;
         data.setpoint = valor_altura;
-        if(valor_altura > 28)
-        {
-            data.setpoint = 28;
-        }
-        if(valor_altura == 0)
-        {
-            data.setpoint = 5;
-        }
-        //printf("PAGINA 1 |setpoint= %lu | Valor altura= %lu \n", data.setpoint, valor_altura);
+            if(valor_altura > 28)
+            {
+                data.setpoint = 28;
+            }
+            if(valor_altura == 0)
+            {
+                data.setpoint = 5;
+            }
+            //printf("PAGINA 1 |setpoint= %lu | Valor altura= %lu \n", data.setpoint, valor_altura);
         } 
         if(pagina==2) 
         {
@@ -336,11 +336,12 @@ void task_SetPoint(void *params)
         if(pagina==0) 
         {
             
-            //printf("PAGINA 0 |setpoint= %lu | setpoint_max=%.2f | setpoint_min= %.2f \n", data.setpoint,data.setpoint_max,data.setpoint_min);
+            printf("PAGINA 0 |setpoint= %lu | setpoint_max=%.2f | setpoint_min= %.2f \n", data.setpoint,data.setpoint_max,data.setpoint_min);
         }
-       xQueueSend(queue_setpoint, &data, pdMS_TO_TICKS(100)); //Se quedara aqui ya que no se desopucpa la cola
-       xQueueSend(queue_leds,&data,pdMS_TO_TICKS(100));
-       xQueueSend(queue_sd,&data,pdMS_TO_TICKS(100)); //Envia datos a la task_guardian_sd
+       xQueueSend(queue_setpoint, &data, pdMS_TO_TICKS(10)); //Se quedara aqui ya que no se desopucpa la cola
+       xQueueSend(queue_pid, &data, pdMS_TO_TICKS(10));
+       xQueueSend(queue_leds,&data,pdMS_TO_TICKS(10));
+       xQueueSend(queue_sd,&data,pdMS_TO_TICKS(10)); //Envia datos a la task_guardian_sd
        vTaskDelay(pdMS_TO_TICKS(100));
        //printf("Ejecucion \n");
 }
@@ -414,13 +415,13 @@ void task_rtc(void *pvParameters)
 
     while (true) 
     {
-        printf("Fuera del mutex\n");
+        //printf("Fuera del mutex\n");
         if(xSemaphoreTake(sem_mutexi2c,portMAX_DELAY) == pdTRUE)
         {
-            printf("Dentro del mutex\n");
+            //printf("Dentro del mutex\n");
             if (ds3231_get_time(I2C, &toma_fecha)) 
             {
-                printf("Hora: %02d:%02d:%02d - Fecha: %02d/%02d/20%02d\n",toma_fecha.hours, toma_fecha.minutes, toma_fecha.seconds, toma_fecha.date, toma_fecha.month, toma_fecha.year);
+                //printf("Hora: %02d:%02d:%02d - Fecha: %02d/%02d/20%02d\n",toma_fecha.hours, toma_fecha.minutes, toma_fecha.seconds, toma_fecha.date, toma_fecha.month, toma_fecha.year);
                 xQueueSend(queue_rtc,&toma_fecha,pdMS_TO_TICKS(100)); //Si se usa maxPORT_DELAY se bloqeuara
             } 
             else 
@@ -444,7 +445,7 @@ void task_pid(void *pvParameters)
 { 
     float TARGET=0.0f;
     estructura_setpoint data;
-    static uint16_t last_pwm = BASE_PWM;
+    //static uint16_t last_pwm = BASE_PWM;
    // 1. Verificación PWM
     pwm_config_t fan = {
         .pin = PIN_PWM,
@@ -493,8 +494,9 @@ void task_pid(void *pvParameters)
 
     while(true) 
     {
-        xQueueReceive(queue_setpoint,&data,pdMS_TO_TICKS(5));
-        //printf("Altura de task_setpoint:%lu, %.2f, %.2f\n",data.setpoint, data.setpoint_max,data.setpoint_min);
+        xQueueReceive(queue_pid,&data,pdMS_TO_TICKS(5));
+        //xQueueReceive(queue_setpoint, &data, pdMS_TO_TICKS(5));
+        printf("Altura de task_setpoint:%lu, %.2f, %.2f\n",data.setpoint, data.setpoint_max,data.setpoint_min);
         TARGET = (float)(data.setpoint);
         //Medición robusta
         float raw_dist = hc_sr04_get_distance_cm(&sensor);
@@ -511,7 +513,7 @@ void task_pid(void *pvParameters)
         float control = PIDController_Update(&pid, TARGET, filtered_height, 0.02f);
         uint16_t pwm = (int16_t)(control);
         //Limites de seguridad con histeresis
-        //static uint16_t last_pwm = BASE_PWM;
+        static uint16_t last_pwm = BASE_PWM;
         if(abs(pwm - last_pwm > 100))
         {
             pwm = (pwm + last_pwm*2)/3; //Promedio ponderado
@@ -522,7 +524,7 @@ void task_pid(void *pvParameters)
 
         //printf("Control: %.2f | PWM: %d\n", control, pwm);
         //printf("Alt: %.2fcm | PWM: %4d | Err: %.2f\n", filtered_height, pwm, TARGET_HEIGHT - filtered_height);
-        printf("Altura:%.2f,Maximo:45,Minimo:0,SETPOINT:%lu\n",filtered_height, data.setpoint); //Para Serial Plotter en Arduino IDE
+        //printf("Altura:%.2f,Maximo:45,Minimo:0,SETPOINT:%lu\n",filtered_height, data.setpoint); //Para Serial Plotter en Arduino IDE
         vTaskDelay(pdMS_TO_TICKS((int)(DT*1000)));
     }    
            
