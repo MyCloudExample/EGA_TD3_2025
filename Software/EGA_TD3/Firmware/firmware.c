@@ -26,19 +26,20 @@
 #define ADDR        0x27    //Direccion del LCD en I2C
 #define FREQ        400000  //Frecuencia de 100KHz para el i2c
 //========================================DEFINICION DE FAN=========================================================================
-#define PIN_PWM     11      //Pin 21 de la placa
-#define PIN_RPM     10      //Pin 22 de la placa
+#define PIN_PWM     10      //Pin 21 de la placa 11
+#define PIN_RPM     11      //Pin 22 de la placa 10
 //NOTA EN LA PLACA DE PRUEBA SE USA EL PIN 11 PARA EL PWM, PERO EN LA PLACA PCB SE UTILIZA EL PIN 10, RECORDAR CAMBIARLO
 //========================================PINES DE HC-SR04==========================================================================
 #define PIN_TRIG    14      //Pin 19 de la placa
 #define PIN_ECHO    15      //Pin 20 de la placa
+//NOTA: PLaca de prueba se usa el GPIO 14 pata TRIG y GPIO 15 para ECHO
 //========================================PIN DE POTENCIOMETRO PARA EL SETPOINT=====================================================
 #define PIN_ADC     26      //Pin 31 de la placa
-//=======================================PINES PARA EL UART=========================================================================
-#define PIN_TX  4           //Pin 6 de la placa
+//=======================================PINES PARA EL SPI=========================================================================
+/*#define PIN_TX  4           //Pin 6 de la placa
 #define PIN_RX  5           //Pin 7 de la placa
 #define UART_ID uart1       //Se utiliza el pueto UART 1
-#define UART_BAUDRATE 115200//Velocidad del UART 1
+#define UART_BAUDRATE 115200//Velocidad del UART 1*/
 //========================================BANDERAS DE ALERTAS=======================================================================
 #define GPIO_LED_MAX 12     //Pin 16 de la placa
 #define GPIO_LED_MIN 13     //Pin 17 de la placa
@@ -145,6 +146,7 @@ void task_guardiana_lcd(void *pvParameter)
     float val_hcsr04=0.0f;
     estructura_setpoint recepcion_lcd;
     char buffer[30];
+    lcd_clear();
 
     while (true) 
     {
@@ -156,10 +158,10 @@ void task_guardiana_lcd(void *pvParameter)
             // Para pruebas de testeo
             //printf("Tarea: task_guradiana_lcd, Altura: %.2f cm\n",val_hcsr04); //Datos del ultrasonico
             // Limpio el LCD
-            lcd_clear();
+            //lcd_clear();
             // Muevo el cursor a la fila 0, columna 0
             lcd_set_cursor(0, 0);
-            sprintf(buffer, "T:%lucm ", recepcion_lcd.setpoint);
+            sprintf(buffer, "T:%lucm                      ", recepcion_lcd.setpoint);
             lcd_string(buffer);
             // Muevo el cursor a la fila 1, columna 0
             lcd_set_cursor(1, 0);
@@ -178,8 +180,7 @@ void task_guardiana_lcd(void *pvParameter)
 //----------------------------------------TAREA GUARDIANA DE MODULO SD--------------------------------------------------------------
 void task_guardiana_sd(void *params) 
 { estructura_setpoint datasd;
-  ds3231_time_t rtcsd;
-  char buffer1[200], buffer2[200];
+  char buffer1[500];
   FATFS fs;
   FIL fil;
   const char* const filename = "dataloger.txt";
@@ -189,13 +190,10 @@ void task_guardiana_sd(void *params)
     {
         xQueueReceive(queue_rtc, &toma_fecha,pdMS_TO_TICKS(100));
         xQueueReceive(queue_sd, &datasd,pdMS_TO_TICKS(100));
-        vTaskDelay(5000);
-        sprintf(buffer1,"Hora: %02d:%02d:%02d,Fecha: %02d/%02d/20%02d",toma_fecha.hours, toma_fecha.minutes, toma_fecha.seconds, toma_fecha.date, toma_fecha.month, toma_fecha.year);
+        vTaskDelay(pdMS_TO_TICKS(5));
+        sprintf(buffer1,"Hora: %02d:%02d:%02d,Fecha: %02d/%02d/20%02d,Setpoint: %lu,SetpointMax: %.2f,SetpointMin: %.2f\n",toma_fecha.hours, toma_fecha.minutes, toma_fecha.seconds, toma_fecha.date, toma_fecha.month, toma_fecha.year,datasd.setpoint, datasd.setpoint_max, datasd.setpoint_min);
         printf("TEXTO: %s\n",buffer1);
-        vTaskDelay(5000);
-        sprintf(buffer2,"Setpoint: %lu, SetpointMax: %.2f, SetpointMin: %.2f",datasd.setpoint, datasd.setpoint_max, datasd.setpoint_min);
-        printf("Setpoint: %s\n",buffer2);
-        vTaskDelay(5000);
+        vTaskDelay(pdMS_TO_TICKS(5));
         
         FRESULT fr = f_mount(&fs, "", 1);
         if (FR_OK != fr) 
@@ -209,11 +207,10 @@ void task_guardiana_sd(void *params)
         {
             panic("f_open(%s) error: %s (%d)\n", filename, FRESULT_str(fr), fr);
         }
-        if (f_printf(&fil, buffer1) < 0 || f_printf(&fil, buffer2)) 
+        if (f_printf(&fil, buffer1) < 0) 
         {
-            printf("Escritura fallida\n");
+            printf("Escritura fallida de buffer1\n");
         }
-
         // Cierra el archivo
         fr = f_close(&fil);
         if (FR_OK != fr) 
@@ -223,9 +220,8 @@ void task_guardiana_sd(void *params)
 
         // Desmonta la memoria SD
         f_unmount("");
-
-        puts("Goodbye, world!");
-        for (;;);
+        //puts("Goodbye, world!");
+        
     }
 }
 //----------------------------------------TAREA GUARDIANA DE LEDS-------------------------------------------------------------------
@@ -421,7 +417,7 @@ void task_rtc(void *pvParameters)
             //printf("Dentro del mutex\n");
             if (ds3231_get_time(I2C, &toma_fecha)) 
             {
-                //printf("Hora: %02d:%02d:%02d - Fecha: %02d/%02d/20%02d\n",toma_fecha.hours, toma_fecha.minutes, toma_fecha.seconds, toma_fecha.date, toma_fecha.month, toma_fecha.year);
+                printf("Hora: %02d:%02d:%02d - Fecha: %02d/%02d/20%02d\n",toma_fecha.hours, toma_fecha.minutes, toma_fecha.seconds, toma_fecha.date, toma_fecha.month, toma_fecha.year);
                 xQueueSend(queue_rtc,&toma_fecha,pdMS_TO_TICKS(100)); //Si se usa maxPORT_DELAY se bloqeuara
             } 
             else 
@@ -496,7 +492,7 @@ void task_pid(void *pvParameters)
     {
         xQueueReceive(queue_pid,&data,pdMS_TO_TICKS(5));
         //xQueueReceive(queue_setpoint, &data, pdMS_TO_TICKS(5));
-        printf("Altura de task_setpoint:%lu, %.2f, %.2f\n",data.setpoint, data.setpoint_max,data.setpoint_min);
+        //printf("Altura de task_setpoint:%lu, %.2f, %.2f\n",data.setpoint, data.setpoint_max,data.setpoint_min);
         TARGET = (float)(data.setpoint);
         //Medición robusta
         float raw_dist = hc_sr04_get_distance_cm(&sensor);
@@ -524,7 +520,7 @@ void task_pid(void *pvParameters)
 
         //printf("Control: %.2f | PWM: %d\n", control, pwm);
         //printf("Alt: %.2fcm | PWM: %4d | Err: %.2f\n", filtered_height, pwm, TARGET_HEIGHT - filtered_height);
-        //printf("Altura:%.2f,Maximo:45,Minimo:0,SETPOINT:%lu\n",filtered_height, data.setpoint); //Para Serial Plotter en Arduino IDE
+        printf("Altura:%.2f,Maximo:45,Minimo:0,SETPOINT:%lu\n",filtered_height, data.setpoint); //Para Serial Plotter en Arduino IDE
         vTaskDelay(pdMS_TO_TICKS((int)(DT*1000)));
     }    
            
@@ -551,7 +547,7 @@ int main(void)
     xTaskCreate(task_SetPoint,"SetPoint",256,NULL,2,NULL);
     //xTaskCreate(task_monitor_gpio,"boton",256,NULL,2,NULL);
     //xTaskCreate(task_hcsr04,"MedicionDeDistancia",256,NULL,2,NULL);
-    //xTaskCreate(task_guardiana_sd,"guardianaSD",2048,NULL,2,NULL);
+    xTaskCreate(task_guardiana_sd,"guardianaSD",2048,NULL,2,NULL);
     xTaskCreate(task_guardiana_lcd,"guardianaLCD",256,NULL,2,NULL);
     xTaskCreate(task_debounce_boton, "debounce_boton", 1024, NULL, 1, NULL);
     xTaskCreate(task_guardiana_leds,"guardianaLEDS",256,NULL,2,NULL);

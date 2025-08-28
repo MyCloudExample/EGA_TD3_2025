@@ -27,10 +27,10 @@ int main() {
     // NUEVO: Configurar la fecha y hora
     ds3231_time_t new_time = {
         .seconds = 0,    // 0-59
-        .minutes = 45,   // 0-59
-        .hours = 12,     // 0-23 (formato 24 horas)
-        .day = 3,        // 1-7 (día de la semana, 1 = domingo, 2 = lunes, etc.)
-        .date = 26,      // 1-31 (día del mes)
+        .minutes = 05,   // 0-59
+        .hours = 21,     // 0-23 (formato 24 horas)
+        .day = 4,        // 1-7 (día de la semana, 1 = domingo, 2 = lunes, etc.)
+        .date = 27,      // 1-31 (día del mes)
         .month = 8,      // 1-12
         .year = 25       // 00-99 (año 2000 + año)
     };

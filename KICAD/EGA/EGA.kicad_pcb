@@ -11730,7 +11730,7 @@
 			(uuid "29839cae-721a-47b4-8426-fc465ec29734")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 2.54 270)
+			(at 0 2.54 -90)
 			(layer "F.Fab")
 			(uuid "3f93d7b1-fc41-46a5-9501-6c569050ab0b")
 			(effects
@@ -13328,8 +13328,8 @@
 			)
 		)
 	)
-	(gr_text "RX"
-		(at 88.945 36.395 0)
+	(gr_text "RX/MISO"
+		(at 86.75 36.395 0)
 		(layer "F.SilkS")
 		(uuid "b687012a-fe66-468c-9249-9abaeccac3ac")
 		(effects
@@ -13406,8 +13406,8 @@
 			)
 		)
 	)
-	(gr_text "TX"
-		(at 88.945 46.645 0)
+	(gr_text "TX/MOSI"
+		(at 86.75 46.5 0)
 		(layer "F.SilkS")
 		(uuid "d695e50c-f31e-4ff5-86a7-a41a3a13bf28")
 		(effects
