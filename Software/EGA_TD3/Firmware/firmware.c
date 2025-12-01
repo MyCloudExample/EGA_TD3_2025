@@ -169,7 +169,7 @@ void task_guardiana_lcd(void *pvParameter)
             lcd_string(buffer);
             // Muevo el cursor a la fila 2, columna 0, deto desde el sensor HC-SR04
             lcd_set_cursor(2, 0);
-            sprintf(buffer, "HCSR04: %.2f cm", val_hcsr04);
+            sprintf(buffer, "HCSR04: %.2f cm    ", val_hcsr04);
             lcd_string(buffer);
         }
         xSemaphoreGive(sem_mutexi2c);

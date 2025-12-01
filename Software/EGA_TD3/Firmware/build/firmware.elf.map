@@ -4721,56 +4721,55 @@ LOAD C:/Users/nahue/.pico-sdk/toolchain/14_2_Rel1/bin/../lib/gcc/arm-none-eabi/1
 .rodata         0x10017630     0x97c0
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .rodata*)
  .rodata.task_guardiana_lcd.str1.4
-                0x10017630      0xe8a CMakeFiles/firmware.dir/firmware.c.obj
-                                 0x44 (size before relaxing)
+                0x10017630      0xe8e CMakeFiles/firmware.dir/firmware.c.obj
+                                 0x48 (size before relaxing)
  .rodata.task_guardiana_sd.str1.4
-                0x100184ba       0xec CMakeFiles/firmware.dir/firmware.c.obj
+                0x100184be       0xec CMakeFiles/firmware.dir/firmware.c.obj
  .rodata.task_SetPoint.str1.4
-                0x100184ba       0x43 CMakeFiles/firmware.dir/firmware.c.obj
+                0x100184be       0x43 CMakeFiles/firmware.dir/firmware.c.obj
  .rodata.task_debounce_boton.str1.4
-                0x100184ba       0x41 CMakeFiles/firmware.dir/firmware.c.obj
+                0x100184be       0x41 CMakeFiles/firmware.dir/firmware.c.obj
  .rodata.task_rtc.str1.4
-                0x100184ba       0x45 CMakeFiles/firmware.dir/firmware.c.obj
+                0x100184be       0x45 CMakeFiles/firmware.dir/firmware.c.obj
  .rodata.task_pid.str1.4
-                0x100184ba       0x51 CMakeFiles/firmware.dir/firmware.c.obj
+                0x100184be       0x51 CMakeFiles/firmware.dir/firmware.c.obj
  .rodata.task_init.str1.4
-                0x100184ba       0x24 CMakeFiles/firmware.dir/firmware.c.obj
+                0x100184be       0x24 CMakeFiles/firmware.dir/firmware.c.obj
  .rodata.main.str1.4
-                0x100184ba       0x6c CMakeFiles/firmware.dir/firmware.c.obj
+                0x100184be       0x6c CMakeFiles/firmware.dir/firmware.c.obj
  .rodata.panic.str1.4
-                0x100184ba       0x12 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_platform_panic/panic.c.obj
+                0x100184be       0x12 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_platform_panic/panic.c.obj
  .rodata.spin_lock_claim_unused.str1.4
-                0x100184ba       0x1b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync/sync.c.obj
+                0x100184be       0x1b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_sync/sync.c.obj
  .rodata.user_irq_claim_unused.str1.4
-                0x100184ba       0x1b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_irq/irq.c.obj
+                0x100184be       0x1b CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_irq/irq.c.obj
  .rodata.timer_hardware_alarm_claim.str1.4
-                0x100184ba       0x22 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_timer/timer.c.obj
+                0x100184be       0x22 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/hardware_timer/timer.c.obj
  .rodata.hard_assertion_failure.str1.4
-                0x100184ba        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100184be        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_runtime/runtime.c.obj
  .rodata.__wrap_malloc.str1.4
-                0x100184ba        0xe CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_malloc/malloc.c.obj
+                0x100184be        0xe CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_malloc/malloc.c.obj
  .rodata.str1.4
-                0x100184ba       0x44 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
- *fill*         0x100184ba        0x2 
+                0x100184be       0x44 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+ *fill*         0x100184be        0x2 
  .rodata.__bi_84
-                0x100184bc        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+                0x100184c0        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
  .rodata.__bi_78
-                0x100184c8        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+                0x100184cc        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
  .rodata.__bi_60
-                0x100184d4        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+                0x100184d8        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
  .rodata.__bi_54
-                0x100184e0        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+                0x100184e4        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
  .rodata.__bi_48
-                0x100184ec        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+                0x100184f0        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
  .rodata.__bi_42
-                0x100184f8        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+                0x100184fc        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
  .rodata.__bi_34
-                0x10018504        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+                0x10018508        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
  .rodata.__bi_26
-                0x10018510        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
+                0x10018514        0xc CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.obj
  .rodata._ftoa.str1.4
-                0x1001851c       0x15 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_printf/printf.c.obj
- *fill*         0x1001851c        0x4 
+                0x10018520       0x15 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_printf/printf.c.obj
  .rodata.pow10.0
                 0x10018520       0x50 CMakeFiles/firmware.dir/C_/Users/nahue/.pico-sdk/sdk/2.1.1/src/rp2_common/pico_printf/printf.c.obj
  .rodata.crlf_str.0
