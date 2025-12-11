@@ -39,22 +39,22 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/TEST_EGA/RTC_EXTERNO/RTC_EXAMPLE/build/pico-sdk/tools/cmake_install.cmake")
+  include("C:/Users/nahue/Desktop/Accesos Directos/GitHUB/Software/TEST_EGA/RTC_EXTERNO/RTC_EXAMPLE/build/pico-sdk/tools/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/TEST_EGA/RTC_EXTERNO/RTC_EXAMPLE/build/pico-sdk/src/cmake_install.cmake")
+  include("C:/Users/nahue/Desktop/Accesos Directos/GitHUB/Software/TEST_EGA/RTC_EXTERNO/RTC_EXAMPLE/build/pico-sdk/src/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/TEST_EGA/RTC_EXTERNO/RTC_EXAMPLE/build/pico-sdk/docs/cmake_install.cmake")
+  include("C:/Users/nahue/Desktop/Accesos Directos/GitHUB/Software/TEST_EGA/RTC_EXTERNO/RTC_EXAMPLE/build/pico-sdk/docs/cmake_install.cmake")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "C:/Users/nahue/Desktop/Accesos Directos/GitHUB/EGA_TD3_2025/Software/TEST_EGA/RTC_EXTERNO/RTC_EXAMPLE/build/pico-sdk/install_local_manifest.txt"
+  file(WRITE "C:/Users/nahue/Desktop/Accesos Directos/GitHUB/Software/TEST_EGA/RTC_EXTERNO/RTC_EXAMPLE/build/pico-sdk/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
